@@ -39,7 +39,7 @@ A static blog site built with [VitePress](https://vitepress.dev/)
 Start the local development server:
 
 ```bash
-pnpm dev
+pnpm docs:dev
 ```
 
 The site will be available at `http://localhost:5173` (or the port shown in the terminal).
@@ -49,7 +49,7 @@ The site will be available at `http://localhost:5173` (or the port shown in the 
 Build the site for production:
 
 ```bash
-pnpm build
+pnpm docs:build
 ```
 
 The output files will be generated in the `docs/.vitepress/dist` directory.
@@ -59,7 +59,7 @@ The output files will be generated in the `docs/.vitepress/dist` directory.
 Preview the built site locally:
 
 ```bash
-pnpm preview
+pnpm docs:preview
 ```
 
 ### Formatting
@@ -76,6 +76,13 @@ pnpm format
   - `.vitepress/`: VitePress configuration and theme customization.
   - `posts/`: Blog posts directory.
 - `package.json`: Project dependencies and scripts.
+
+## Content and compliance
+
+- The root `LICENSE` applies to repository code only; blog posts, images, videos, and other media are not automatically licensed under MIT.
+- Before reusing or redistributing site content, check the copyright and source notice for the specific material.
+- This repository and site are intended for lawful, authorized learning and discussion, and should not be used to bypass third-party terms of service, access controls, billing rules, or account restrictions.
+- If you believe any published material is infringing, improperly attributed, or otherwise unsuitable for public display, please contact the author for review.
 
 ## License
 
