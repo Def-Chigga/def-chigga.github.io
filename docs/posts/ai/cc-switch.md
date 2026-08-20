@@ -6,6 +6,29 @@ tags: [AI, CCSwitch]
 
 # CC Switch 用户手册
 
+> **来源 (Source)**
+>
+> 本文是一份基于上游开源项目 CC Switch 的实战笔记。
+>
+> - **Upstream project**: <https://github.com/farion1231/cc-switch>
+> - **Upstream license**: refer to the `LICENSE` file in the upstream
+>   repository (typically MIT License) for the license that governs
+>   verbatim excerpts quoted below.
+> - **This post**: prose, structure, screenshots and any commentary
+>   have been written or assembled by the author of this repository
+>   for personal study and are shared under the same license as the
+>   rest of the posts on this site (CC BY-NC-SA 4.0, see
+>   `docs/content-policy.md`). Where material is reproduced or
+>   substantially adapted from upstream documentation, attribution is
+>   given at the relevant section.
+> - **Trademarks**: "CC Switch" and any product names belong to their
+>   respective owners; they are used nominatively here to refer to the
+>   upstream project.
+
+## 合规边界说明
+
+文中涉及的代理、转发、供应商切换、协议适配与账号接入能力，仅应在遵守适用法律法规、平台条款和已获授权的前提下使用，不应用于绕过访问控制、计费、配额、封禁、账号限制或其它服务规则。若你接入第三方供应商或中转服务，也应自行确认其来源、授权状态与合规性。
+
 ## 1. 快速入门
 
 ### 1.1 软件介绍
