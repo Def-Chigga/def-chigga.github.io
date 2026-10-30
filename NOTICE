@@ -35,12 +35,13 @@ the articles, images, video, or fonts in this repository.
 ## 3. Media assets
 
 - **Fonts**: `docs/public/fonts/OPlusSans.subset.woff2` is a subset of the
-  OPlus Sans typeface. The redistribution terms of this font have not been
-  confirmed with its publisher, so it is treated here as not redistributable
-  until those terms are established in writing. If they cannot be established,
-  the file will be replaced with a font under a known license, such as Noto
-  Sans SC or Source Han Sans (both SIL OFL 1.1). No font in this repository is
-  sold or bundled with software for sale.
+  OPlus Sans typeface. Copyright OPPO. OPPO releases the font for free
+  commercial use. It is used here solely as a web font to render this site, is
+  not sold or sublicensed, and is not offered as a standalone asset. If OPPO's
+  published terms are found not to permit this use, the file will be removed
+  and replaced with a font under a known license such as Noto Sans SC or
+  Source Han Sans (both SIL OFL 1.1). No font in this repository is sold or
+  bundled with software for sale.
 - **Images and video** under `docs/public/` and `docs/images/` are either
   created by the repository author, or used with a license that permits
   redistribution. Each non-original asset must have an entry in
