@@ -1,0 +1,65 @@
+# NOTICE
+
+This repository is the source of the blog at https://def-chigga.github.io.
+
+Copyright (c) 2026 DefChigga. All rights reserved where not otherwise stated
+below.
+
+## 1. Licensing map
+
+| Scope | License | Where stated |
+| --- | --- | --- |
+| Source code: `*.ts`, `*.js`, `*.json`, `*.yml`, config files, scripts | MIT | `LICENSE` at the repository root |
+| Author-written posts and pages: Markdown under `docs/**` | CC BY-NC-SA 4.0 | `docs/content-policy.md`, `creativeCommons` in `docs/.vitepress/config.ts` |
+| Bundled third-party dependencies | Their own licenses | see section 2 below |
+| Media assets under `docs/public/` and `docs/images/` | Author-created or licensed, see section 3 | `docs/images/gallery/SOURCES.md` |
+
+The MIT license covers the code only. It does not automatically apply to
+the articles, images, video, or fonts in this repository.
+
+## 2. Third-party software
+
+- **VitePress** — MIT License. <https://github.com/vuejs/vitepress>
+- **vitepress-theme-async** — MIT License. <https://github.com/theme-forest/vitepress-theme-async>
+- **Vue 3** — MIT License. <https://github.com/vuejs/core>
+- Package dependencies and their transitive dependencies — see `pnpm-lock.yaml`
+  and the `LICENSE` file shipped in each package under `node_modules/`.
+
+## 3. Media assets
+
+- **Fonts**: `docs/public/fonts/OPlusSans.subset.woff2` is a subset of
+  OPlus Sans, distributed by OPPO under the SIL Open Font License 1.1
+  (<https://openfontlicense.org>). It is redistributed here unmodified apart
+  from glyph subsetting, which the OFL permits. The font is not sold and is
+  not bundled with any software for sale.
+- **Images and video** under `docs/public/` and `docs/images/` are either
+  created by the repository author, or used with a license that permits
+  redistribution. Each non-original asset must have an entry in
+  `docs/images/gallery/SOURCES.md` recording source, author, and license
+  before it is committed.
+- Assets whose source or license cannot be established must not be added.
+  Historically, a gallery of images with unverified provenance was removed
+  for this reason; see `docs/images/gallery/SOURCES.md`.
+
+## 4. Third-party documents reproduced as posts
+
+Posts that quote or adapt upstream documentation credit the upstream project
+and license at the top of the post. The current case is:
+
+- `docs/posts/ai/cc-switch.md` — based on the CC Switch project at
+  <https://github.com/farion1231/cc-switch>. The upstream license governs any
+  verbatim excerpts; the surrounding commentary is the author's own work.
+
+## 5. Trademarks
+
+Product names, logos, and trademarks mentioned on the site or in this
+repository belong to their respective owners. They are used nominatively to
+identify the products or services being discussed. GitHub marks are used in
+accordance with <https://github.com/logos>.
+
+## 6. Reporting
+
+To report a copyright or trademark concern, see `SECURITY.md` and
+`docs/content-policy.md` section 5. For a formal DMCA notice, contact GitHub
+at <copyright@github.com> as described in the GitHub Terms of Service,
+section F.

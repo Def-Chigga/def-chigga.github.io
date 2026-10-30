@@ -14,5 +14,6 @@ If you want to repopulate the gallery, restore images only after:
   page with a visible notice, since the rest of the site is published
   under CC BY-NC-SA 4.0.
 
-Report problems via the channels listed in
-[`/SECURITY.md`](../SECURITY.md) and [`/NOTICE`](../NOTICE).
+Report problems via the channels listed in the repository-root
+[`SECURITY.md`](https://github.com/Def-Chigga/def-chigga.github.io/blob/master/SECURITY.md)
+and [`NOTICE`](https://github.com/Def-Chigga/def-chigga.github.io/blob/master/NOTICE).
