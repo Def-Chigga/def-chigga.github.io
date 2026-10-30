@@ -64,6 +64,12 @@ the upstream documentation is the license declared in that repository's
 own `LICENSE` file; redistribute verbatim excerpts only in accordance
 with that license and with attribution.
 
+Screenshots under `docs/images/cc-switch/` are captures of the upstream
+application's own user interface. They are reproduced to document how the
+software behaves, are not offered as standalone assets, and carry no
+licence beyond the upstream project's terms. They will be removed or
+replaced if the upstream author objects.
+
 ## 4. Acceptable Use
 
 The repository and the deployed site must not be used to host or

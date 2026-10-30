@@ -7,7 +7,7 @@ banner:
 
 ## 版权与内容说明
 
-本站文章与页面内容默认由作者保留相应权利；除非页面另有说明，站点已发布的文章通过本站主题以 CC BY-NC-SA 4.0 发布，转载或引用时请同时注明作者与来源链接。完整策略见 [`/content-policy`](https://github.com/Def-Chigga/vitepress-blog/blob/main/docs/content-policy.md)。
+本站文章与页面内容默认由作者保留相应权利；除非页面另有说明，站点已发布的文章通过本站主题以 CC BY-NC-SA 4.0 发布，转载或引用时请同时注明作者与来源链接。完整策略见 [`/content-policy`](/content-policy)。
 
 本站使用的图片、视频与其它媒体资源会尽量采用原创、已获授权或允许再分发的内容。仓库根目录的 `NOTICE` 与 `docs/images/gallery/SOURCES.md` 列出了已知的上游来源。如你认为本站内容存在侵权、来源标注不当或其它不适宜公开展示的问题，请通过 `docs/content-policy.md` 中给出的举报渠道告知，我会及时核查并处理；正式 DMCA 通知可按 GitHub 服务条款第 F 条提交。
 
