@@ -136,10 +136,9 @@ export default defineConfig({
       ],
     },
     banner: {
-      type: 'video', // 'img' | 'video'
-      // Author-created media asset. See NOTICE §3: media assets must be
-      // author-created or carry a redistribution license.
-      bgurl: '/banner-video.mp4',
+      type: 'img', // 'img' | 'video'
+      // Original SVG created for this repository. See NOTICE §3.
+      bgurl: '/banner-bg.svg',
       bannerTitle: 'Hello word',
       bannerText: 'Hi my new friend!',
       // ...
