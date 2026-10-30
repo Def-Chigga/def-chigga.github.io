@@ -22,7 +22,7 @@ Property / Trademarks).
 | -------------------------------------- | --------------------------- | --------------------------------------------------------------------- |
 | Repository source code (`*.ts`, `*.json`, workflows, scripts) | MIT                          | See top-level `LICENSE`.                                               |
 | Author-written blog posts and pages (Markdown under `docs/posts/**`) | CC BY-NC-SA 4.0 (deed.zh-hans) | Configured in `docs/.vitepress/config.ts` → `creativeCommons`.        |
-| Bundled dependencies                   | Their own licenses (MIT / OFL / Apache-2.0 etc.) | See `NOTICE` at the repository root.                                  |
+| Bundled dependencies                   | Their own licenses (MIT / SATA / OFL / Apache-2.0 etc.) | See `NOTICE` at the repository root.                                  |
 | Third-party documents reproduced as posts | The upstream project's license, with attribution | See "Third-party content" below.                                      |
 
 Posts reuse Creative Commons via the `creativeCommons` theme plugin

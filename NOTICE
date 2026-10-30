@@ -20,7 +20,14 @@ the articles, images, video, or fonts in this repository.
 ## 2. Third-party software
 
 - **VitePress** — MIT License. <https://github.com/vuejs/vitepress>
-- **vitepress-theme-async** — MIT License. <https://github.com/theme-forest/vitepress-theme-async>
+- **vitepress-theme-async** — **SATA 2.0 (The Star And Thank Author License)**.
+  <https://github.com/MaLuns/vitepress-theme-async>
+  Copyright © 2023 maLuns (admin@imalun.com). Many thanks to the author for
+  releasing this theme. The npm package metadata declares `MIT`, but the
+  repository `LICENSE` file is SATA 2.0; the repository text is treated as the
+  controlling license and is reproduced in full at
+  <https://github.com/zTrix/sata-license>. This project uses the theme without
+  removing or altering its copyright and license notice, as SATA requires.
 - **Vue 3** — MIT License. <https://github.com/vuejs/core>
 - Package dependencies and their transitive dependencies — see `pnpm-lock.yaml`
   and the `LICENSE` file shipped in each package under `node_modules/`.
@@ -37,9 +44,14 @@ the articles, images, video, or fonts in this repository.
   redistribution. Each non-original asset must have an entry in
   `docs/images/gallery/SOURCES.md` recording source, author, and license
   before it is committed.
+- `docs/public/banner-video.mp4` is original footage created by the repository
+  author and is used only as the banner background of this site.
 - Assets whose source or license cannot be established must not be added.
-  Historically, a gallery of images with unverified provenance was removed
-  for this reason; see `docs/images/gallery/SOURCES.md`.
+  A gallery of 31 images was removed in August 2026 for this reason: those
+  images had been downloaded from a third-party wallpaper site (wallspic.com)
+  that the theme demo merely linked to. They were never part of the theme
+  repository and were not covered by the theme license. See
+  `docs/images/gallery/SOURCES.md`.
 
 ## 4. Third-party documents reproduced as posts
 
@@ -57,7 +69,33 @@ repository belong to their respective owners. They are used nominatively to
 identify the products or services being discussed. GitHub marks are used in
 accordance with <https://github.com/logos>.
 
-## 6. Reporting
+## 6. Compliance with the GitHub Terms of Service
+
+This repository is maintained so that it can be read against the GitHub Terms
+of Service directly. The relevant provisions and how they are met:
+
+- **Section C (Acceptable Use)** — "Your use of the Website and Service must
+  not violate any applicable laws, including copyright or trademark laws".
+  Only content the author owns or may redistribute is published here. The
+  unacceptable-use list lives in `docs/content-policy.md` §4.
+- **Section D.1 (Responsibility for User-Generated Content)** — "You are
+  responsible for Your Content and any harm resulting from it." The author
+  accepts that responsibility for every file in this repository.
+- **Section D.3 (Ownership and License Grants)** — "If you post Content you
+  did not create, you are responsible for ensuring you have the right to post
+  it and for complying with any applicable licenses." Section 3 of this file
+  is the rule that enforces it for media assets.
+- **Section D.5 (License Grant to Other Users)** — posting publicly grants
+  others a license to view and fork. Content that cannot be licensed on those
+  terms is not published here.
+- **Section F (Copyright Infringement and DMCA)** — a rights holder should
+  use GitHub's DMCA process, described in `SECURITY.md`. The author removes or
+  attributes reported material rather than ignoring reports, so the account
+  does not become a repeat infringer.
+- **Section G (Intellectual Property Notice)** — third-party trademarks and
+  logos are used nominatively only; see `docs/content-policy.md` §6.
+
+## 7. Reporting
 
 To report a copyright or trademark concern, see `SECURITY.md` and
 `docs/content-policy.md` section 5. For a formal DMCA notice, contact GitHub
