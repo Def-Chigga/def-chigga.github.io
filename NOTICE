@@ -44,11 +44,14 @@ the articles, images, video, or fonts in this repository.
   redistribution. Each non-original asset must have an entry in
   `docs/images/gallery/SOURCES.md` recording source, author, and license
   before it is committed.
-- A banner video previously stored at `docs/public/banner-video.mp4` was
-  removed in October 2026. It had been downloaded from a third-party personal
-  blog (<https://www.imalun.com/>) that is not the theme's own repository and
-  did not offer a redistribution license. The banner now uses
-  `docs/public/banner-bg.svg`, an original graphic created for this repository.
+- A banner video previously stored at `docs/public/banner-video.mp4` is not
+  currently used. It had been downloaded from a third-party personal blog
+  (<https://www.imalun.com/>) that is not the theme's own repository and did not
+  offer a redistribution license. Permission to redistribute is being requested
+  from the author; the file will only be restored if written permission is
+  received, and the permission date will be recorded here at that time. The
+  banner currently uses `docs/public/banner-bg.svg`, an original graphic created
+  for this repository.
 - Assets whose source or license cannot be established must not be added.
   A gallery of 31 images was removed in August 2026 for this reason: those
   images had been downloaded from a third-party wallpaper site (wallspic.com)
