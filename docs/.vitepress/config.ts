@@ -136,9 +136,9 @@ export default defineConfig({
       ],
     },
     banner: {
-      type: 'img', // 'img' | 'video'
-      // Original SVG created for this repository. See NOTICE §3.
-      bgurl: '/banner-bg.svg',
+      type: 'video', // 'img' | 'video'
+      // See NOTICE §3 for the recorded origin and status of this asset.
+      bgurl: '/banner-video.mp4',
       bannerTitle: 'Hello word',
       bannerText: 'Hi my new friend!',
       // ...

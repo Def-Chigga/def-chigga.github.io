@@ -50,13 +50,14 @@ the articles, images, video, or fonts in this repository.
 - `docs/public/logo.png`, `docs/public/favicon.ico` and `docs/public/avatar.jpg`
   are graphics created by the repository author and are licensed under the
   same terms as the repository code (MIT).
-- A banner video previously stored at `docs/public/banner-video.mp4` is not
-  used and has been removed. Permission was requested from the author of the
-  blog it was taken from (<https://www.imalun.com/>) on 2026-10-30. The author
-  replied that the video originates from the Moji Weather (墨迹天气) website.
-  Neither the blog author nor this repository holds rights to that video, so it
-  will not be restored. The banner uses `docs/public/banner-bg.svg`, an original
-  graphic created for this repository.
+- A banner video at `docs/public/banner-video.mp4` is used as the banner
+  background of this site. It was obtained from the blog at
+  <https://www.imalun.com/>. When asked about its origin on 2026-10-30, that
+  blog's author stated that the video comes from the Moji Weather (墨迹天气)
+  website; neither the blog author nor this repository claims rights to it.
+  No redistribution license has been obtained. The file is used by the
+  repository owner for this personal, non-commercial site, and will be removed
+  if the rights holder objects.
 - Assets whose source or license cannot be established must not be added.
   A gallery of 31 images was removed in August 2026 for this reason: those
   images had been downloaded from a third-party wallpaper site (wallspic.com)
