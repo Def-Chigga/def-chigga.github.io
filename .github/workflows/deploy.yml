@@ -34,14 +34,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      # pnpm must exist before setup-node when cache: pnpm is enabled,
+      # otherwise setup-node fails looking for the pnpm binary.
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: pnpm
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       # 关键修复：升级到v6版本，支持Node.js 24
       - name: Setup Pages
