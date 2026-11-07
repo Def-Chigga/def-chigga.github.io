@@ -1,6 +1,7 @@
 ---
 title: 内容与版权说明
 description: Content and Copyright Policy
+layout: custom
 ---
 
 # 内容与版权说明 (Content Policy)

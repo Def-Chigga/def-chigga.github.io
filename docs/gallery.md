@@ -1,6 +1,6 @@
 ---
 title: 相册库
-layout: page
+layout: custom
 single_column: true
 ---
 

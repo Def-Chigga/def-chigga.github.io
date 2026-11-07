@@ -31,6 +31,8 @@ export default defineConfig({
   srcDir: './',
   lang: 'zh',
   cleanUrls: true,
+  // Source-notes kept next to the assets; not a site page.
+  srcExclude: ['images/gallery/SOURCES.md'],
   /* 网站信息 */
   title: 'Blog',
   titleTemplate: `${author} 的小站`,

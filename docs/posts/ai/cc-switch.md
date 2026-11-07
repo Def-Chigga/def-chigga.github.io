@@ -1,5 +1,6 @@
 ---
 title: CC Switch 用户手册
+date: 2026-04-17
 categories: [AI]
 tags: [AI, CCSwitch]
 ---

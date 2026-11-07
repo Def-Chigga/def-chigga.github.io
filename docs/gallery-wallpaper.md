@@ -1,6 +1,6 @@
 ---
 title: 壁纸 # 相册详情
-layout: page
+layout: custom
 single_column: true
 ---
 
