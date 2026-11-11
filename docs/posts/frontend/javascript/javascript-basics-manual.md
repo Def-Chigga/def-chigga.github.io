@@ -3,7 +3,6 @@ title: JavaScript零基础入门学习手册
 date: 2026-11-11
 categories: [前端]
 tags: [JavaScript]
-outline: [2, 2]
 ---
 
 # JavaScript零基础入门学习手册
@@ -36,13 +35,13 @@ outline: [2, 2]
 
 **贯穿案例怎样成长。** 同一条任务始终保留身份、标题、分钟、标签、完成状态和创建时间。普通小例只演示部分字段时，会说明局部前提；第25、40、45章采用同一完整契约。
 
-| 阶段 | 输入与状态 | 新增能力 | 离开阶段前应证明 |
-| :--- | :--- | :--- | :--- |
-| 第1—14章 | 源码中的小数据 | 转换、控制流、函数与统计 | 能解释结果，能拒绝不合约定的输入 |
-| 第15—25章 | 模块化内存任务表 | 独立规则、错误边界、稳定ID | 删除不复用ID，非法操作不改变旧状态 |
-| 第26—29章 | 稍后完成的结果 | 等待、组合、取消和防旧结果覆盖 | 能说明何时启动、何时恢复以及失败由谁接管 |
-| 第30—33章与第40章 | 表单与浏览器存储 | 页面交互、导入导出、恢复 | 同来源刷新与重启后恢复，坏数据不被清空 |
-| 第34—39章与第45章 | HTTP与文件快照 | 保存队列、接口、命令行和测试 | 保存失败保留旧状态，正常与主要失败路径可检查 |
+| 阶段              | 输入与状态       | 新增能力                       | 离开阶段前应证明                             |
+| :---------------- | :--------------- | :----------------------------- | :------------------------------------------- |
+| 第1—14章          | 源码中的小数据   | 转换、控制流、函数与统计       | 能解释结果，能拒绝不合约定的输入             |
+| 第15—25章         | 模块化内存任务表 | 独立规则、错误边界、稳定ID     | 删除不复用ID，非法操作不改变旧状态           |
+| 第26—29章         | 稍后完成的结果   | 等待、组合、取消和防旧结果覆盖 | 能说明何时启动、何时恢复以及失败由谁接管     |
+| 第30—33章与第40章 | 表单与浏览器存储 | 页面交互、导入导出、恢复       | 同来源刷新与重启后恢复，坏数据不被清空       |
+| 第34—39章与第45章 | HTTP与文件快照   | 保存队列、接口、命令行和测试   | 保存失败保留旧状态，正常与主要失败路径可检查 |
 
 完成第33章后可以先做第40章，再回到第34—39章补Node与工程能力。第42—44章按需要回读，第45章综合项目不依赖其选修内容。各阶段的具体任务和检查方法放在相应章节末，第48章提供验收入口汇总。
 
@@ -289,11 +288,11 @@ node demo.mjs
 
 ### 1.7 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 显示结果 | `console.log(value)` | 宿主控制台输出；不等于持久保存 |
-| 运行源码 | `node demo.mjs` | 命令在终端执行 |
-| 长期保留数据 | 文件或存储操作 | 必须明确编写和处理失败 |
+| 场景         | 写法或工具           | 结果与边界                     |
+| :----------- | :------------------- | :----------------------------- |
+| 显示结果     | `console.log(value)` | 宿主控制台输出；不等于持久保存 |
+| 运行源码     | `node demo.mjs`      | 命令在终端执行                 |
+| 长期保留数据 | 文件或存储操作       | 必须明确编写和处理失败         |
 
 ## 第2章 准备环境与运行第一个程序
 
@@ -479,11 +478,11 @@ npm list --global --depth=0
 
 **选学路线。** 先完成官网安装的2.1—2.7节。需要多版本时，从下表选择一种管理器，阅读对应小节即可；不必依次安装全部工具。
 
-| 你使用的环境 | 可选路线 | 继续位置 |
-| :--- | :--- | :--- |
-| Windows原生PowerShell | nvm-windows或fnm，选一种 | 2.9与2.11，或2.12.1 |
-| macOS／Linux／WSL | nvm-sh或fnm，选一种 | 2.10与2.11，或2.12.2 |
-| 当前只学单版本 | 已完成的官网安装 | 直接进入第3章 |
+| 你使用的环境          | 可选路线                 | 继续位置             |
+| :-------------------- | :----------------------- | :------------------- |
+| Windows原生PowerShell | nvm-windows或fnm，选一种 | 2.9与2.11，或2.12.1  |
+| macOS／Linux／WSL     | nvm-sh或fnm，选一种      | 2.10与2.11，或2.12.2 |
+| 当前只学单版本        | 已完成的官网安装         | 直接进入第3章        |
 
 ### 2.9 Windows：nvm-windows安装、切换与检查
 
@@ -727,12 +726,12 @@ node demo.mjs
 
 “`fnm current`与`node --version`不一致”时，先看`node -p "process.execPath"`，Windows再用`Get-Command node -All`和`where.exe node`，macOS／Linux用`command -v node`。常见原因是原生Node或旧管理器的PATH入口覆盖了fnm、编辑器沿用旧环境、或子目录读取了不同版本文件。一次只处理一个来源，并重新打开终端确认。
 
-| 工具 | 适用环境与项目约定 | 当前环境检查 |
-| :--- | :--- | :--- |
-| 官网安装包／发行文件 | 先完成单版本入门；版本由安装和PATH决定 | `node --version`与`process.execPath` |
-| nvm-windows | Windows原生；v1与v2行为按2.9、2.11节区分 | 对应版本的nvm诊断命令与Node真实路径 |
-| nvm-sh | macOS、Linux、WSL；按Shell加载并可读取.nvmrc | `nvm current`与Node真实路径 |
-| fnm | Windows、macOS、Linux、WSL；可读取.nvmrc／.node-version，自动切换需初始化 | `fnm current`与Node真实路径 |
+| 工具                 | 适用环境与项目约定                                                        | 当前环境检查                         |
+| :------------------- | :------------------------------------------------------------------------ | :----------------------------------- |
+| 官网安装包／发行文件 | 先完成单版本入门；版本由安装和PATH决定                                    | `node --version`与`process.execPath` |
+| nvm-windows          | Windows原生；v1与v2行为按2.9、2.11节区分                                  | 对应版本的nvm诊断命令与Node真实路径  |
+| nvm-sh               | macOS、Linux、WSL；按Shell加载并可读取.nvmrc                              | `nvm current`与Node真实路径          |
+| fnm                  | Windows、macOS、Linux、WSL；可读取.nvmrc／.node-version，自动切换需初始化 | `fnm current`与Node真实路径          |
 
 fnm不是nvm命令的别名，不能只把旧教程中的程序名替换后直接执行。项目成员可以使用不同管理器，但应共享确切版本要求、核对实际Node版本，并在升级后重新运行项目检查。
 
@@ -756,23 +755,22 @@ fnm不是nvm命令的别名，不能只把旧教程中的程序名替换后直�
 
 ### 2.14 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 第一次安装 | 官网Windows .msi／macOS .pkg／Linux预编译文件 | 按系统与架构选择，安装后新开终端 |
-| 核对版本 | `node --version / npm --version` | 分别核对运行时与包管理器 |
-| 核对真正运行的程序 | `node -p "process.execPath"` | 路径应属于所选安装或管理器 |
-| 执行源码文件 | `node demo.mjs` | 先在终端进入文件所在目录 |
-| Windows npm脚本受限 | npm.cmd --version | 先用随Node分发的.cmd入口检查 |
-| 迁移前查看全局工具 | `npm list --global --depth=0` | 用于记录，不会自动迁移这些工具 |
-| Windows v2列版本 | `nvm list installed` | 不等于项目shim最终解析 |
-| Windows v2项目诊断 | `node --nvm-which --version` | 仅v2 shim相关能力 |
-| POSIX项目切换 | `nvm use` | 读取.nvmrc；当前shell生效 |
-| fnm安装与当前版本 | `fnm install 26.13.0`；`fnm current` | 管理器与Node分别安装，先初始化Shell |
-| fnm当前与默认版本 | `fnm use 26.13.0`；`fnm default 26.13.0` | 当前Shell切换与默认约定是两步 |
-| fnm项目切换 | `fnm install`；`fnm use` | 在项目中读取版本文件；自动切换另需--use-on-cd |
-| fnm单次执行 | `fnm exec --using 24.22.2 node --version` | 目标版本先安装，不改变当前Shell选择 |
-| 路径冲突 | `where.exe / Get-Command / command -v` | 先查入口，再修配置 |
-
+| 场景                | 写法或工具                                    | 结果与边界                                    |
+| :------------------ | :-------------------------------------------- | :-------------------------------------------- |
+| 第一次安装          | 官网Windows .msi／macOS .pkg／Linux预编译文件 | 按系统与架构选择，安装后新开终端              |
+| 核对版本            | `node --version / npm --version`              | 分别核对运行时与包管理器                      |
+| 核对真正运行的程序  | `node -p "process.execPath"`                  | 路径应属于所选安装或管理器                    |
+| 执行源码文件        | `node demo.mjs`                               | 先在终端进入文件所在目录                      |
+| Windows npm脚本受限 | npm.cmd --version                             | 先用随Node分发的.cmd入口检查                  |
+| 迁移前查看全局工具  | `npm list --global --depth=0`                 | 用于记录，不会自动迁移这些工具                |
+| Windows v2列版本    | `nvm list installed`                          | 不等于项目shim最终解析                        |
+| Windows v2项目诊断  | `node --nvm-which --version`                  | 仅v2 shim相关能力                             |
+| POSIX项目切换       | `nvm use`                                     | 读取.nvmrc；当前shell生效                     |
+| fnm安装与当前版本   | `fnm install 26.13.0`；`fnm current`          | 管理器与Node分别安装，先初始化Shell           |
+| fnm当前与默认版本   | `fnm use 26.13.0`；`fnm default 26.13.0`      | 当前Shell切换与默认约定是两步                 |
+| fnm项目切换         | `fnm install`；`fnm use`                      | 在项目中读取版本文件；自动切换另需--use-on-cd |
+| fnm单次执行         | `fnm exec --using 24.22.2 node --version`     | 目标版本先安装，不改变当前Shell选择           |
+| 路径冲突            | `where.exe / Get-Command / command -v`        | 先查入口，再修配置                            |
 
 ## 第3章 读懂代码、执行顺序与错误信息
 
@@ -808,7 +806,7 @@ node demo.mjs
 
 ### 3.2 注释、命名与代码块
 
-注释向阅读代码的人说明意图，不参与普通运行。//到行末是单行注释，/*和*/包围多行注释。名字区分大小写，task与Task不同；不要用let等保留字作普通变量名。花括号在不同语法里可表示代码块或对象，要看上下文。
+注释向阅读代码的人说明意图，不参与普通运行。//到行末是单行注释，/_和_/包围多行注释。名字区分大小写，task与Task不同；不要用let等保留字作普通变量名。花括号在不同语法里可表示代码块或对象，要看上下文。
 
 示例 **C03E02**，文件 `demo.mjs`，环境：Node.js。建议保存到：`js-study/examples/ch03/C03E02/`。
 
@@ -1054,7 +1052,7 @@ node fixed.mjs
 
 ### 3.6 动手练习与参考答案
 
-1. 顺序执行let n = 2、n = n + 3、n = n * 2，结果是多少？答案10；每一步都读取前一步状态。
+1. 顺序执行let n = 2、n = n + 3、n = n \* 2，结果是多少？答案10；每一步都读取前一步状态。
 
 2. return后换行再写对象，能交回对象吗？不能；应将return和表达式起始部分放同一行。
 
@@ -1062,12 +1060,12 @@ node fixed.mjs
 
 ### 3.7 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 观察值 | `console.log(...)` | 执行时显示；后来赋值不改旧输出 |
-| 赋值 | name = expression | 先求右侧再更新 |
-| 故意失败演示 | try/catch | 只捕获明确预期的错误 |
-| 模块严格模式 | .mjs | 不是编辑器格式选项 |
+| 场景         | 写法或工具         | 结果与边界                     |
+| :----------- | :----------------- | :----------------------------- |
+| 观察值       | `console.log(...)` | 执行时显示；后来赋值不改旧输出 |
+| 赋值         | name = expression  | 先求右侧再更新                 |
+| 故意失败演示 | try/catch          | 只捕获明确预期的错误           |
+| 模块严格模式 | .mjs               | 不是编辑器格式选项             |
 
 ## 第4章 变量、值与数据类型
 
@@ -1332,13 +1330,13 @@ second = { ... }       second ─────→ 新对象
 
 ### 4.7 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 需要重新赋值 | let | 不要求变量一直保持同一值类型 |
-| 不重新绑定 | const | 仍可能修改对象内容 |
-| 粗分类 | typeof value | null和数组需补充检查 |
-| 判断数组 | `Array.isArray(value)` | 不靠length猜测 |
-| 检查属性存在 | `Object.hasOwn(obj, key)` | 区分缺失与已存undefined |
+| 场景         | 写法或工具                | 结果与边界                   |
+| :----------- | :------------------------ | :--------------------------- |
+| 需要重新赋值 | let                       | 不要求变量一直保持同一值类型 |
+| 不重新绑定   | const                     | 仍可能修改对象内容           |
+| 粗分类       | typeof value              | null和数组需补充检查         |
+| 判断数组     | `Array.isArray(value)`    | 不靠length猜测               |
+| 检查属性存在 | `Object.hasOwn(obj, key)` | 区分缺失与已存undefined      |
 
 ## 第5章 类型转换、相等与逻辑判断
 
@@ -1444,7 +1442,7 @@ const duration = {
   },
   toString() {
     return '二十分钟'
-  }
+  },
 }
 console.log(Number(duration))
 console.log(String(duration))
@@ -1633,13 +1631,13 @@ TypeError
 
 ### 5.7 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 显式数值转换 | Number(text) | 空白可能为0；失败可能NaN |
-| 普通相等 | === / !== | 不自动跨类型转换 |
-| 缺失默认值 | value ?? fallback | 只替换null/undefined |
-| 安全访问 | value?.field | 根名字需存在；不吞实际异常 |
-| 布尔化 | Boolean(value) / !!value | 空数组、空对象都为true |
+| 场景         | 写法或工具               | 结果与边界                 |
+| :----------- | :----------------------- | :------------------------- |
+| 显式数值转换 | Number(text)             | 空白可能为0；失败可能NaN   |
+| 普通相等     | === / !==                | 不自动跨类型转换           |
+| 缺失默认值   | value ?? fallback        | 只替换null/undefined       |
+| 安全访问     | value?.field             | 根名字需存在；不吞实际异常 |
+| 布尔化       | Boolean(value) / !!value | 空数组、空对象都为true     |
 
 ## 第6章 数值、精度与数学工具
 
@@ -1921,14 +1919,14 @@ true
 
 ### 6.7 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 有限数值 | `Number.isFinite(x)` | 拒绝NaN和正负Infinity |
-| 整数范围 | `Number.isSafeInteger(x)` | 仅说明数值安全，不是业务合法 |
-| 截断 | `Math.trunc(x)` | 向零；不同于floor |
-| 格式化 | x.toFixed(digits) | 返回字符串；不改变x |
-| 大整数 | BigInt(text) | 与Number混算需明确转换 |
-| 改善求和 | `Math.sumPrecise(iterable)` | ES2026；仍为Number结果 |
+| 场景     | 写法或工具                  | 结果与边界                   |
+| :------- | :-------------------------- | :--------------------------- |
+| 有限数值 | `Number.isFinite(x)`        | 拒绝NaN和正负Infinity        |
+| 整数范围 | `Number.isSafeInteger(x)`   | 仅说明数值安全，不是业务合法 |
+| 截断     | `Math.trunc(x)`             | 向零；不同于floor            |
+| 格式化   | x.toFixed(digits)           | 返回字符串；不改变x          |
+| 大整数   | BigInt(text)                | 与Number混算需明确转换       |
+| 改善求和 | `Math.sumPrecise(iterable)` | ES2026；仍为Number结果       |
 
 ## 第7章 字符串、Unicode与文本处理
 
@@ -2197,14 +2195,14 @@ node demo.mjs
 
 ### 7.7 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 清理边界 | text.trim() | 返回新文本 |
-| 查找 | includes / indexOf | 后者未找到返回-1 |
-| 截取 | slice(start, end) | 不含end；按码元 |
+| 场景     | 写法或工具                      | 结果与边界             |
+| :------- | :------------------------------ | :--------------------- |
+| 清理边界 | text.trim()                     | 返回新文本             |
+| 查找     | includes / indexOf              | 后者未找到返回-1       |
+| 截取     | slice(start, end)               | 不含end；按码元        |
 | 全部替换 | replaceAll(search, replacement) | 注意正则参数的额外限制 |
-| 连接数组 | items.join(separator) | 方法属于数组 |
-| 编码 | TextEncoder / TextDecoder | 字节与字符串分开 |
+| 连接数组 | items.join(separator)           | 方法属于数组           |
+| 编码     | TextEncoder / TextDecoder       | 字节与字符串分开       |
 
 ## 第8章 条件判断与输入规则
 
@@ -2416,8 +2414,7 @@ false
 ```javascript
 const task = { title: '阅读异步章节', minutes: 90, done: false }
 const validTitle = typeof task.title === 'string' && task.title.trim().length > 0
-const validMinutes =
-  Number.isInteger(task.minutes) && task.minutes >= 1 && task.minutes <= 1440
+const validMinutes = Number.isInteger(task.minutes) && task.minutes >= 1 && task.minutes <= 1440
 if (!validTitle || !validMinutes || typeof task.done !== 'boolean') {
   console.log('任务无效')
 } else if (task.done) {
@@ -2453,13 +2450,13 @@ node demo.mjs
 
 ### 8.7 本章速查
 
-| 场景 | 写法或工具 | 结果与边界 |
-| :--- | :--- | :--- |
-| 范围分支 | if / else if / else | 先考虑规则覆盖顺序 |
-| 离散命令 | switch | 严格匹配；明确break |
-| 选择一个值 | condition ? a : b | 只计算被选中的分支 |
-| 输入检查 | 类型→清理→转换→范围 | 每层有独立失败原因 |
-| 保留false/0 | ??或明确条件 | 业务上可能是合法输入 |
+| 场景        | 写法或工具          | 结果与边界           |
+| :---------- | :------------------ | :------------------- |
+| 范围分支    | if / else if / else | 先考虑规则覆盖顺序   |
+| 离散命令    | switch              | 严格匹配；明确break  |
+| 选择一个值  | condition ? a : b   | 只计算被选中的分支   |
+| 输入检查    | 类型→清理→转换→范围 | 每层有独立失败原因   |
+| 保留false/0 | ??或明确条件        | 业务上可能是合法输入 |
 
 ## 第9章 循环与分步解决问题
 
@@ -2490,7 +2487,7 @@ do {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2525,7 +2522,7 @@ for (let i = 4; i >= 0; i -= 2) console.log('倒数', i)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2566,7 +2563,7 @@ for (let day = 1; day <= 2; day += 1) {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2601,7 +2598,7 @@ for (const title of titles) console.log('仍按元素', title)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2649,7 +2646,7 @@ console.log('空输入', emptyTotal)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2669,12 +2666,12 @@ node demo.mjs
 
 ### 9.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 条件重复 | while；先判断 | 可能执行零次 |
-| 至少一次 | do...while | 执行后再判断 |
-| 取元素 | for...of | 对象需有迭代协议 |
-| 结束本层 | break | 不自动结束全部外层 |
+| 场景     | 做法与返回    | 易错边界           |
+| :------- | :------------ | :----------------- |
+| 条件重复 | while；先判断 | 可能执行零次       |
+| 至少一次 | do...while    | 执行后再判断       |
+| 取元素   | for...of      | 对象需有迭代协议   |
+| 结束本层 | break         | 不自动结束全部外层 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-iteration-statements)。
 
@@ -2706,7 +2703,7 @@ console.log(double(6))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2748,7 +2745,7 @@ console.log(label(0), label(25))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2792,7 +2789,7 @@ inspect(1, 2, 3)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2823,7 +2820,7 @@ console.log(collect('C', existing) === existing)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2860,7 +2857,7 @@ console.log('调用后', count, original.done)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2898,7 +2895,7 @@ console.log(factorial(4), factorial(-1))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -2936,8 +2933,7 @@ countMinutes的契约要求数组元素为合法数值；实际外部输入要�
 
 ```javascript
 function parseMinutes(text) {
-  if (typeof text !== 'string' || text.trim() === '')
-    throw new TypeError('请输入分钟文本')
+  if (typeof text !== 'string' || text.trim() === '') throw new TypeError('请输入分钟文本')
   const value = Number(text)
   if (!Number.isInteger(value) || value < 0 || value > 1440) {
     throw new RangeError('分钟数需要0至1440的整数')
@@ -2966,15 +2962,14 @@ for (const text of [' ', '12px', '1.5', '1441']) {
 
 检查方法：另试'-1'和null，应分别进入范围失败与类型失败。能说清为什么先检查空白，再转换和检查范围，才算掌握；把Number转换成功当作校验通过不算完成。
 
-
 ### 10.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 返回结果 | return value | 结束本次调用 |
-| 默认参数 | name = expression | undefined才触发 |
-| 减少副作用 | 返回新结果 | 共享嵌套对象仍要检查 |
-| 递归 | 缩小问题直到基例 | 受调用栈和输入规模约束 |
+| 场景       | 做法与返回        | 易错边界               |
+| :--------- | :---------------- | :--------------------- |
+| 返回结果   | return value      | 结束本次调用           |
+| 默认参数   | name = expression | undefined才触发        |
+| 减少副作用 | 返回新结果        | 共享嵌套对象仍要检查   |
+| 递归       | 缩小问题直到基例  | 受调用栈和输入规模约束 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-function-definitions)。
 
@@ -3005,7 +3000,7 @@ console.log(JSON.stringify(tasks))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3042,7 +3037,7 @@ console.log(JSON.stringify(values.slice(-1)))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3079,7 +3074,7 @@ console.log([].includes('A'))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3118,7 +3113,7 @@ console.log(JSON.stringify(good))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3143,7 +3138,7 @@ fill([])的[]只求值一次，两行都得到同一个数组。good在每轮执
 ```javascript
 const tasks = [
   { id: 10, title: 'A' },
-  { id: 20, title: 'B' }
+  { id: 20, title: 'B' },
 ]
 tasks.splice(0, 1)
 console.log(tasks[0].id, tasks[0].title)
@@ -3157,7 +3152,7 @@ console.log(JSON.stringify(numbers))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3189,12 +3184,12 @@ node demo.mjs
 
 ### 11.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 范围复制 | slice(start,end) | 新外层数组，end不含 |
-| 原地替换 | splice(start,count,items) | 返回删除项 |
-| 成员判断 | includes(value) | 对象仍按身份 |
-| 移除尾项 | pop() | 空数组返回undefined |
+| 场景     | 做法与返回                | 易错边界            |
+| :------- | :------------------------ | :------------------ |
+| 范围复制 | slice(start,end)          | 新外层数组，end不含 |
+| 原地替换 | splice(start,count,items) | 返回删除项          |
+| 成员判断 | includes(value)           | 对象仍按身份        |
+| 移除尾项 | pop()                     | 空数组返回undefined |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-array-objects)。
 
@@ -3215,7 +3210,7 @@ const task = {
   title: '学习对象',
   minutes: 25,
   显示名称: '第一项',
-  owner: { name: '小明' }
+  owner: { name: '小明' },
 }
 const key = 'minutes'
 console.log(task.title, task[key], task['显示名称'])
@@ -3226,7 +3221,7 @@ console.log(task.key)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3261,7 +3256,7 @@ console.log(JSON.stringify(task))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3292,16 +3287,16 @@ console.log(
   JSON.stringify(
     Object.fromEntries([
       ['a', 1],
-      ['a', 3]
-    ])
-  )
+      ['a', 3],
+    ]),
+  ),
 )
 ```
 
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3332,7 +3327,7 @@ const task = {
   [field]: 20,
   describe() {
     return `${this.title}：${this.minutes}分钟`
-  }
+  },
 }
 console.log(task.describe())
 console.log(JSON.stringify(Object.keys(task)))
@@ -3341,7 +3336,7 @@ console.log(JSON.stringify(Object.keys(task)))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3355,7 +3350,7 @@ node demo.mjs
 
 ### 12.5 模型约束与不可信键
 
-JavaScript允许随时增加普通对象属性，业务模型却应规定允许哪些字段、类型和范围。外部键可能是constructor、__proto__等特殊名字；用自有字段白名单并避免把外部数据直接合并到配置对象。
+JavaScript允许随时增加普通对象属性，业务模型却应规定允许哪些字段、类型和范围。外部键可能是constructor、**proto**等特殊名字；用自有字段白名单并避免把外部数据直接合并到配置对象。
 
 示例 **C12E05**，目录 `js-study/examples/ch12/C12E05/`，环境：Node.js。
 
@@ -3375,7 +3370,7 @@ console.log(Object.hasOwn(counts, '__proto__'), Object.getPrototypeOf(counts))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3407,12 +3402,12 @@ true null
 
 ### 12.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 自身字段 | `Object.hasOwn(obj,key)` | 不检查值是否合法 |
-| 动态字段 | obj[key] | 先计算key表达式 |
-| 键值数组 | `Object.entries(obj)` | 自身、可枚举、字符串键 |
-| 删除 | delete obj.key | 与赋undefined不同 |
+| 场景     | 做法与返回               | 易错边界               |
+| :------- | :----------------------- | :--------------------- |
+| 自身字段 | `Object.hasOwn(obj,key)` | 不检查值是否合法       |
+| 动态字段 | obj[key]                 | 先计算key表达式        |
+| 键值数组 | `Object.entries(obj)`    | 自身、可枚举、字符串键 |
+| 删除     | delete obj.key           | 与赋undefined不同      |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-object-objects)。
 
@@ -3434,7 +3429,7 @@ const { title: name, note = '暂无', minutes = 25 } = { title: '阅读', note: 
 console.log(first, third)
 console.log(name, note, minutes)
 const {
-  owner: { city }
+  owner: { city },
 } = { owner: { city: '杭州' } }
 console.log(city)
 ```
@@ -3442,7 +3437,7 @@ console.log(city)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3481,7 +3476,7 @@ console.log(JSON.stringify({ ...'JS' }))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3518,7 +3513,7 @@ console.log(JSON.stringify(target))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3558,7 +3553,7 @@ console.log(JSON.stringify({ absent: undefined, number: NaN }))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3597,7 +3592,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3618,12 +3613,12 @@ TypeError
 
 ### 13.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 解构默认 | name = default | undefined才触发 |
-| 数组展开 | [...iterable] | 新外层，内层共享 |
-| 对象复制 | {...obj} | 自身可枚举属性 |
-| 冻结 | `Object.freeze(obj)` | 浅层，非深不可变 |
+| 场景     | 做法与返回           | 易错边界         |
+| :------- | :------------------- | :--------------- |
+| 解构默认 | name = default       | undefined才触发  |
+| 数组展开 | [...iterable]        | 新外层，内层共享 |
+| 对象复制 | {...obj}             | 自身可枚举属性   |
+| 冻结     | `Object.freeze(obj)` | 浅层，非深不可变 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-destructuring-assignment)、[HTML标准：结构化数据](https://html.spec.whatwg.org/multipage/structured-data.html)。
 
@@ -3648,12 +3643,12 @@ console.log(apply(4, double))
 console.log(
   apply(4, (value) => {
     return value + 1
-  })
+  }),
 )
 console.log(
   apply(4, (value) => {
     value + 1
-  })
+  }),
 )
 const wrap = (title) => ({ title })
 console.log(JSON.stringify(wrap('阅读')))
@@ -3662,7 +3657,7 @@ console.log(JSON.stringify(wrap('阅读')))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3690,11 +3685,11 @@ console.log(JSON.stringify(values.map((n) => n * 2)))
 console.log(JSON.stringify(values.filter((n) => n > 1)))
 console.log(
   values.find((n) => n > 1),
-  values.findIndex((n) => n > 1)
+  values.findIndex((n) => n > 1),
 )
 console.log(
   values.some((n) => n > 2),
-  values.every((n) => n > 0)
+  values.every((n) => n > 0),
 )
 console.log([].some(Boolean), [].every(Boolean))
 console.log(values.forEach(() => {}))
@@ -3704,7 +3699,7 @@ console.log(JSON.stringify(['10', '10', '10'].map((text) => parseInt(text, 10)))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3744,7 +3739,7 @@ console.log(JSON.stringify(['A B', 'C'].flatMap((text) => text.split(' '))))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3777,20 +3772,20 @@ console.log(JSON.stringify(numbers.toSpliced(1, 1, 7)))
 console.log(JSON.stringify(numbers.with(-1, 9)))
 const items = [
   { id: 'A', n: 1 },
-  { id: 'B', n: 1 }
+  { id: 'B', n: 1 },
 ]
 console.log(
   items
     .toSorted((a, b) => a.n - b.n)
     .map((item) => item.id)
-    .join(',')
+    .join(','),
 )
 ```
 
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3819,7 +3814,7 @@ A,B
 const tasks = [
   { title: 'A', minutes: 10, done: false },
   { title: 'B', minutes: 20, done: true },
-  { title: 'C', minutes: 30, done: false }
+  { title: 'C', minutes: 30, done: false },
 ]
 const pending = tasks.filter((task) => !task.done)
 console.log(pending.reduce((sum, task) => sum + task.minutes, 0))
@@ -3833,7 +3828,7 @@ console.log(tasks.map((task) => task.title).join(','))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3863,11 +3858,9 @@ filter里的任务对象仍来自原数组，修改pending[0].title会影响原�
 const tasks = [
   { id: 1, title: '模块', minutes: 30, done: false },
   { id: 2, title: '函数', minutes: 10, done: true },
-  { id: 3, title: '数组', minutes: 20, done: false }
+  { id: 3, title: '数组', minutes: 20, done: false },
 ]
-const selected = tasks
-  .filter((task) => !task.done)
-  .toSorted((a, b) => a.minutes - b.minutes)
+const selected = tasks.filter((task) => !task.done).toSorted((a, b) => a.minutes - b.minutes)
 const total = selected.reduce((sum, task) => sum + task.minutes, 0)
 console.log(selected.map((task) => task.title).join('、'))
 console.log(total)
@@ -3888,12 +3881,12 @@ console.log([].reduce((sum, task) => sum + task.minutes, 0))
 
 ### 14.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 映射 | map(callback)→数组 | 回调要返回新值 |
-| 筛选 | filter(callback)→数组 | 保留原元素引用 |
-| 累计 | reduce(callback, initial) | 空输入依赖初值 |
-| 非修改排序 | toSorted(compare) | 新外层，仍浅复制 |
+| 场景       | 做法与返回                | 易错边界         |
+| :--------- | :------------------------ | :--------------- |
+| 映射       | map(callback)→数组        | 回调要返回新值   |
+| 筛选       | filter(callback)→数组     | 保留原元素引用   |
+| 累计       | reduce(callback, initial) | 空输入依赖初值   |
+| 非修改排序 | toSorted(compare)         | 新外层，仍浅复制 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-array.prototype.map)。
 
@@ -3930,7 +3923,7 @@ console.log(title)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -3979,7 +3972,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4025,7 +4018,7 @@ console.log(makeReader()())
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4061,7 +4054,7 @@ console.log([keep(0), keep(1)].map((fn) => fn()).join(','))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4091,7 +4084,7 @@ function makeTask() {
     },
     status() {
       return done
-    }
+    },
   }
 }
 const task = makeTask()
@@ -4106,7 +4099,7 @@ console.log(retained)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4139,12 +4132,12 @@ null
 
 ### 15.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 块级声明 | let/const | 初始化前不能读取 |
-| 词法查找 | 定义位置的外层 | 不按调用者变量查找 |
-| 闭包 | 函数关联外部绑定 | 不是自动值快照 |
-| 循环回调 | for(let...) | 每轮绑定规则不同于var |
+| 场景     | 做法与返回       | 易错边界              |
+| :------- | :--------------- | :-------------------- |
+| 块级声明 | let/const        | 初始化前不能读取      |
+| 词法查找 | 定义位置的外层   | 不按调用者变量查找    |
+| 闭包     | 函数关联外部绑定 | 不是自动值快照        |
+| 循环回调 | for(let...)      | 每轮绑定规则不同于var |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-environment-records)。
 
@@ -4173,7 +4166,7 @@ console.log(this === undefined)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4198,7 +4191,7 @@ const task = {
   title: '阅读',
   describe() {
     return this.title
-  }
+  },
 }
 const detached = task.describe
 try {
@@ -4214,7 +4207,7 @@ console.log([1, 2].map(() => task.describe()).join(','))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4250,7 +4243,7 @@ console.log(bound.call({ title: '其他' }, '!'))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4279,7 +4272,7 @@ const task = {
   title: 'B',
   makeReader() {
     return () => this.title
-  }
+  },
 }
 const read = task.makeReader()
 console.log(read(), read.call({ title: 'C' }))
@@ -4298,7 +4291,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4343,7 +4336,7 @@ console.log(new Bound().value)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -4376,20 +4369,18 @@ node demo.mjs
 
 ### 16.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 方法调用 | obj.method() | 接收者是obj |
-| 立即指定接收者 | call/apply | 普通函数规则 |
-| 预先绑定 | bind返回新函数 | 不立即执行 |
-| 箭头 | 词法this | 不能当通用构造函数 |
+| 场景           | 做法与返回     | 易错边界           |
+| :------------- | :------------- | :----------------- |
+| 方法调用       | obj.method()   | 接收者是obj        |
+| 立即指定接收者 | call/apply     | 普通函数规则       |
+| 预先绑定       | bind返回新函数 | 不立即执行         |
+| 箭头           | 词法this       | 不能当通用构造函数 |
 
 本章参考：[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)。
 
 ## 第17章 原型、class与对象组织
 
 前面用对象字面量保存一条任务。本章进一步回答：多条任务怎样共享行为，属性不存在时为什么还能读到方法，以及`class`究竟提供了什么组织方式。先运行例子观察属性来自哪里，再看构造过程；描述符和跨环境问题可以第二遍回读。
-
-**本章导航：** [17.1 原型链与属性查找](#171-原型链与属性查找) · [17.2 构造函数和prototype](#172-构造函数和prototype) · [17.3 class、字段、私有成员和访问器](#173-class字段私有成员和访问器) · [17.4 继承、super与组合](#174-继承super与组合) · [17.5 描述符、可枚举性与身份边界【进阶回读】](#175-描述符可枚举性与身份边界进阶回读) · [17.6 动手练习与参考答案](#176-动手练习与参考答案) · [17.7 本章速查](#177-本章速查)
 
 ### 17.1 原型链与属性查找
 
@@ -4706,13 +4697,13 @@ realm可以先理解为一套独立全局环境和内置对象；浏览器iframe
 
 ### 17.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| 查原型 | `Object.getPrototypeOf(obj)`返回对象或null | 不是构造函数的prototype属性 |
-| 自有属性 | `Object.hasOwn(obj, key)`返回布尔值 | 与沿链检查的in不同 |
-| 共享行为 | `class`实例方法或构造器prototype | 方法取出后仍可能丢失this |
-| 定义属性 | `Object.defineProperty`返回原对象 | 省略的属性标志默认false |
-| 识别数组 | `Array.isArray(value)`返回布尔值 | 不验证元素内容 |
+| 场景     | 常用写法与返回                             | 边界                        |
+| :------- | :----------------------------------------- | :-------------------------- |
+| 查原型   | `Object.getPrototypeOf(obj)`返回对象或null | 不是构造函数的prototype属性 |
+| 自有属性 | `Object.hasOwn(obj, key)`返回布尔值        | 与沿链检查的in不同          |
+| 共享行为 | `class`实例方法或构造器prototype           | 方法取出后仍可能丢失this    |
+| 定义属性 | `Object.defineProperty`返回原对象          | 省略的属性标志默认false     |
+| 识别数组 | `Array.isArray(value)`返回布尔值           | 不验证元素内容              |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-ordinary-object-internal-methods-and-internal-slots)。
 
@@ -4732,7 +4723,7 @@ Map是键值映射，键可以是对象等任意值。`set`设置并返回Map自
 const owner = { name: '小明' }
 const minutes = new Map([
   [owner, 20],
-  ['unknown', undefined]
+  ['unknown', undefined],
 ])
 console.log(minutes.get(owner), minutes.has('unknown'), minutes.has('missing'))
 console.log(minutes.get({ name: '小明' }))
@@ -4986,13 +4977,13 @@ true
 
 ### 18.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| 查映射 | `map.get(key)`读取，`has`判断存在 | 值undefined不等于缺键 |
+| 场景     | 常用写法与返回                           | 边界                   |
+| :------- | :--------------------------------------- | :--------------------- |
+| 查映射   | `map.get(key)`读取，`has`判断存在        | 值undefined不等于缺键  |
 | 集合运算 | `union/intersection/difference`返回新Set | ES2025方法；对象按身份 |
-| 默认值 | `getOrInsertComputed`缺键时计算 | ES2026；先核对实现支持 |
-| 唯一键 | `Symbol(description)`返回新Symbol | 描述相同不代表相等 |
-| 弱关联 | `WeakMap.get/set/has/delete` | 不能枚举，不预测回收 |
+| 默认值   | `getOrInsertComputed`缺键时计算          | ES2026；先核对实现支持 |
+| 唯一键   | `Symbol(description)`返回新Symbol        | 描述相同不代表相等     |
+| 弱关联   | `WeakMap.get/set/has/delete`             | 不能枚举，不预测回收   |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-map-objects)。
 
@@ -5236,7 +5227,7 @@ function openResource() {
   return {
     close() {
       console.log('关闭')
-    }
+    },
   }
 }
 const resource = openResource()
@@ -5276,13 +5267,13 @@ node demo.mjs
 
 ### 19.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| 拒绝操作 | `throw new Error(message)` | 优先Error对象而非裸字符串 |
-| 局部处理 | `try/catch` | 只捕获有处理能力的失败 |
-| 必做清理 | `try/finally` | finally中避免return/覆盖主异常 |
-| 保留原因 | `new Error(message, { cause })` | 日志需筛除敏感信息 |
-| 识别错误 | `Error.isError(value)` | ES2026，检查环境支持 |
+| 场景     | 常用写法与返回                  | 边界                           |
+| :------- | :------------------------------ | :----------------------------- |
+| 拒绝操作 | `throw new Error(message)`      | 优先Error对象而非裸字符串      |
+| 局部处理 | `try/catch`                     | 只捕获有处理能力的失败         |
+| 必做清理 | `try/finally`                   | finally中避免return/覆盖主异常 |
+| 保留原因 | `new Error(message, { cause })` | 日志需筛除敏感信息             |
+| 识别错误 | `Error.isError(value)`          | ES2026，检查环境支持           |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-try-statement)。
 
@@ -5378,7 +5369,7 @@ for (const value of [
     const x = {}
     x.self = x
     return x
-  })()
+  })(),
 ]) {
   try {
     JSON.stringify(value)
@@ -5506,7 +5497,7 @@ if (!hasSource) {
   console.log('环境尚不支持JSON来源上下文')
 } else {
   const data = JSON.parse('{"id":9007199254740993}', (key, value, context) =>
-    key === 'id' ? BigInt(context.source) : value
+    key === 'id' ? BigInt(context.source) : value,
   )
   console.log(data.id.toString())
 }
@@ -5573,13 +5564,13 @@ node demo.mjs
 
 ### 20.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| 转文本 | `JSON.stringify(value, replacer, space)` | 不是通用深复制 |
-| 读文本 | `JSON.parse(text, reviver)` | 解析成功不代表数据合法 |
-| 验证结构 | 类型、范围、唯一性和版本检查 | 全部通过再接受 |
-| 保存日期/集合 | 显式转为ISO文本/数组 | 读取后校验并重建 |
-| 大整数 | 优先明确字符串协议 | 来源上下文和rawJSON为ES2026能力 |
+| 场景          | 常用写法与返回                           | 边界                            |
+| :------------ | :--------------------------------------- | :------------------------------ |
+| 转文本        | `JSON.stringify(value, replacer, space)` | 不是通用深复制                  |
+| 读文本        | `JSON.parse(text, reviver)`              | 解析成功不代表数据合法          |
+| 验证结构      | 类型、范围、唯一性和版本检查             | 全部通过再接受                  |
+| 保存日期/集合 | 显式转为ISO文本/数组                     | 读取后校验并重建                |
+| 大整数        | 优先明确字符串协议                       | 来源上下文和rawJSON为ES2026能力 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-json-object)。
 
@@ -5603,7 +5594,7 @@ const inShanghai = new Intl.DateTimeFormat('zh-CN', {
   timeZone: 'Asia/Shanghai',
   hour: '2-digit',
   minute: '2-digit',
-  hourCycle: 'h23'
+  hourCycle: 'h23',
 })
 console.log(inShanghai.format(instant))
 ```
@@ -5671,9 +5662,7 @@ console.log(normalized.toISOString())
 function isUtcDate(year, month, day) {
   const date = new Date(Date.UTC(year, month - 1, day))
   return (
-    date.getUTCFullYear() === year &&
-    date.getUTCMonth() === month - 1 &&
-    date.getUTCDate() === day
+    date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
   )
 }
 console.log(isUtcDate(2026, 2, 30), isUtcDate(2026, 2, 28))
@@ -5742,7 +5731,7 @@ Intl是ECMAScript国际化能力集合，由ECMA-402规定。DateTimeFormat按�
 const number = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
-  useGrouping: false
+  useGrouping: false,
 })
 console.log(number.format(12.5))
 const collator = new Intl.Collator('en', { sensitivity: 'base' })
@@ -5776,13 +5765,13 @@ const formatter = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'UTC',
   year: 'numeric',
   month: '2-digit',
-  day: '2-digit'
+  day: '2-digit',
 })
 const parts = Object.fromEntries(
   formatter
     .formatToParts(instant)
     .filter((part) => part.type !== 'literal')
-    .map((part) => [part.type, part.value])
+    .map((part) => [part.type, part.value]),
 )
 console.log(`${parts.year}-${parts.month}-${parts.day}`)
 ```
@@ -5863,13 +5852,13 @@ false
 
 ### 21.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| 存时刻 | `date.toISOString()`返回UTC文本 | 无效Date会抛RangeError |
-| 取时间戳 | `date.getTime()`返回毫秒 | 无效日期返回NaN |
-| UTC分量 | `getUTCFullYear/getUTCMonth/getUTCDate` | 月份从0开始 |
-| 本地化 | `new Intl.DateTimeFormat(...).format(date)` | 显式指定地区与时区 |
-| 稳定测试 | 把now作为参数传入 | 分清等于边界是否到期 |
+| 场景     | 常用写法与返回                              | 边界                   |
+| :------- | :------------------------------------------ | :--------------------- |
+| 存时刻   | `date.toISOString()`返回UTC文本             | 无效Date会抛RangeError |
+| 取时间戳 | `date.getTime()`返回毫秒                    | 无效日期返回NaN        |
+| UTC分量  | `getUTCFullYear/getUTCMonth/getUTCDate`     | 月份从0开始            |
+| 本地化   | `new Intl.DateTimeFormat(...).format(date)` | 显式指定地区与时区     |
+| 稳定测试 | 把now作为参数传入                           | 分清等于边界是否到期   |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-date-objects)、[ECMAScript国际化API规范](https://402.ecma-international.org/)。
 
@@ -5986,7 +5975,7 @@ const text = '阅读:20 练习:30'
 const pattern = /(?<title>[^\s:]+):(?<minutes>\d+)/g
 const tasks = [...text.matchAll(pattern)].map((match) => ({
   title: match.groups.title,
-  minutes: Number(match.groups.minutes)
+  minutes: Number(match.groups.minutes),
 }))
 console.log(JSON.stringify(tasks))
 console.log(text.search(/练习/))
@@ -6141,13 +6130,13 @@ node demo.mjs
 
 ### 22.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| 判断 | `regexp.test(text)`返回布尔值 | g/y会改变lastIndex |
-| 提取 | `regexp.exec(text)`返回匹配或null | 先检查null再读分组 |
-| 全部匹配 | `text.matchAll(/.../g)`返回迭代器 | 注意输入长度与消费成本 |
-| 替换 | `text.replace(pattern, callback)`返回新文本 | 原字符串不修改 |
-| 动态片段 | `RegExp.escape(text)`返回模式片段 | ES2025；不是通用安全转义 |
+| 场景     | 常用写法与返回                              | 边界                     |
+| :------- | :------------------------------------------ | :----------------------- |
+| 判断     | `regexp.test(text)`返回布尔值               | g/y会改变lastIndex       |
+| 提取     | `regexp.exec(text)`返回匹配或null           | 先检查null再读分组       |
+| 全部匹配 | `text.matchAll(/.../g)`返回迭代器           | 注意输入长度与消费成本   |
+| 替换     | `text.replace(pattern, callback)`返回新文本 | 原字符串不修改           |
+| 动态片段 | `RegExp.escape(text)`返回模式片段           | ES2025；不是通用安全转义 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-regexp-regular-expression-objects)。
 
@@ -6169,12 +6158,10 @@ const range = {
     let current = 1
     return {
       next() {
-        return current <= 3
-          ? { value: current++, done: false }
-          : { value: undefined, done: true }
-      }
+        return current <= 3 ? { value: current++, done: false } : { value: undefined, done: true }
+      },
     }
-  }
+  },
 }
 console.log(JSON.stringify([...range]))
 console.log(JSON.stringify([...range]))
@@ -6217,9 +6204,9 @@ const iterable = {
       return() {
         console.log('关闭迭代器')
         return { done: true }
-      }
+      },
     }
-  }
+  },
 }
 for (const value of iterable) {
   console.log(value)
@@ -6439,21 +6426,19 @@ node demo.mjs
 
 ### 23.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| 产生迭代器 | `obj[Symbol.iterator]()` | 返回对象必须有next |
-| 手动推进 | `iterator.next()`返回步骤对象 | done为true后已结束 |
-| 声明生成器 | `function*`与`yield` | 调用创建对象，next才驱动 |
-| 惰性管线 | `Iterator.from(...).map/filter/take` | ES2025；一次消费 |
-| 连接来源 | `Iterator.concat(...)` | ES2026；核对环境 |
+| 场景       | 常用写法与返回                       | 边界                     |
+| :--------- | :----------------------------------- | :----------------------- |
+| 产生迭代器 | `obj[Symbol.iterator]()`             | 返回对象必须有next       |
+| 手动推进   | `iterator.next()`返回步骤对象        | done为true后已结束       |
+| 声明生成器 | `function*`与`yield`                 | 调用创建对象，next才驱动 |
+| 惰性管线   | `Iterator.from(...).map/filter/take` | ES2025；一次消费         |
+| 连接来源   | `Iterator.concat(...)`               | ES2026；核对环境         |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-iterator-objects)。
 
 ## 第24章 模块、多文件与程序组织
 
 当所有代码放在一个文件里，状态、规则和显示会互相缠绕。模块为每个文件建立明确接口。先用Node的.mjs完成两个文件，再看浏览器启动方式。浏览器页面结构暂作最小启动容器，第30章逐项解释HTML。
-
-**本章导航：** [24.1 拆文件与模块私有状态](#241-拆文件与模块私有状态) · [24.2 导出、重命名与活绑定](#242-导出重命名与活绑定) · [24.3 Node.js的模块类型与内置模块](#243-nodejs的模块类型与内置模块) · [24.4 浏览器模块与最小启动页面](#244-浏览器模块与最小启动页面) · [24.5 动态导入、JSON与循环依赖](#245-动态导入json与循环依赖) · [24.6 动手练习与参考答案](#246-动手练习与参考答案) · [24.7 本章速查](#247-本章速查)
 
 ### 24.1 拆文件与模块私有状态
 
@@ -6659,12 +6644,7 @@ const args = process.argv.slice(2)
 for (let index = 0; index < args.length; index += 2) {
   const key = args[index]
   const value = args[index + 1]
-  if (
-    !['--dir', '--port'].includes(key) ||
-    options.has(key) ||
-    !value ||
-    value.startsWith('--')
-  ) {
+  if (!['--dir', '--port'].includes(key) || options.has(key) || !value || value.startsWith('--')) {
     throw new Error('用法：node tools/serve-examples.mjs --dir 页面目录 --port 3211')
   }
   options.set(key, value)
@@ -6680,7 +6660,7 @@ const types = {
   '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
-  '.txt': 'text/plain; charset=utf-8'
+  '.txt': 'text/plain; charset=utf-8',
 }
 const server = createServer((request, response) => {
   void handle(request, response).catch((error) => {
@@ -6714,7 +6694,7 @@ async function handle(request, response) {
   response.writeHead(200, {
     'Content-Type': type,
     'Cache-Control': 'no-store',
-    'X-Content-Type-Options': 'nosniff'
+    'X-Content-Type-Options': 'nosniff',
   })
   response.end(request.method === 'HEAD' ? undefined : data)
 }
@@ -6724,7 +6704,7 @@ server.on('error', (error) => {
   console.error(
     error.code === 'EADDRINUSE'
       ? '端口已占用：先停止自己启动的旧服务，或显式选择另一端口；浏览器存储随来源区分。'
-      : error.message
+      : error.message,
   )
   process.exitCode = 1
 })
@@ -6756,11 +6736,14 @@ Test-Path -LiteralPath '.\tools\serve-examples.mjs'
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><title>模块练习</title></head>
-<body>
-  <p id="result">加载中</p>
-  <script type="module" src="./main.mjs"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>模块练习</title>
+  </head>
+  <body>
+    <p id="result">加载中</p>
+    <script type="module" src="./main.mjs"></script>
+  </body>
 </html>
 ```
 
@@ -6853,21 +6836,19 @@ true
 
 ### 24.7 本章速查
 
-| 场景 | 常用写法与返回 | 边界 |
-| :--- | :--- | :--- |
-| ESM文件 | `.mjs`，或`"type": "module"`范围内的`.js` | 显式配置，避免猜测 |
-| 命名导出 | `export`与`import { name }` | 导入绑定不能重赋值 |
-| 内置模块 | `import { readFile } from 'node:fs/promises'` | 浏览器没有同名Node能力 |
-| 动态导入 | `import(url)`返回Promise | 与require同步返回不同 |
-| JSON模块 | `with { type: 'json' }`导入属性 | 导入属性值是字符串，Node JSON模块要求此属性 |
+| 场景     | 常用写法与返回                                | 边界                                        |
+| :------- | :-------------------------------------------- | :------------------------------------------ |
+| ESM文件  | `.mjs`，或`"type": "module"`范围内的`.js`     | 显式配置，避免猜测                          |
+| 命名导出 | `export`与`import { name }`                   | 导入绑定不能重赋值                          |
+| 内置模块 | `import { readFile } from 'node:fs/promises'` | 浏览器没有同名Node能力                      |
+| 动态导入 | `import(url)`返回Promise                      | 与require同步返回不同                       |
+| JSON模块 | `with { type: 'json' }`导入属性               | 导入属性值是字符串，Node JSON模块要求此属性 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-modules)、[Node.js v26.13.0：esm](https://nodejs.org/docs/v26.13.0/api/esm.html)、[HTML标准：脚本与事件循环](https://html.spec.whatwg.org/multipage/webappapis.html)。
 
 ## 第25章 阶段项目：模块化的内存任务管理器
 
 这是第一份能独立运行的任务管理核心。范围刻意限定为内存：退出后数据消失，浏览器和文件保存留给后续阶段。先把字段和失败规则写清，再组合已有函数、数组、对象、模块和校验知识。
-
-**本章导航：** [25.1 需求与数据契约](#251-需求与数据契约) · [25.2 实现校验与增删改查](#252-实现校验与增删改查) · [25.3 查询、排序与统计](#253-查询排序与统计) · [25.4 模块边界与显示层](#254-模块边界与显示层) · [25.5 阶段验收与不修改输入](#255-阶段验收与不修改输入) · [25.6 动手练习与参考答案](#256-动手练习与参考答案) · [25.7 本章速查](#257-本章速查)
 
 ### 25.1 需求与数据契约
 
@@ -6884,7 +6865,7 @@ const task = {
   minutes: 25,
   tags: ['基础'],
   done: false,
-  createdAt: '2026-11-09T00:00:00.000Z'
+  createdAt: '2026-11-09T00:00:00.000Z',
 }
 const store = { version: 1, nextId: 2, tasks: [task] }
 console.log(JSON.stringify(store))
@@ -6893,7 +6874,7 @@ console.log(JSON.stringify(store))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -6924,7 +6905,7 @@ function makeTask(id, title, minutes) {
     minutes,
     tags: [],
     done: false,
-    createdAt: '2026-11-09T00:00:00.000Z'
+    createdAt: '2026-11-09T00:00:00.000Z',
   }
 }
 let tasks = []
@@ -6944,7 +6925,7 @@ console.log('完成', tasks[0].done, tasks[1].done)
 const open = tasks.filter((task) => !task.done)
 console.log(
   '未完成分钟',
-  open.reduce((sum, task) => sum + task.minutes, 0)
+  open.reduce((sum, task) => sum + task.minutes, 0),
 )
 tasks = tasks.filter((task) => task.id !== 1)
 console.log('删除后', tasks[0].id, nextId)
@@ -6972,12 +6953,12 @@ console.log('失败后', tasks.length, nextId)
 
 #### 25.1.2 再把入口动作映射到业务模块
 
-| 刚观察的动作 | 下一节的正式接口 | 必须保留的条件 |
-| :--- | :--- | :--- |
-| 建立空列表和ID | `emptyStore()` | 格式版本与nextId一起初始化 |
-| 验证候选再新增 | `normalizeFields`、`addTask` | 不在校验成功前改变旧状态 |
-| map完成、filter删除 | `editTask`、`removeTask` | ID稳定，不存在的ID有明确失败 |
-| filter后累计 | `selectTasks`、`summarize` | 汇总当前筛选范围，不修改存储顺序 |
+| 刚观察的动作        | 下一节的正式接口             | 必须保留的条件                   |
+| :------------------ | :--------------------------- | :------------------------------- |
+| 建立空列表和ID      | `emptyStore()`               | 格式版本与nextId一起初始化       |
+| 验证候选再新增      | `normalizeFields`、`addTask` | 不在校验成功前改变旧状态         |
+| map完成、filter删除 | `editTask`、`removeTask`     | ID稳定，不存在的ID有明确失败     |
+| filter后累计        | `selectTasks`、`summarize`   | 汇总当前筛选范围，不修改存储顺序 |
 
 下一节完整模块按“错误类型→字段校验→整份快照→增删改→查询统计”排列。第一次只追踪emptyStore与addTask；运行成功后再追踪edit/remove和查询，不必一次记下全部辅助函数。
 
@@ -7004,13 +6985,10 @@ function assert(condition, message) {
 }
 
 function exactKeys(value, keys, label) {
-  assert(
-    value !== null && typeof value === 'object' && !Array.isArray(value),
-    `${label}必须是对象`
-  )
+  assert(value !== null && typeof value === 'object' && !Array.isArray(value), `${label}必须是对象`)
   assert(
     Object.keys(value).every((key) => keys.includes(key)),
-    `${label}含未知字段`
+    `${label}含未知字段`,
   )
 }
 
@@ -7021,7 +6999,7 @@ export function normalizeFields(value) {
   assert(title.length >= 1 && title.length <= 200, '标题需要1至200个UTF-16码元')
   assert(
     Number.isInteger(value.minutes) && value.minutes >= 0 && value.minutes <= 1440,
-    '分钟数必须是0至1440的整数'
+    '分钟数必须是0至1440的整数',
   )
   assert(typeof value.done === 'boolean', '完成状态必须是布尔值')
   assert(Array.isArray(value.tags) && value.tags.length <= 20, '标签必须是最多20项的数组')
@@ -7054,13 +7032,13 @@ export function validateStore(value) {
     const date = new Date(task.createdAt)
     assert(
       Number.isFinite(date.getTime()) && date.toISOString() === task.createdAt,
-      'createdAt必须是规范的UTC ISO时间字符串'
+      'createdAt必须是规范的UTC ISO时间字符串',
     )
     const fields = normalizeFields({
       title: task.title,
       minutes: task.minutes,
       tags: task.tags,
-      done: task.done
+      done: task.done,
     })
     return { id: task.id, ...fields, createdAt: task.createdAt }
   })
@@ -7076,7 +7054,7 @@ export function addTask(store, input, now = new Date().toISOString()) {
   return validateStore({
     ...store,
     nextId: store.nextId + 1,
-    tasks: [...store.tasks, task]
+    tasks: [...store.tasks, task],
   })
 }
 
@@ -7089,11 +7067,11 @@ export function editTask(store, id, patch) {
     minutes: task.minutes,
     tags: task.tags,
     done: task.done,
-    ...patch
+    ...patch,
   })
   return {
     ...store,
-    tasks: store.tasks.map((item) => (item.id === id ? { ...item, ...fields } : item))
+    tasks: store.tasks.map((item) => (item.id === id ? { ...item, ...fields } : item)),
   }
 }
 
@@ -7114,8 +7092,7 @@ export function selectTasks(store, { query = '', status = 'all', sort = 'id' } =
     return matched && (status === 'all' || task.done === (status === 'done'))
   })
   return selected.toSorted((a, b) => {
-    const result =
-      sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a[sort] - b[sort]
+    const result = sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a[sort] - b[sort]
     return result || a.id - b.id
   })
 }
@@ -7124,7 +7101,7 @@ export function summarize(tasks) {
   return {
     total: tasks.length,
     done: tasks.filter((task) => task.done).length,
-    minutes: tasks.reduce((sum, task) => sum + task.minutes, 0)
+    minutes: tasks.reduce((sum, task) => sum + task.minutes, 0),
   }
 }
 ```
@@ -7137,12 +7114,12 @@ let store = emptyStore()
 store = addTask(
   store,
   { title: ' 阅读 ', minutes: 25, tags: ['JS'], done: false },
-  '2026-11-09T00:00:00.000Z'
+  '2026-11-09T00:00:00.000Z',
 )
 store = addTask(
   store,
   { title: '练习', minutes: 10, tags: [], done: false },
-  '2026-11-09T00:00:00.000Z'
+  '2026-11-09T00:00:00.000Z',
 )
 store = editTask(store, 1, { done: true })
 store = removeTask(store, 2)
@@ -7157,7 +7134,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7182,11 +7159,7 @@ import { emptyStore, addTask, selectTasks, summarize } from '../C25E03/task-core
 let store = emptyStore()
 const instant = '2026-11-09T00:00:00.000Z'
 for (const minutes of [30, 10, 20]) {
-  store = addTask(
-    store,
-    { title: `练习${minutes}`, minutes, done: false, tags: ['JS'] },
-    instant
-  )
+  store = addTask(store, { title: `练习${minutes}`, minutes, done: false, tags: ['JS'] }, instant)
 }
 const tasks = selectTasks(store, { query: 'JS', status: 'open', sort: 'minutes' })
 console.log(tasks.map((task) => task.minutes).join(','))
@@ -7197,7 +7170,7 @@ console.log(JSON.stringify(summarize([])))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7236,7 +7209,7 @@ console.log(formatTask({ id: 1, title: '学习模块', done: false, minutes: 20 
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7272,7 +7245,7 @@ console.log('阶段检查通过')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7297,7 +7270,7 @@ import {
   editTask,
   removeTask,
   selectTasks,
-  summarize
+  summarize,
 } from '../C25E03/task-core.mjs'
 const fields = { title: '零分钟', minutes: 0, tags: [], done: false }
 let store = addTask(emptyStore(), fields)
@@ -7306,7 +7279,7 @@ store = editTask(store, 2, { done: true })
 assert.deepEqual(summarize(selectTasks(store, { status: 'open' })), {
   total: 1,
   done: 0,
-  minutes: 0
+  minutes: 0,
 })
 store = removeTask(store, 1)
 store = addTask(store, { ...fields, title: '新任务' })
@@ -7339,12 +7312,12 @@ console.log('模块、规则、查询和失败保护检查通过')
 
 ### 25.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 建立空状态 | emptyStore() | version与nextId有约定 |
-| 新增修改 | addTask/editTask | 返回新状态，可能抛InputError |
-| 查询 | selectTasks | 新外层结果 |
-| 汇总 | summarize | 统计传入范围 |
+| 场景       | 做法与返回       | 易错边界                     |
+| :--------- | :--------------- | :--------------------------- |
+| 建立空状态 | emptyStore()     | version与nextId有约定        |
+| 新增修改   | addTask/editTask | 返回新状态，可能抛InputError |
+| 查询       | selectTasks      | 新外层结果                   |
+| 汇总       | summarize        | 统计传入范围                 |
 
 本章参考：[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)。
 
@@ -7369,7 +7342,7 @@ console.log('注册后继续')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7398,7 +7371,7 @@ console.log(
       console.log('同步回调', n)
       return n * 2
     })
-    .join(',')
+    .join(','),
 )
 setTimeout(() => console.log('延迟读取', title), 0)
 title = '新标题'
@@ -7408,7 +7381,7 @@ console.log('当前同步代码结束')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7445,7 +7418,7 @@ const interval = setInterval(() => {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7486,7 +7459,7 @@ console.log('外层返回', returned)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7524,7 +7497,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7556,12 +7529,12 @@ node demo.mjs
 
 ### 26.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 一次延迟 | setTimeout(callback,delay) | 延迟不是准点承诺 |
-| 停止 | clearTimeout/clearInterval | 已执行效果不会撤销 |
-| 传统回调 | callback(error,result) | 应只结算一次 |
-| 后续错误 | 在实际边界处理 | 注册处try不足以捕获 |
+| 场景     | 做法与返回                 | 易错边界            |
+| :------- | :------------------------- | :------------------ |
+| 一次延迟 | setTimeout(callback,delay) | 延迟不是准点承诺    |
+| 停止     | clearTimeout/clearInterval | 已执行效果不会撤销  |
+| 传统回调 | callback(error,result)     | 应只结算一次        |
+| 后续错误 | 在实际边界处理             | 注册处try不足以捕获 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-jobs)、[Node.js v26.13.0：timers](https://nodejs.org/docs/v26.13.0/api/timers.html)。
 
@@ -7591,7 +7564,7 @@ console.log('B')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7623,7 +7596,7 @@ console.log(await outer)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7666,7 +7639,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7705,7 +7678,7 @@ console.log(JSON.stringify(await Promise.all([])))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7740,7 +7713,7 @@ if (typeof Promise.try === 'function') {
   console.log(
     await Promise.try(() => {
       throw new Error('同步错误')
-    }).catch((e) => e.message)
+    }).catch((e) => e.message),
   )
 } else {
   console.log('本环境尚无Promise.try')
@@ -7750,7 +7723,7 @@ if (typeof Promise.try === 'function') {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7794,7 +7767,7 @@ console.log(await chain)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7827,12 +7800,12 @@ TypeError
 
 ### 27.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
+| 场景     | 做法与返回    | 易错边界                 |
+| :------- | :------------ | :----------------------- |
 | 全部成功 | `Promise.all` | 输入顺序，失败不取消其余 |
-| 全部结算 | allSettled | 每项有状态 |
-| 首个成功 | any | 全失败为AggregateError |
-| 链式收尾 | finally | 抛错可能覆盖原结果 |
+| 全部结算 | allSettled    | 每项有状态               |
+| 首个成功 | any           | 全失败为AggregateError   |
+| 链式收尾 | finally       | 抛错可能覆盖原结果       |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-promise-objects)。
 
@@ -7864,7 +7837,7 @@ console.log('最终值', await result)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7911,7 +7884,7 @@ console.log('稍后', done.length)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -7952,7 +7925,7 @@ console.log(moduleValue)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -8007,7 +7980,7 @@ console.log(await wait(0, new AbortController().signal))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -8021,7 +7994,7 @@ node demo.mjs
 
 ### 28.5 异步迭代与Array.fromAsync
 
-异步迭代器的next结果通过Promise交回。for await...of逐次等待下一项，适合分块数据。async generator通过async function*建立。`Array.fromAsync`逐次收集，与`Promise.all`一次观察已创建任务的组合方式不同。
+异步迭代器的next结果通过Promise交回。for await...of逐次等待下一项，适合分块数据。async generator通过async function\*建立。`Array.fromAsync`逐次收集，与`Promise.all`一次观察已创建任务的组合方式不同。
 
 示例 **C28E05**，目录 `js-study/examples/ch28/C28E05/`，环境：Node.js。
 
@@ -8043,7 +8016,7 @@ if (typeof Array.fromAsync === 'function') {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -8109,15 +8082,14 @@ console.log(shown)
 
 运行`node demo.mjs`应显示“新结果”。独立排错：暂时去掉sequence判断，结果会变为“旧结果”且断言失败；恢复后通过。序号规则只决定谁能更新当前显示，不撤回后台已经完成的工作。真正的网络取消在第47章给出独立练习，两者不能互相替代。
 
-
 ### 28.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 顺序等待 | for...of内await | 有依赖时适用 |
-| 组合并发 | `Promise.all(tasks)` | 需控制规模 |
-| 协作取消 | AbortController | 接口要支持信号 |
-| 异步遍历 | for await...of | 逐项等待，考虑清理 |
+| 场景     | 做法与返回           | 易错边界           |
+| :------- | :------------------- | :----------------- |
+| 顺序等待 | for...of内await      | 有依赖时适用       |
+| 组合并发 | `Promise.all(tasks)` | 需控制规模         |
+| 协作取消 | AbortController      | 接口要支持信号     |
+| 异步遍历 | for await...of       | 逐项等待，考虑清理 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-async-function-definitions)、[DOM标准](https://dom.spec.whatwg.org/#aborting-ongoing-activities)。
 
@@ -8150,7 +8122,7 @@ console.log('脚本末尾')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -8187,7 +8159,7 @@ console.log('同步2')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -8213,16 +8185,19 @@ Promise1
 
 ```html
 <!doctype html>
-<html lang="zh-CN"><meta charset="UTF-8"><title>渲染观察</title>
-<button id="run">观察更新</button><p id="result">尚未更新</p>
-<script type="module">
-const result = document.querySelector('#result')
-document.querySelector('#run').addEventListener('click', () => {
-  result.textContent = '同步已修改DOM'
-  queueMicrotask(() => console.log('微任务读取', result.textContent))
-  requestAnimationFrame(() => console.log('动画回调读取', result.textContent))
-})
-</script></html>
+<html lang="zh-CN">
+  <meta charset="UTF-8" /><title>渲染观察</title>
+  <button id="run">观察更新</button>
+  <p id="result">尚未更新</p>
+  <script type="module">
+    const result = document.querySelector('#result')
+    document.querySelector('#run').addEventListener('click', () => {
+      result.textContent = '同步已修改DOM'
+      queueMicrotask(() => console.log('微任务读取', result.textContent))
+      requestAnimationFrame(() => console.log('动画回调读取', result.textContent))
+    })
+  </script>
+</html>
 ```
 
 操作：打开本页和开发者工具，点击按钮。文字变成“同步已修改DOM”，控制台能看到两次读取。这里检查DOM状态，不声称日志就证明像素已完成绘制。HTML与事件的细节在第30—32章展开。
@@ -8247,7 +8222,7 @@ queueMicrotask(() => console.log('queueMicrotask'))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -8295,7 +8270,7 @@ console.log('已安排')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -8343,20 +8318,18 @@ node demo.mjs
 
 ### 29.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 立即执行 | 当前调用栈 | 先完成当前同步路径 |
-| 微任务 | Promise反应、queueMicrotask | 连续追加可能饥饿 |
-| 视觉更新 | requestAnimationFrame | 不是准点后台计时 |
-| Node专有 | `process.nextTick` | 不能套用浏览器 |
+| 场景     | 做法与返回                  | 易错边界           |
+| :------- | :-------------------------- | :----------------- |
+| 立即执行 | 当前调用栈                  | 先完成当前同步路径 |
+| 微任务   | Promise反应、queueMicrotask | 连续追加可能饥饿   |
+| 视觉更新 | requestAnimationFrame       | 不是准点后台计时   |
+| Node专有 | `process.nextTick`          | 不能套用浏览器     |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-jobs)、[HTML标准：脚本与事件循环](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)、[Node.js官方文档](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)。
 
 ## 第30章 浏览器前置：HTML、CSS与页面加载
 
 本章补足制作教学页面所需的网页基础，不假设已经学过HTML或CSS。HTML描述结构，CSS描述表现，JavaScript安排行为。语言、文档、渲染和网络是不同层次；页面不更新时要先找是哪一层失败。
-
-**本章导航：** [30.1 网页、文件与URL](#301-网页文件与url) · [30.2 最小文档、语义与表单](#302-最小文档语义与表单) · [30.3 CSS选择器、层叠和盒模型](#303-css选择器层叠和盒模型) · [30.4 脚本加载和文档就绪](#304-脚本加载和文档就绪) · [30.5 本地服务与开发者工具](#305-本地服务与开发者工具) · [30.6 动手练习与参考答案](#306-动手练习与参考答案) · [30.7 本章速查](#307-本章速查)
 
 ### 30.1 网页、文件与URL
 
@@ -8369,13 +8342,20 @@ node demo.mjs
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<h1>学习清单</h1><p>先读懂页面，再加入行为。</p><button id="add">点击观察</button>
-<script type="module">
-document.querySelector('#add').addEventListener('click', () => console.log('按钮已点击'))
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <h1>学习清单</h1>
+    <p>先读懂页面，再加入行为。</p>
+    <button id="add">点击观察</button>
+    <script type="module">
+      document.querySelector('#add').addEventListener('click', () => console.log('按钮已点击'))
+    </script>
+  </body>
+</html>
 ```
 
 运行方式：在`js-study`学习根目录执行`node tools/serve-examples.mjs --dir examples/ch30/C30E01`，将目录改为当前示例目录；打开终端打印的本机URL。Ctrl+C停止。后续浏览器例子均可复用此命令。 点击按钮后控制台显示“按钮已点击”；没有打开控制台时页面看起来没有变化，这是本例约定。
@@ -8393,23 +8373,33 @@ doctype声明现代HTML解析模式，lang说明主要语言，charset声明编�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<main>
-<h1>任务清单</h1>
-<ul><li>认识标签</li><li>填写表单</li></ul>
-<form id="task-form">
-  <label for="title">任务标题</label><input id="title" name="title" required>
-  <button type="submit">提交</button>
-</form><p id="result" role="status"></p>
-</main>
-<script type="module">
-document.querySelector('#task-form').addEventListener('submit', event => {
-  event.preventDefault()
-  document.querySelector('#result').textContent = '收到：' + document.querySelector('#title').value
-})
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <main>
+      <h1>任务清单</h1>
+      <ul>
+        <li>认识标签</li>
+        <li>填写表单</li>
+      </ul>
+      <form id="task-form">
+        <label for="title">任务标题</label><input id="title" name="title" required />
+        <button type="submit">提交</button>
+      </form>
+      <p id="result" role="status"></p>
+    </main>
+    <script type="module">
+      document.querySelector('#task-form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        document.querySelector('#result').textContent =
+          '收到：' + document.querySelector('#title').value
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：点击“任务标题”文字能把焦点移到输入框。输入“阅读”后提交，页面显示“收到：阅读”。required为空时浏览器先提示；自定义业务校验仍需编写。
@@ -8427,18 +8417,51 @@ CSS用选择器找到元素，再给属性赋值。类选择器以点开头，�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title><style>* { box-sizing: border-box; }
-body { margin: 0; font: 16px/1.6 system-ui; background: #f4f5f3; color: #23352e; }
-.panel { max-width: 640px; margin: 32px auto; padding: 24px; background: white; }
-.muted { color: #52665d; }
-button { padding: 10px 16px; }
-[hidden] { display: none !important; }</style></head>
-<body>
-<main class="panel"><h1>可读的页面</h1><p class="muted">样式不会替你改变任务数据。</p><button id="toggle">切换提示</button><p id="tip" hidden>这是提示</p></main>
-<script type="module">
-document.querySelector('#toggle').addEventListener('click', () => { document.querySelector('#tip').hidden = !document.querySelector('#tip').hidden })
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui;
+        background: #f4f5f3;
+        color: #23352e;
+      }
+      .panel {
+        max-width: 640px;
+        margin: 32px auto;
+        padding: 24px;
+        background: white;
+      }
+      .muted {
+        color: #52665d;
+      }
+      button {
+        padding: 10px 16px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <h1>可读的页面</h1>
+      <p class="muted">样式不会替你改变任务数据。</p>
+      <button id="toggle">切换提示</button>
+      <p id="tip" hidden>这是提示</p>
+    </main>
+    <script type="module">
+      document.querySelector('#toggle').addEventListener('click', () => {
+        document.querySelector('#tip').hidden = !document.querySelector('#tip').hidden
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：主区域有内边距，正文与背景可分辨；缩小窗口仍可阅读；点击按钮交替显示/隐藏提示。
@@ -8455,9 +8478,16 @@ document.querySelector('#toggle').addEventListener('click', () => { document.que
 
 ```html
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><title>模块加载</title>
-<script type="module" src="./main.mjs"></script></head>
-<body><p id="result">等待模块</p></body></html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>模块加载</title>
+    <script type="module" src="./main.mjs"></script>
+  </head>
+  <body>
+    <p id="result">等待模块</p>
+  </body>
+</html>
 ```
 
 文件 `main.mjs`：
@@ -8484,11 +8514,14 @@ DOMContentLoaded关注文档解析和相应延迟脚本，不代表所有图片�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><title>定位模块请求</title></head>
-<body>
-  <p id="result">等待模块</p>
-  <script type="module" src="./missing.mjs"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>定位模块请求</title>
+  </head>
+  <body>
+    <p id="result">等待模块</p>
+    <script type="module" src="./missing.mjs"></script>
+  </body>
 </html>
 ```
 
@@ -8528,12 +8561,12 @@ node tools/serve-examples.mjs --dir examples/ch30/C30E05 --port 3211
 
 ### 30.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 结构 | HTML元素与属性 | 不是JS语法 |
-| 表现 | CSS选择器与声明 | 层叠、盒模型影响结果 |
-| 模块入口 | script type=module | 通过HTTP验证 |
-| 排错 | Console/Elements/Network | 不同层看不同证据 |
+| 场景     | 做法与返回               | 易错边界             |
+| :------- | :----------------------- | :------------------- |
+| 结构     | HTML元素与属性           | 不是JS语法           |
+| 表现     | CSS选择器与声明          | 层叠、盒模型影响结果 |
+| 模块入口 | script type=module       | 通过HTTP验证         |
+| 排错     | Console/Elements/Network | 不同层看不同证据     |
 
 本章参考：[HTML标准](https://html.spec.whatwg.org/multipage/)、[HTML标准：脚本](https://html.spec.whatwg.org/multipage/scripting.html)、[DOM标准](https://dom.spec.whatwg.org/)。
 
@@ -8552,20 +8585,32 @@ DOM是文档对象模型（Document Object Model），用节点树表示页面�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<ul id="list">
-<li>A</li>
-<li>B</li>
-</ul><pre id="out"></pre>
-<script type="module">
-const list = document.querySelector('#list')
-document.querySelector('#out').textContent = JSON.stringify({
-  childNodes: list.childNodes.length, elements: list.children.length,
-  first: list.firstElementChild.textContent, parent: list.parentElement.tagName
-}, null, 2)
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>A</li>
+      <li>B</li>
+    </ul>
+    <pre id="out"></pre>
+    <script type="module">
+      const list = document.querySelector('#list')
+      document.querySelector('#out').textContent = JSON.stringify(
+        {
+          childNodes: list.childNodes.length,
+          elements: list.children.length,
+          first: list.firstElementChild.textContent,
+          parent: list.parentElement.tagName,
+        },
+        null,
+        2,
+      )
+    </script>
+  </body>
+</html>
 ```
 
 检查页面JSON：elements为2、first为A，childNodes大于2，因为保留了换行文本节点。
@@ -8583,20 +8628,27 @@ querySelector返回首个匹配元素或null，querySelectorAll返回静态NodeL
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<div id="box"><p class="item">A</p></div><pre id="out"></pre>
-<script type="module">
-const box = document.querySelector('#box')
-const staticList = document.querySelectorAll('.item')
-const liveList = document.getElementsByClassName('item')
-const added = document.createElement('p')
-added.className = 'item'
-added.textContent = 'B'
-box.append(added)
-document.querySelector('#out').textContent = `${staticList.length},${liveList.length},${document.querySelector('#missing')}`
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <div id="box"><p class="item">A</p></div>
+    <pre id="out"></pre>
+    <script type="module">
+      const box = document.querySelector('#box')
+      const staticList = document.querySelectorAll('.item')
+      const liveList = document.getElementsByClassName('item')
+      const added = document.createElement('p')
+      added.className = 'item'
+      added.textContent = 'B'
+      box.append(added)
+      document.querySelector('#out').textContent =
+        `${staticList.length},${liveList.length},${document.querySelector('#missing')}`
+    </script>
+  </body>
+</html>
 ```
 
 检查：页面有A、B，结果为1,2,null。
@@ -8605,7 +8657,7 @@ document.querySelector('#out').textContent = `${staticList.length},${liveList.le
 
 ### 31.3 创建、修改、属性和类
 
-createElement建立元素，append加入节点，remove从树移除；textContent设置文本。HTML attribute是文档标记上的属性，DOM property是对象接口，两者常有关联但不总相同。dataset把data-*映射为字符串字段。
+createElement建立元素，append加入节点，remove从树移除；textContent设置文本。HTML attribute是文档标记上的属性，DOM property是对象接口，两者常有关联但不总相同。dataset把data-\*映射为字符串字段。
 
 示例 **C31E03**，目录 `js-study/examples/ch31/C31E03/`，环境：浏览器。
 
@@ -8614,20 +8666,28 @@ createElement建立元素，append加入节点，remove从树移除；textConten
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<div id="box"></div><input id="field" value="初始"><pre id="out"></pre>
-<script type="module">
-const item = document.createElement('p')
-item.textContent = '<strong>作为文本</strong>'
-item.classList.add('task')
-item.dataset.taskId = '7'
-document.querySelector('#box').append(item)
-const field = document.querySelector('#field')
-field.value = '当前'
-document.querySelector('#out').textContent = `${field.value}/${field.getAttribute('value')}/${item.dataset.taskId}`
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <div id="box"></div>
+    <input id="field" value="初始" />
+    <pre id="out"></pre>
+    <script type="module">
+      const item = document.createElement('p')
+      item.textContent = '<strong>作为文本</strong>'
+      item.classList.add('task')
+      item.dataset.taskId = '7'
+      document.querySelector('#box').append(item)
+      const field = document.querySelector('#field')
+      field.value = '当前'
+      document.querySelector('#out').textContent =
+        `${field.value}/${field.getAttribute('value')}/${item.dataset.taskId}`
+    </script>
+  </body>
+</html>
 ```
 
 检查：尖括号文本原样显示，不会变成加粗元素；结果为当前/初始/7。
@@ -8645,24 +8705,33 @@ document.querySelector('#out').textContent = `${field.value}/${field.getAttribut
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<p id="empty"></p><ul id="tasks"></ul>
-<script type="module">
-const tasks = [{ id: 10, title: '阅读', done: false }, { id: 20, title: '练习', done: true }]
-function render() {
-  const nodes = tasks.map(task => {
-    const item = document.createElement('li')
-    item.dataset.id = String(task.id)
-    item.textContent = `${task.title}：${task.done ? '完成' : '待办'}`
-    return item
-  })
-  document.querySelector('#tasks').replaceChildren(...nodes)
-  document.querySelector('#empty').textContent = tasks.length ? '' : '暂无任务'
-}
-render()
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <p id="empty"></p>
+    <ul id="tasks"></ul>
+    <script type="module">
+      const tasks = [
+        { id: 10, title: '阅读', done: false },
+        { id: 20, title: '练习', done: true },
+      ]
+      function render() {
+        const nodes = tasks.map((task) => {
+          const item = document.createElement('li')
+          item.dataset.id = String(task.id)
+          item.textContent = `${task.title}：${task.done ? '完成' : '待办'}`
+          return item
+        })
+        document.querySelector('#tasks').replaceChildren(...nodes)
+        document.querySelector('#empty').textContent = tasks.length ? '' : '暂无任务'
+      }
+      render()
+    </script>
+  </body>
+</html>
 ```
 
 检查：出现两行“阅读：待办”“练习：完成”，DOM里data-id分别10和20。
@@ -8680,20 +8749,26 @@ render()
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<button id="render">再次渲染</button><ul id="list"></ul>
-<script type="module">
-const input = '<img src=x onerror=alert(1)>'
-function render() {
-  const item = document.createElement('li')
-  item.textContent = input
-  document.querySelector('#list').replaceChildren(item)
-}
-document.querySelector('#render').addEventListener('click', render)
-render()
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <button id="render">再次渲染</button>
+    <ul id="list"></ul>
+    <script type="module">
+      const input = '<img src=x onerror=alert(1)>'
+      function render() {
+        const item = document.createElement('li')
+        item.textContent = input
+        document.querySelector('#list').replaceChildren(item)
+      }
+      document.querySelector('#render').addEventListener('click', render)
+      render()
+    </script>
+  </body>
+</html>
 ```
 
 检查：显示img标记原文，不出现图片节点或弹窗；连续点击三次仍只有一条li。
@@ -8720,12 +8795,12 @@ render()
 
 ### 31.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
+| 场景     | 做法与返回               | 易错边界           |
+| :------- | :----------------------- | :----------------- |
 | 查找首项 | querySelector→元素或null | 选择器语法也要合法 |
-| 静态集合 | querySelectorAll | 后加元素不自动纳入 |
-| 文本 | textContent | 不解析用户标记 |
-| 替换列表 | replaceChildren | 会影响原节点与焦点 |
+| 静态集合 | querySelectorAll         | 后加元素不自动纳入 |
+| 文本     | textContent              | 不解析用户标记     |
+| 替换列表 | replaceChildren          | 会影响原节点与焦点 |
 
 本章参考：[DOM标准](https://dom.spec.whatwg.org/)、[HTML标准](https://html.spec.whatwg.org/multipage/dom.html)。
 
@@ -8744,18 +8819,29 @@ addEventListener按事件类型注册函数，removeEventListener移除相同函
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<button id="button">点击</button><button id="stop">停止监听</button><p id="out">0</p>
-<script type="module">
-const button = document.querySelector('#button')
-let count = 0
-const show = () => { count += 1; document.querySelector('#out').textContent = String(count) }
-button.addEventListener('click', show)
-document.querySelector('#stop').addEventListener('click', () => button.removeEventListener('click', show))
-button.addEventListener('click', () => console.log('只响应一次'), { once: true })
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <button id="button">点击</button><button id="stop">停止监听</button>
+    <p id="out">0</p>
+    <script type="module">
+      const button = document.querySelector('#button')
+      let count = 0
+      const show = () => {
+        count += 1
+        document.querySelector('#out').textContent = String(count)
+      }
+      button.addEventListener('click', show)
+      document
+        .querySelector('#stop')
+        .addEventListener('click', () => button.removeEventListener('click', show))
+      button.addEventListener('click', () => console.log('只响应一次'), { once: true })
+    </script>
+  </body>
+</html>
 ```
 
 检查：点击两次数字为2，而一次监听日志只出现一次；点停止后再次点击数字不变。
@@ -8773,18 +8859,29 @@ button.addEventListener('click', () => console.log('只响应一次'), { once: t
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<ul id="list"><li><button data-id="10">完成 <span>A</span></button></li></ul><p id="out"></p>
-<script type="module">
-const list = document.querySelector('#list')
-list.addEventListener('click', event => {
-  const button = event.target.closest('button[data-id]')
-  if (!button || !list.contains(button)) return
-  document.querySelector('#out').textContent = `ID=${button.dataset.id}，监听于${event.currentTarget.id}`
-})
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>
+        <button data-id="10">完成 <span>A</span></button>
+      </li>
+    </ul>
+    <p id="out"></p>
+    <script type="module">
+      const list = document.querySelector('#list')
+      list.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-id]')
+        if (!button || !list.contains(button)) return
+        document.querySelector('#out').textContent =
+          `ID=${button.dataset.id}，监听于${event.currentTarget.id}`
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：点按钮文字内的A也识别ID=10；监听位置仍是list。
@@ -8802,19 +8899,37 @@ preventDefault阻止允许取消的默认动作；input在内容变化时触发�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<form id="form"><label for="name">标题</label><input id="name"><button>提交</button></form><p id="out"></p>
-<script type="module">
-const field = document.querySelector('#name')
-let composing = false
-field.addEventListener('compositionstart', () => { composing = true })
-field.addEventListener('compositionend', () => { composing = false; show() })
-field.addEventListener('input', event => { if (!composing && !event.isComposing) show() })
-function show() { document.querySelector('#out').textContent = `当前：${field.value}` }
-document.querySelector('#form').addEventListener('submit', event => { event.preventDefault(); show() })
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <form id="form"><label for="name">标题</label><input id="name" /><button>提交</button></form>
+    <p id="out"></p>
+    <script type="module">
+      const field = document.querySelector('#name')
+      let composing = false
+      field.addEventListener('compositionstart', () => {
+        composing = true
+      })
+      field.addEventListener('compositionend', () => {
+        composing = false
+        show()
+      })
+      field.addEventListener('input', (event) => {
+        if (!composing && !event.isComposing) show()
+      })
+      function show() {
+        document.querySelector('#out').textContent = `当前：${field.value}`
+      }
+      document.querySelector('#form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        show()
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：提交不刷新页面；中文输入完成后显示最终文字。不同输入法事件细节需在目标浏览器验证。
@@ -8832,23 +8947,36 @@ value通常是字符串，checked是布尔值；FormData按有name且符合提�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<form id="form"><label>标题 <input name="title" required maxlength="20"></label>
-<label>分钟 <input name="minutes" type="number" required min="0" max="1440" value="25"></label>
-<label><input name="done" type="checkbox">已完成</label><button>检查</button></form><pre id="out"></pre>
-<script type="module">
-document.querySelector('#form').addEventListener('submit', event => {
-  event.preventDefault()
-  const data = new FormData(event.currentTarget)
-  const title = String(data.get('title') ?? '').trim()
-  const minutes = Number(data.get('minutes'))
-  const done = data.has('done')
-  const valid = title.length > 0 && Number.isInteger(minutes) && minutes >= 0 && minutes <= 1440
-  document.querySelector('#out').textContent = valid ? JSON.stringify({ title, minutes, done }) : '输入不符合业务规则'
-})
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <form id="form">
+      <label>标题 <input name="title" required maxlength="20" /></label>
+      <label
+        >分钟 <input name="minutes" type="number" required min="0" max="1440" value="25"
+      /></label>
+      <label><input name="done" type="checkbox" />已完成</label><button>检查</button>
+    </form>
+    <pre id="out"></pre>
+    <script type="module">
+      document.querySelector('#form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        const data = new FormData(event.currentTarget)
+        const title = String(data.get('title') ?? '').trim()
+        const minutes = Number(data.get('minutes'))
+        const done = data.has('done')
+        const valid =
+          title.length > 0 && Number.isInteger(minutes) && minutes >= 0 && minutes <= 1440
+        document.querySelector('#out').textContent = valid
+          ? JSON.stringify({ title, minutes, done })
+          : '输入不符合业务规则'
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：输入空白标题即使通过required的非空字符串条件，也会被trim后的规则拒绝；0分钟应允许。勾选后done为true。
@@ -8866,26 +8994,43 @@ FormData未勾选的复选框常不出现该键，不能直接把"on"文本当�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<form id="form"><label>任务 <input id="title" required></label><button>添加</button></form><p id="status" role="status"></p><ul id="list"></ul>
-<script type="module">
-const tasks = []
-const field = document.querySelector('#title')
-document.querySelector('#form').addEventListener('submit', event => {
-  event.preventDefault()
-  const title = field.value.trim()
-  if (!title) { document.querySelector('#status').textContent = '请输入非空白标题'; field.focus(); return }
-  tasks.push({ id: tasks.length + 1, title })
-  document.querySelector('#list').replaceChildren(...tasks.map(task => {
-    const li = document.createElement('li'); li.textContent = task.title; return li
-  }))
-  document.querySelector('#status').textContent = '已添加任务'
-  field.value = ''
-  field.focus()
-})
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <form id="form">
+      <label>任务 <input id="title" required /></label><button>添加</button>
+    </form>
+    <p id="status" role="status"></p>
+    <ul id="list"></ul>
+    <script type="module">
+      const tasks = []
+      const field = document.querySelector('#title')
+      document.querySelector('#form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        const title = field.value.trim()
+        if (!title) {
+          document.querySelector('#status').textContent = '请输入非空白标题'
+          field.focus()
+          return
+        }
+        tasks.push({ id: tasks.length + 1, title })
+        document.querySelector('#list').replaceChildren(
+          ...tasks.map((task) => {
+            const li = document.createElement('li')
+            li.textContent = task.title
+            return li
+          }),
+        )
+        document.querySelector('#status').textContent = '已添加任务'
+        field.value = ''
+        field.focus()
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：键盘Tab能到输入和按钮；Enter可提交；成功后焦点回到标题；空白不会产生新li。此例无删除，所以用长度加1不会复用ID，完整项目采用独立nextId。
@@ -8912,12 +9057,12 @@ document.querySelector('#form').addEventListener('submit', event => {
 
 ### 32.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 监听 | addEventListener | 注册和执行分开 |
-| 委托 | target.closest | 还需限制所属区域 |
-| 取消默认 | preventDefault | 不等于停止传播 |
-| 控件值 | value/checked | 字符串和布尔分开 |
+| 场景     | 做法与返回       | 易错边界         |
+| :------- | :--------------- | :--------------- |
+| 监听     | addEventListener | 注册和执行分开   |
+| 委托     | target.closest   | 还需限制所属区域 |
+| 取消默认 | preventDefault   | 不等于停止传播   |
+| 控件值   | value/checked    | 字符串和布尔分开 |
 
 本章参考：[DOM标准](https://dom.spec.whatwg.org/)、[HTML标准：表单](https://html.spec.whatwg.org/multipage/forms.html)、[HTML标准：交互](https://html.spec.whatwg.org/multipage/interaction.html)。
 
@@ -8936,20 +9081,28 @@ localStorage按来源保存字符串，sessionStorage还按页面会话划分。
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<button id="run">写入并读取</button><pre id="out"></pre>
-<script type="module">
-document.querySelector('#run').addEventListener('click', () => {
-  try {
-    localStorage.setItem('js-handbook-demo', '25')
-    const stored = localStorage.getItem('js-handbook-demo')
-    document.querySelector('#out').textContent = `${stored}/${typeof stored}`
-    localStorage.removeItem('js-handbook-demo')
-  } catch (error) { document.querySelector('#out').textContent = `存储不可用：${error.name}` }
-})
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <button id="run">写入并读取</button>
+    <pre id="out"></pre>
+    <script type="module">
+      document.querySelector('#run').addEventListener('click', () => {
+        try {
+          localStorage.setItem('js-handbook-demo', '25')
+          const stored = localStorage.getItem('js-handbook-demo')
+          document.querySelector('#out').textContent = `${stored}/${typeof stored}`
+          localStorage.removeItem('js-handbook-demo')
+        } catch (error) {
+          document.querySelector('#out').textContent = `存储不可用：${error.name}`
+        }
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：允许存储时显示25/string，示例随后只删除自己的演示键，不清空该来源所有存储。
@@ -8967,23 +9120,30 @@ getItem缺失返回null，不是undefined。不要用`localStorage.clear`清理�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<button id="read">检查演示数据</button><pre id="out"></pre>
-<script type="module">
-const key = 'js-handbook-validate'
-document.querySelector('#read').addEventListener('click', () => {
-  localStorage.setItem(key, '{broken')
-  const raw = localStorage.getItem(key)
-  try {
-    const data = JSON.parse(raw)
-    if (data.version !== 1 || !Array.isArray(data.tasks)) throw new Error('结构不符合约定')
-  } catch (error) {
-    document.querySelector('#out').textContent = `拒绝恢复，原文仍为：${localStorage.getItem(key)}`
-  }
-})
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <button id="read">检查演示数据</button>
+    <pre id="out"></pre>
+    <script type="module">
+      const key = 'js-handbook-validate'
+      document.querySelector('#read').addEventListener('click', () => {
+        localStorage.setItem(key, '{broken')
+        const raw = localStorage.getItem(key)
+        try {
+          const data = JSON.parse(raw)
+          if (data.version !== 1 || !Array.isArray(data.tasks)) throw new Error('结构不符合约定')
+        } catch (error) {
+          document.querySelector('#out').textContent =
+            `拒绝恢复，原文仍为：${localStorage.getItem(key)}`
+        }
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：显示原文{broken仍存在。只为演示创建本例专用键，完成后在控制台执行`localStorage.removeItem("js-handbook-validate")`清理。
@@ -9001,21 +9161,27 @@ URL与URLSearchParams处理地址和查询参数，避免手工拼接导致中�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<p id="out"></p><button id="change">更新关键词</button>
-<script type="module">
-const url = new URL(location.href)
-document.querySelector('#out').textContent = url.searchParams.get('q') ?? '尚无关键词'
-document.querySelector('#change').addEventListener('click', () => {
-  const next = new URL(location.href)
-  next.searchParams.set('q', '中文 & JS')
-  history.replaceState(null, '', next)
-  document.querySelector('#out').textContent = next.searchParams.get('q')
-})
-window.addEventListener('storage', event => console.log('其他页面修改', event.key))
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <p id="out"></p>
+    <button id="change">更新关键词</button>
+    <script type="module">
+      const url = new URL(location.href)
+      document.querySelector('#out').textContent = url.searchParams.get('q') ?? '尚无关键词'
+      document.querySelector('#change').addEventListener('click', () => {
+        const next = new URL(location.href)
+        next.searchParams.set('q', '中文 & JS')
+        history.replaceState(null, '', next)
+        document.querySelector('#out').textContent = next.searchParams.get('q')
+      })
+      window.addEventListener('storage', (event) => console.log('其他页面修改', event.key))
+    </script>
+  </body>
+</html>
 ```
 
 检查：点击后地址查询参数被编码，页面显示完整“中文 & JS”；刷新仍可从URL读回。另开同来源页面可观察storage通知。
@@ -9033,28 +9199,42 @@ File表示用户明确选择的文件；Blob表示二进制数据块。对象URL
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<label>选择JSON <input id="file" type="file" accept=".json,application/json"></label>
-<button id="export">导出演示</button><pre id="out"></pre>
-<script type="module">
-document.querySelector('#file').addEventListener('change', async event => {
-  const file = event.target.files[0]
-  if (!file) return
-  try {
-    if (file.size > 1024 * 1024) throw new Error('文件超过1 MiB')
-    const value = JSON.parse(await file.text())
-    if (value === null || typeof value !== 'object' || Array.isArray(value)) throw new Error('顶层应为对象')
-    document.querySelector('#out').textContent = JSON.stringify(value, null, 2)
-  } catch (error) { document.querySelector('#out').textContent = error.message }
-})
-document.querySelector('#export').addEventListener('click', () => {
-  const url = URL.createObjectURL(new Blob([JSON.stringify({ version: 1, tasks: [] })], { type: 'application/json' }))
-  const link = document.createElement('a'); link.href = url; link.download = 'demo.json'; link.click()
-  setTimeout(() => URL.revokeObjectURL(url), 1000)
-})
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <label>选择JSON <input id="file" type="file" accept=".json,application/json" /></label>
+    <button id="export">导出演示</button>
+    <pre id="out"></pre>
+    <script type="module">
+      document.querySelector('#file').addEventListener('change', async (event) => {
+        const file = event.target.files[0]
+        if (!file) return
+        try {
+          if (file.size > 1024 * 1024) throw new Error('文件超过1 MiB')
+          const value = JSON.parse(await file.text())
+          if (value === null || typeof value !== 'object' || Array.isArray(value))
+            throw new Error('顶层应为对象')
+          document.querySelector('#out').textContent = JSON.stringify(value, null, 2)
+        } catch (error) {
+          document.querySelector('#out').textContent = error.message
+        }
+      })
+      document.querySelector('#export').addEventListener('click', () => {
+        const url = URL.createObjectURL(
+          new Blob([JSON.stringify({ version: 1, tasks: [] })], { type: 'application/json' }),
+        )
+        const link = document.createElement('a')
+        link.href = url
+        link.download = 'demo.json'
+        link.click()
+        setTimeout(() => URL.revokeObjectURL(url), 1000)
+      })
+    </script>
+  </body>
+</html>
 ```
 
 检查：导出得到`demo.json`；选择合法对象JSON能显示，坏JSON显示错误，超大文件拒绝；本例只预览，不写入任务存储。
@@ -9072,20 +9252,24 @@ Cookie可随符合规则的HTTP请求发送，受域、路径、SameSite等限�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript教学示例</title></head>
-<body>
-<p id="out"></p>
-<script type="module">
-const capabilities = {
-  localStorage: typeof localStorage !== 'undefined',
-  indexedDB: typeof indexedDB !== 'undefined',
-  cookieEnabled: navigator.cookieEnabled
-}
-document.querySelector('#out').textContent = JSON.stringify(capabilities)
-// 这里只检查入口是否存在；真正操作仍可能因权限和配额失败。
-
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript教学示例</title>
+  </head>
+  <body>
+    <p id="out"></p>
+    <script type="module">
+      const capabilities = {
+        localStorage: typeof localStorage !== 'undefined',
+        indexedDB: typeof indexedDB !== 'undefined',
+        cookieEnabled: navigator.cookieEnabled,
+      }
+      document.querySelector('#out').textContent = JSON.stringify(capabilities)
+      // 这里只检查入口是否存在；真正操作仍可能因权限和配额失败。
+    </script>
+  </body>
+</html>
 ```
 
 检查：页面显示当前浏览器能力布尔值，具体值允许随策略不同。没有创建Cookie或数据库。
@@ -9112,12 +9296,12 @@ document.querySelector('#out').textContent = JSON.stringify(capabilities)
 
 ### 33.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 保存文本 | `localStorage.setItem` | 同步，可能抛错 |
-| 读缺失项 | getItem→null | 与坏JSON不同 |
-| 查询参数 | URLSearchParams | 自动处理编码 |
-| 临时下载地址 | createObjectURL/revoke | 使用后释放 |
+| 场景         | 做法与返回             | 易错边界       |
+| :----------- | :--------------------- | :------------- |
+| 保存文本     | `localStorage.setItem` | 同步，可能抛错 |
+| 读缺失项     | getItem→null           | 与坏JSON不同   |
+| 查询参数     | URLSearchParams        | 自动处理编码   |
+| 临时下载地址 | createObjectURL/revoke | 使用后释放     |
 
 本章参考：[HTML标准：Web Storage](https://html.spec.whatwg.org/multipage/webstorage.html)、[URL标准](https://url.spec.whatwg.org/)、[File API规范](https://w3c.github.io/FileAPI/)、[IndexedDB规范](https://w3c.github.io/IndexedDB/)。
 
@@ -9431,14 +9615,14 @@ node demo.mjs add 复习CLI
 
 ### 34.7 本章速查
 
-| 场景 | 做法或返回值 | 边界 |
-| :--- | :--- | :--- |
-| 参数 | `process.argv`.slice(2)返回字符串数组 | 引号由shell处理 |
-| 环境变量 | `process.env`.NAME为文本或undefined | 转换后仍需校验 |
-| 工作目录 | `process.cwd()` | 不等于模块目录 |
-| 退出状态 | `process.exitCode` = 2 | 保留正常收尾机会 |
-| 事件 | on/once/off/emit | emit同步调用监听器 |
-| 终端输入 | readline接口 | finally中close |
+| 场景     | 做法或返回值                          | 边界               |
+| :------- | :------------------------------------ | :----------------- |
+| 参数     | `process.argv`.slice(2)返回字符串数组 | 引号由shell处理    |
+| 环境变量 | `process.env`.NAME为文本或undefined   | 转换后仍需校验     |
+| 工作目录 | `process.cwd()`                       | 不等于模块目录     |
+| 退出状态 | `process.exitCode` = 2                | 保留正常收尾机会   |
+| 事件     | on/once/off/emit                      | emit同步调用监听器 |
+| 终端输入 | readline接口                          | finally中close     |
 
 ## 第35章 文件、路径、二进制与流
 
@@ -9656,7 +9840,7 @@ await Promise.all([
   enqueue(async () => {
     log.push('开始B')
     log.push('完成B')
-  })
+  }),
 ])
 console.log(log.join('→'))
 ```
@@ -9690,13 +9874,13 @@ const collected = []
 const upper = new Transform({
   transform(chunk, encoding, callback) {
     callback(null, chunk.toString('utf8').toUpperCase())
-  }
+  },
 })
 const destination = new Writable({
   write(chunk, encoding, callback) {
     collected.push(chunk.toString('utf8'))
     callback()
-  }
+  },
 })
 await pipeline(Readable.from(['learn', ' node']), upper, destination)
 console.log(collected.join(''))
@@ -9740,14 +9924,14 @@ LEARN NODE
 
 ### 35.7 本章速查
 
-| 场景 | 做法或返回值 | 边界 |
-| :--- | :--- | :--- |
-| 路径拼接 | path.join/resolve | 不创建文件、不授权路径 |
-| 文本读取 | readFile(file, "utf8")返回文本 | 无encoding返回Buffer |
-| 写入 | await writeFile | 默认替换；不可不等待地重叠写 |
-| 替换 | 同目录临时文件再rename | 不等于跨平台断电事务 |
-| 二进制 | Buffer/Uint8Array/DataView | 明确编码、偏移和字节序 |
-| 流连接 | await pipeline | 传播失败并安排清理 |
+| 场景     | 做法或返回值                   | 边界                         |
+| :------- | :----------------------------- | :--------------------------- |
+| 路径拼接 | path.join/resolve              | 不创建文件、不授权路径       |
+| 文本读取 | readFile(file, "utf8")返回文本 | 无encoding返回Buffer         |
+| 写入     | await writeFile                | 默认替换；不可不等待地重叠写 |
+| 替换     | 同目录临时文件再rename         | 不等于跨平台断电事务         |
+| 二进制   | Buffer/Uint8Array/DataView     | 明确编码、偏移和字节序       |
+| 流连接   | await pipeline                 | 传播失败并安排清理           |
 
 ## 第36章 使用Node.js建立本机HTTP服务
 
@@ -9770,8 +9954,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -9783,7 +9966,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -9806,7 +9989,7 @@ await withServer(
     const response = await fetch(base)
     console.log(response.status)
     console.log(await response.text())
-  }
+  },
 )
 ```
 
@@ -9865,8 +10048,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -9878,7 +10060,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -9909,7 +10091,7 @@ await withServer(
     const wrong = await fetch(`${base}/tasks`, { method: 'POST' })
     console.log(wrong.status, wrong.headers.get('allow'))
     await wrong.text()
-  }
+  },
 )
 ```
 
@@ -9945,8 +10127,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -9958,7 +10139,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10021,11 +10202,11 @@ await withServer(
       const response = await fetch(base, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body
+        body,
       })
       console.log(response.status, await response.text())
     }
-  }
+  },
 )
 ```
 
@@ -10061,8 +10242,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10074,7 +10254,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10091,7 +10271,7 @@ import { readFile } from 'node:fs/promises'
 import { withServer, json } from './server.mjs'
 const files = new Map([
   ['/', ['index.html', 'text/html; charset=utf-8']],
-  ['/app.mjs', ['app.mjs', 'text/javascript; charset=utf-8']]
+  ['/app.mjs', ['app.mjs', 'text/javascript; charset=utf-8']],
 ])
 await withServer(
   async (req, res) => {
@@ -10112,7 +10292,7 @@ await withServer(
     const blocked = await fetch(`${base}/secret.txt`)
     console.log(blocked.status)
     await blocked.text()
-  }
+  },
 )
 ```
 
@@ -10120,7 +10300,11 @@ await withServer(
 
 ```html
 <!doctype html>
-<html lang="zh-CN"><meta charset="utf-8"><title>任务页</title><h1 id="title">任务页</h1><script type="module" src="/app.mjs"></script></html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>任务页</title>
+  <h1 id="title">任务页</h1>
+  <script type="module" src="/app.mjs"></script>
+</html>
 ```
 
 文件 `app.mjs`：
@@ -10159,8 +10343,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10172,7 +10355,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10194,7 +10377,7 @@ await withServer(
   async (base) => {
     const response = await fetch(base)
     console.log(response.status, await response.text())
-  }
+  },
 )
 console.log('服务已关闭')
 ```
@@ -10273,13 +10456,13 @@ EADDRINUSE
 
 ### 36.7 本章速查
 
-| 场景 | 做法或返回值 | 边界 |
-| :--- | :--- | :--- |
-| HTTP成功 | 200查询、201创建等 | 按实际语义选择 |
-| 资源/方法错误 | 404／405；405必须附`Allow` | 方法表与实际路由一致 |
-| 请求体 | 按字节限额、再解析和校验 | Content-Length不是完整防线 |
-| 静态文件 | 固定URL到文件映射 | 给正确MIME |
-| 启停 | 等待listen/close | 处理error与异步拒绝 |
+| 场景          | 做法或返回值               | 边界                       |
+| :------------ | :------------------------- | :------------------------- |
+| HTTP成功      | 200查询、201创建等         | 按实际语义选择             |
+| 资源/方法错误 | 404／405；405必须附`Allow` | 方法表与实际路由一致       |
+| 请求体        | 按字节限额、再解析和校验   | Content-Length不是完整防线 |
+| 静态文件      | 固定URL到文件映射          | 给正确MIME                 |
+| 启停          | 等待listen/close           | 处理error与异步拒绝        |
 
 ## 第37章 HTTP、Fetch与网络错误
 
@@ -10300,8 +10483,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10313,7 +10495,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10342,7 +10524,7 @@ export async function scenario(use) {
       for await (const chunk of req) chunks.push(chunk)
       return json(res, 200, {
         method: req.method,
-        text: Buffer.concat(chunks).toString('utf8')
+        text: Buffer.concat(chunks).toString('utf8'),
       })
     }
     json(res, 200, { tasks: [{ id: 1, title: '学习Fetch', done: false }] })
@@ -10394,8 +10576,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10407,7 +10588,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10436,7 +10617,7 @@ export async function scenario(use) {
       for await (const chunk of req) chunks.push(chunk)
       return json(res, 200, {
         method: req.method,
-        text: Buffer.concat(chunks).toString('utf8')
+        text: Buffer.concat(chunks).toString('utf8'),
       })
     }
     json(res, 200, { tasks: [{ id: 1, title: '学习Fetch', done: false }] })
@@ -10452,7 +10633,7 @@ await scenario(async (base) => {
   const request = new Request(`${base}/echo`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ title: '任务A' })
+    body: JSON.stringify({ title: '任务A' }),
   })
   const response = await fetch(request)
   const copy = response.clone()
@@ -10493,8 +10674,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10506,7 +10686,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10535,7 +10715,7 @@ export async function scenario(use) {
       for await (const chunk of req) chunks.push(chunk)
       return json(res, 200, {
         method: req.method,
-        text: Buffer.concat(chunks).toString('utf8')
+        text: Buffer.concat(chunks).toString('utf8'),
       })
     }
     json(res, 200, { tasks: [{ id: 1, title: '学习Fetch', done: false }] })
@@ -10587,8 +10767,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10600,7 +10779,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10629,7 +10808,7 @@ export async function scenario(use) {
       for await (const chunk of req) chunks.push(chunk)
       return json(res, 200, {
         method: req.method,
-        text: Buffer.concat(chunks).toString('utf8')
+        text: Buffer.concat(chunks).toString('utf8'),
       })
     }
     json(res, 200, { tasks: [{ id: 1, title: '学习Fetch', done: false }] })
@@ -10650,7 +10829,7 @@ function validateTasks(value) {
         !task ||
         !Number.isSafeInteger(task.id) ||
         typeof task.title !== 'string' ||
-        typeof task.done !== 'boolean'
+        typeof task.done !== 'boolean',
     )
   )
     throw new TypeError('任务数据格式不符')
@@ -10700,8 +10879,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10713,7 +10891,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10742,7 +10920,7 @@ export async function scenario(use) {
       for await (const chunk of req) chunks.push(chunk)
       return json(res, 200, {
         method: req.method,
-        text: Buffer.concat(chunks).toString('utf8')
+        text: Buffer.concat(chunks).toString('utf8'),
       })
     }
     json(res, 200, { tasks: [{ id: 1, title: '学习Fetch', done: false }] })
@@ -10795,8 +10973,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10808,7 +10985,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10837,7 +11014,7 @@ export async function scenario(use) {
       for await (const chunk of req) chunks.push(chunk)
       return json(res, 200, {
         method: req.method,
-        text: Buffer.concat(chunks).toString('utf8')
+        text: Buffer.concat(chunks).toString('utf8'),
       })
     }
     json(res, 200, { tasks: [{ id: 1, title: '学习Fetch', done: false }] })
@@ -10891,8 +11068,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -10904,7 +11080,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -10933,7 +11109,7 @@ export async function scenario(use) {
       for await (const chunk of req) chunks.push(chunk)
       return json(res, 200, {
         method: req.method,
-        text: Buffer.concat(chunks).toString('utf8')
+        text: Buffer.concat(chunks).toString('utf8'),
       })
     }
     json(res, 200, { tasks: [{ id: 1, title: '学习Fetch', done: false }] })
@@ -11004,20 +11180,18 @@ HTTP 503，尝试2次
 
 ### 37.7 本章速查
 
-| 场景 | 做法或返回值 | 边界 |
-| :--- | :--- | :--- |
-| 请求 | `fetch(url, options)`返回`Promise<Response>` | HTTP失败不自动拒绝 |
-| 正文 | await `response.json`/text | 通常一次消费 |
-| HTTP检查 | response.ok表示200至299 | 仍需业务校验 |
-| 取消 | signal: controller.signal | 不回滚服务端 |
-| CORS | 浏览器授权读取机制 | no-cors不是绕过 |
-| 重试 | 限次数、限范围、考虑幂等 | 不盲重试创建 |
+| 场景     | 做法或返回值                                 | 边界               |
+| :------- | :------------------------------------------- | :----------------- |
+| 请求     | `fetch(url, options)`返回`Promise<Response>` | HTTP失败不自动拒绝 |
+| 正文     | await `response.json`/text                   | 通常一次消费       |
+| HTTP检查 | response.ok表示200至299                      | 仍需业务校验       |
+| 取消     | signal: controller.signal                    | 不回滚服务端       |
+| CORS     | 浏览器授权读取机制                           | no-cors不是绕过    |
+| 重试     | 限次数、限范围、考虑幂等                     | 不盲重试创建       |
 
 ## 第38章 npm、依赖与工程工具
 
 包是可以分发的一组代码和元数据；包管理器负责获取依赖并记录关系。Node负责运行，npm负责管理包，这两者有各自版本。前面的内置模块练习不需要npm安装，本章在独立目录学习工具链，避免把工具堆成第一行程序的前提。
-
-**本章导航：** [38.1 package.json、脚本与依赖分类](#381-packagejson脚本与依赖分类) · [38.2 安装、锁文件与可重复运行](#382-安装锁文件与可重复运行) · [38.3 版本范围、项目Node约定与升级](#383-版本范围项目node约定与升级) · [38.4 本地命令、npm exec与安装脚本](#384-本地命令npm-exec与安装脚本) · [38.5 检查、格式化与构建的职责](#385-检查格式化与构建的职责) · [38.6 动手练习与参考答案](#386-动手练习与参考答案) · [38.7 本章速查](#387-本章速查)
 
 ### 38.1 package.json、脚本与依赖分类
 
@@ -11270,8 +11444,8 @@ export default [
   {
     files: ['**/*.mjs'],
     languageOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-    rules: { 'no-undef': 'error', eqeqeq: ['error', 'always'] }
-  }
+    rules: { 'no-undef': 'error', eqeqeq: ['error', 'always'] },
+  },
 ]
 ```
 
@@ -11329,14 +11503,14 @@ npm run format
 
 ### 38.7 本章速查
 
-| 场景 | 做法或返回值 | 边界 |
-| :--- | :--- | :--- |
-| 清单 | `package.json` | JSON无注释 |
-| 首次安装/改依赖 | `npm install` | 可能更新锁文件 |
-| 按锁文件安装 | `npm ci` | 清理node_modules，要求清单匹配 |
-| 本地脚本 | `npm run` 名称 -- 参数 | 工具版本来自项目 |
-| Node约定 | .nvmrc、engines、启动检查 | 管理器行为按版本区分 |
-| 质量/构建 | lint、format、build、test | 各自保证不同事项 |
+| 场景            | 做法或返回值              | 边界                           |
+| :-------------- | :------------------------ | :----------------------------- |
+| 清单            | `package.json`            | JSON无注释                     |
+| 首次安装/改依赖 | `npm install`             | 可能更新锁文件                 |
+| 按锁文件安装    | `npm ci`                  | 清理node_modules，要求清单匹配 |
+| 本地脚本        | `npm run` 名称 -- 参数    | 工具版本来自项目               |
+| Node约定        | .nvmrc、engines、启动检查 | 管理器行为按版本区分           |
+| 质量/构建       | lint、format、build、test | 各自保证不同事项               |
 
 本章参考：[npm文档](https://docs.npmjs.com/)、[Vite指南](https://vite.dev/guide/)、[ESLint配置说明](https://eslint.org/docs/latest/use/configure/)、[Prettier 3.6.2：命令行](https://github.com/prettier/prettier/blob/3.6.2/docs/cli.md)。
 
@@ -11508,7 +11682,7 @@ test('异步正常和拒绝路径', async () => {
 test('时钟通过参数控制', () => {
   assert.equal(
     createdAt(() => Date.UTC(2026, 0, 1)),
-    '2026-01-01T00:00:00.000Z'
+    '2026-01-01T00:00:00.000Z',
   )
 })
 ```
@@ -11564,8 +11738,7 @@ export async function withServer(handler, use) {
     Promise.resolve()
       .then(() => handler(req, res))
       .catch(() => {
-        if (!res.headersSent)
-          res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain; charset=utf-8' })
         if (!res.writableEnded) res.end('server error')
       })
   })
@@ -11577,7 +11750,7 @@ export async function withServer(handler, use) {
     await use(`http://127.0.0.1:${server.address().port}`)
   } finally {
     await new Promise((resolve, reject) =>
-      server.close((error) => (error ? reject(error) : resolve()))
+      server.close((error) => (error ? reject(error) : resolve())),
     )
   }
 }
@@ -11600,7 +11773,7 @@ await withServer(
     assert.equal(response.status, 200)
     assert.equal(value.ready, true)
     console.log(response.status, value.ready)
-  }
+  },
 )
 ```
 
@@ -11642,20 +11815,18 @@ node demo.mjs
 
 ### 39.7 本章速查
 
-| 场景 | 做法或返回值 | 边界 |
-| :--- | :--- | :--- |
-| 调试 | 断点、变量、调用栈 | 先复现再改 |
-| 普通断言 | equal/deepEqual/throws | 区分身份、结构、类型 |
-| 异步断言 | await assert.rejects | 不用throws替代 |
-| 运行测试 | `node --test` 文件 | 等待所有异步工作 |
-| 隔离 | 临时目录、临时端口、固定时钟 | 清理自己拥有的资源 |
-| 验证层次 | 静态、单元、集成、端到端 | 分别说明覆盖范围 |
+| 场景     | 做法或返回值                 | 边界                 |
+| :------- | :--------------------------- | :------------------- |
+| 调试     | 断点、变量、调用栈           | 先复现再改           |
+| 普通断言 | equal/deepEqual/throws       | 区分身份、结构、类型 |
+| 异步断言 | await assert.rejects         | 不用throws替代       |
+| 运行测试 | `node --test` 文件           | 等待所有异步工作     |
+| 隔离     | 临时目录、临时端口、固定时钟 | 清理自己拥有的资源   |
+| 验证层次 | 静态、单元、集成、端到端     | 分别说明覆盖范围     |
 
 ## 第40章 阶段项目：可保存数据的浏览器任务管理器
 
 本项目把前面的模块、DOM、表单、JSON和存储组合起来。静态服务只负责提供页面文件，任务保存在浏览器localStorage；第45章才把保存职责移到Node服务端。四个源文件完整给出，按本章列出的文件名保存后，即可从项目入口运行。
-
-**本章导航：** [40.1 页面、任务契约和运行方式](#401-页面任务契约和运行方式) · [40.2 业务核心与界面表现](#402-业务核心与界面表现) · [40.3 完整入口、保存顺序与损坏保护](#403-完整入口保存顺序与损坏保护) · [40.4 导入导出、格式版本与拒绝策略](#404-导入导出格式版本与拒绝策略) · [40.5 阶段验收与边界清单](#405-阶段验收与边界清单) · [40.6 动手练习与参考答案](#406-动手练习与参考答案) · [40.7 本章速查](#407-本章速查)
 
 ### 40.1 页面、任务契约和运行方式
 
@@ -11674,18 +11845,23 @@ node demo.mjs
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><title>任务页面第一步</title></head>
-<body>
-  <h1>任务页面第一步</h1>
-  <form id="form">
-    <label>标题 <input id="title" required maxlength="200"></label>
-    <label>分钟 <input id="minutes" type="number" min="0" max="1440" step="1" value="25" required></label>
-    <button>添加</button>
-  </form>
-  <p id="message" role="status"></p>
-  <ul id="tasks"></ul>
-  <script type="module" src="./app.mjs"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>任务页面第一步</title>
+  </head>
+  <body>
+    <h1>任务页面第一步</h1>
+    <form id="form">
+      <label>标题 <input id="title" required maxlength="200" /></label>
+      <label
+        >分钟 <input id="minutes" type="number" min="0" max="1440" step="1" value="25" required
+      /></label>
+      <button>添加</button>
+    </form>
+    <p id="message" role="status"></p>
+    <ul id="tasks"></ul>
+    <script type="module" src="./app.mjs"></script>
+  </body>
 </html>
 ```
 
@@ -11697,7 +11873,7 @@ import {
   validateStore,
   addTask,
   editTask,
-  removeTask
+  removeTask,
 } from '../../examples/ch25/C25E03/task-core.mjs'
 const form = document.querySelector('#form')
 const title = document.querySelector('#title')
@@ -11721,7 +11897,7 @@ function render() {
       row.append(`#${task.id} ${task.title} ${task.minutes}分钟 `)
       for (const [action, text] of [
         ['toggle', task.done ? '恢复待办' : '完成'],
-        ['delete', '删除']
+        ['delete', '删除'],
       ]) {
         const button = document.createElement('button')
         button.type = 'button'
@@ -11731,7 +11907,7 @@ function render() {
         row.append(button)
       }
       return row
-    })
+    }),
   )
 }
 function commit(next) {
@@ -11749,8 +11925,8 @@ form.addEventListener('submit', (event) => {
         title: title.value,
         minutes: Number(minutes.value),
         tags: [],
-        done: false
-      })
+        done: false,
+      }),
     )
     form.reset()
   } catch (error) {
@@ -11766,7 +11942,7 @@ list.addEventListener('click', (event) => {
     commit(
       button.dataset.action === 'delete'
         ? removeTask(state, id)
-        : editTask(state, id, { done: !task.done })
+        : editTask(state, id, { done: !task.done }),
     )
   } catch (error) {
     message.textContent = error.message
@@ -11794,73 +11970,106 @@ node tools/serve-examples.mjs --dir . --port 3211
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>学习任务管理器</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <script type="module" src="./app.mjs"></script>
-</head>
-<body>
-  <main class="workspace">
-    <header class="page-header">
-      <h1>学习任务管理器</h1>
-      <p>把下一步写清楚，完成后再向前。</p>
-    </header>
-    <p id="message" class="message" role="status" aria-live="polite">正在读取任务……</p>
-    <section class="editor" aria-labelledby="editor-heading">
-      <h2 id="editor-heading">添加任务</h2>
-      <form id="task-form">
-        <div class="field field-title">
-          <label for="title">任务标题</label>
-          <input id="title" name="title" required maxlength="200" autocomplete="off" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>学习任务管理器</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.mjs"></script>
+  </head>
+  <body>
+    <main class="workspace">
+      <header class="page-header">
+        <h1>学习任务管理器</h1>
+        <p>把下一步写清楚，完成后再向前。</p>
+      </header>
+      <p id="message" class="message" role="status" aria-live="polite">正在读取任务……</p>
+      <section class="editor" aria-labelledby="editor-heading">
+        <h2 id="editor-heading">添加任务</h2>
+        <form id="task-form">
+          <div class="field field-title">
+            <label for="title">任务标题</label>
+            <input id="title" name="title" required maxlength="200" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="minutes">预计分钟数</label>
+            <input
+              id="minutes"
+              name="minutes"
+              type="number"
+              min="0"
+              max="1440"
+              step="1"
+              value="25"
+              required
+            />
+          </div>
+          <div class="field field-title">
+            <label for="tags">标签，用中文或英文逗号分隔</label>
+            <input id="tags" name="tags" autocomplete="off" />
+          </div>
+          <div class="form-actions">
+            <button id="save" type="submit" data-mutate>添加任务</button>
+            <button id="cancel-edit" type="button" class="secondary" hidden>取消编辑</button>
+          </div>
+        </form>
+      </section>
+      <section aria-labelledby="list-heading">
+        <div class="section-heading">
+          <h2 id="list-heading">任务清单</h2>
+          <p id="summary"></p>
         </div>
-        <div class="field">
-          <label for="minutes">预计分钟数</label>
-          <input id="minutes" name="minutes" type="number" min="0" max="1440" step="1" value="25" required />
+        <form id="filters" class="filters" role="search">
+          <div class="field field-title">
+            <label for="query">搜索标题或标签</label><input id="query" name="q" type="search" />
+          </div>
+          <div class="field">
+            <label for="status">完成状态</label
+            ><select id="status">
+              <option value="all">全部</option>
+              <option value="open">待完成</option>
+              <option value="done">已完成</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sort">排序</label
+            ><select id="sort">
+              <option value="id">添加顺序</option>
+              <option value="title">标题</option>
+              <option value="minutes">预计分钟数</option>
+            </select>
+          </div>
+          <button type="submit" class="secondary">查询</button>
+        </form>
+        <p id="empty" class="empty" hidden>当前没有符合条件的任务。可以添加任务或调整筛选。</p>
+        <ul id="tasks" class="task-list"></ul>
+      </section>
+      <section class="data-tools" aria-labelledby="data-heading">
+        <h2 id="data-heading">保存与交换</h2>
+        <p>操作成功后保存在当前来源的localStorage。导入会整体替换现有任务，请先导出备份。</p>
+        <div class="tool-actions">
+          <button id="export" type="button" class="secondary">导出 JSON</button>
+          <label for="import-file">选择 JSON 文件（最多4 MiB）</label>
+          <input id="import-file" type="file" accept=".json,application/json" data-mutate />
         </div>
-        <div class="field field-title">
-          <label for="tags">标签，用中文或英文逗号分隔</label>
-          <input id="tags" name="tags" autocomplete="off" />
+        <div id="import-preview" class="import-preview" hidden>
+          <p id="import-description"></p>
+          <button id="confirm-import" type="button" class="danger" data-mutate>
+            确认替换现有任务
+          </button>
+          <button id="cancel-import" type="button" class="secondary">取消导入</button>
         </div>
-        <div class="form-actions">
-          <button id="save" type="submit" data-mutate>添加任务</button>
-          <button id="cancel-edit" type="button" class="secondary" hidden>取消编辑</button>
-        </div>
-      </form>
-    </section>
-    <section aria-labelledby="list-heading">
-      <div class="section-heading"><h2 id="list-heading">任务清单</h2><p id="summary"></p></div>
-      <form id="filters" class="filters" role="search">
-        <div class="field field-title"><label for="query">搜索标题或标签</label><input id="query" name="q" type="search" /></div>
-        <div class="field"><label for="status">完成状态</label><select id="status"><option value="all">全部</option><option value="open">待完成</option><option value="done">已完成</option></select></div>
-        <div class="field"><label for="sort">排序</label><select id="sort"><option value="id">添加顺序</option><option value="title">标题</option><option value="minutes">预计分钟数</option></select></div>
-        <button type="submit" class="secondary">查询</button>
-      </form>
-      <p id="empty" class="empty" hidden>当前没有符合条件的任务。可以添加任务或调整筛选。</p>
-      <ul id="tasks" class="task-list"></ul>
-    </section>
-    <section class="data-tools" aria-labelledby="data-heading">
-      <h2 id="data-heading">保存与交换</h2>
-      <p>操作成功后保存在当前来源的localStorage。导入会整体替换现有任务，请先导出备份。</p>
-      <div class="tool-actions">
-        <button id="export" type="button" class="secondary">导出 JSON</button>
-        <label for="import-file">选择 JSON 文件（最多4 MiB）</label>
-        <input id="import-file" type="file" accept=".json,application/json" data-mutate />
-      </div>
-      <div id="import-preview" class="import-preview" hidden>
-        <p id="import-description"></p>
-        <button id="confirm-import" type="button" class="danger" data-mutate>确认替换现有任务</button>
-        <button id="cancel-import" type="button" class="secondary">取消导入</button>
-      </div>
-    </section>
-    <section id="recovery" hidden aria-labelledby="recovery-heading">
-<h2 id="recovery-heading">恢复损坏数据</h2><p>当前停止所有保存。先复制下方原文到独立文本文件，再决定是否重置。</p>
-<label for="raw-data">原始存储文本</label><textarea id="raw-data" rows="6" readonly></textarea>
-<button id="reset-storage" type="button" class="danger">确认清除损坏数据并重新开始</button>
-</section><footer>浏览器本地版 · 数据属于当前协议、主机与端口</footer>
-  </main>
-</body>
+      </section>
+      <section id="recovery" hidden aria-labelledby="recovery-heading">
+        <h2 id="recovery-heading">恢复损坏数据</h2>
+        <p>当前停止所有保存。先复制下方原文到独立文本文件，再决定是否重置。</p>
+        <label for="raw-data">原始存储文本</label
+        ><textarea id="raw-data" rows="6" readonly></textarea>
+        <button id="reset-storage" type="button" class="danger">确认清除损坏数据并重新开始</button>
+      </section>
+      <footer>浏览器本地版 · 数据属于当前协议、主机与端口</footer>
+    </main>
+  </body>
 </html>
 ```
 
@@ -11897,13 +12106,10 @@ function assert(condition, message) {
 }
 
 function exactKeys(value, keys, label) {
-  assert(
-    value !== null && typeof value === 'object' && !Array.isArray(value),
-    `${label}必须是对象`
-  )
+  assert(value !== null && typeof value === 'object' && !Array.isArray(value), `${label}必须是对象`)
   assert(
     Object.keys(value).every((key) => keys.includes(key)),
-    `${label}含未知字段`
+    `${label}含未知字段`,
   )
 }
 
@@ -11914,7 +12120,7 @@ export function normalizeFields(value) {
   assert(title.length >= 1 && title.length <= 200, '标题需要1至200个UTF-16码元')
   assert(
     Number.isInteger(value.minutes) && value.minutes >= 0 && value.minutes <= 1440,
-    '分钟数必须是0至1440的整数'
+    '分钟数必须是0至1440的整数',
   )
   assert(typeof value.done === 'boolean', '完成状态必须是布尔值')
   assert(Array.isArray(value.tags) && value.tags.length <= 20, '标签必须是最多20项的数组')
@@ -11947,13 +12153,13 @@ export function validateStore(value) {
     const date = new Date(task.createdAt)
     assert(
       Number.isFinite(date.getTime()) && date.toISOString() === task.createdAt,
-      'createdAt必须是规范的UTC ISO时间字符串'
+      'createdAt必须是规范的UTC ISO时间字符串',
     )
     const fields = normalizeFields({
       title: task.title,
       minutes: task.minutes,
       tags: task.tags,
-      done: task.done
+      done: task.done,
     })
     return { id: task.id, ...fields, createdAt: task.createdAt }
   })
@@ -11969,7 +12175,7 @@ export function addTask(store, input, now = new Date().toISOString()) {
   return validateStore({
     ...store,
     nextId: store.nextId + 1,
-    tasks: [...store.tasks, task]
+    tasks: [...store.tasks, task],
   })
 }
 
@@ -11982,11 +12188,11 @@ export function editTask(store, id, patch) {
     minutes: task.minutes,
     tags: task.tags,
     done: task.done,
-    ...patch
+    ...patch,
   })
   return {
     ...store,
-    tasks: store.tasks.map((item) => (item.id === id ? { ...item, ...fields } : item))
+    tasks: store.tasks.map((item) => (item.id === id ? { ...item, ...fields } : item)),
   }
 }
 
@@ -12007,8 +12213,7 @@ export function selectTasks(store, { query = '', status = 'all', sort = 'id' } =
     return matched && (status === 'all' || task.done === (status === 'done'))
   })
   return selected.toSorted((a, b) => {
-    const result =
-      sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a[sort] - b[sort]
+    const result = sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a[sort] - b[sort]
     return result || a.id - b.id
   })
 }
@@ -12017,7 +12222,7 @@ export function summarize(tasks) {
   return {
     total: tasks.length,
     done: tasks.filter((task) => task.done).length,
-    minutes: tasks.reduce((sum, task) => sum + task.minutes, 0)
+    minutes: tasks.reduce((sum, task) => sum + task.minutes, 0),
   }
 }
 ```
@@ -12288,15 +12493,15 @@ textarea {
 
 下面完整`app.mjs`采用与刚才小页面相同的业务核心。API适配层暂时仍调用本地函数与localStorage，保持与未来HTTP版本相同的接口形状，不意味着本地存储变成异步磁盘。
 
-| 检查点 | 先阅读的函数或状态 | 页面操作与预期 |
-| :--- | :--- | :--- |
-| 空表与恢复 | 初始化、`validateStore`、`blocked` | 空表可添加；坏JSON停止保存并展示恢复区 |
-| 新增与校验 | submit监听、`normalizeFields` | 中文标题和0分钟可保存，空白和非法分钟失败 |
-| 完成、编辑、删除 | 列表事件委托、`editingId` | 编辑已完成项后仍完成；删除以ID定位 |
-| 搜索与统计 | `refresh`、`selectTasks`、`render` | 状态和关键词筛选后统计对应当前结果 |
-| 保存后提交 | `api`、`mutate` | 保存失败显示错误，旧内存仍可解释 |
-| 导出与导入 | `candidate`、`importSequence`、确认按钮 | 未确认不替换；坏文件保留原表 |
-| 跨运行恢复 | 初始化和固定来源 | 同一来源刷新、停服再开仍恢复 |
+| 检查点           | 先阅读的函数或状态                      | 页面操作与预期                            |
+| :--------------- | :-------------------------------------- | :---------------------------------------- |
+| 空表与恢复       | 初始化、`validateStore`、`blocked`      | 空表可添加；坏JSON停止保存并展示恢复区    |
+| 新增与校验       | submit监听、`normalizeFields`           | 中文标题和0分钟可保存，空白和非法分钟失败 |
+| 完成、编辑、删除 | 列表事件委托、`editingId`               | 编辑已完成项后仍完成；删除以ID定位        |
+| 搜索与统计       | `refresh`、`selectTasks`、`render`      | 状态和关键词筛选后统计对应当前结果        |
+| 保存后提交       | `api`、`mutate`                         | 保存失败显示错误，旧内存仍可解释          |
+| 导出与导入       | `candidate`、`importSequence`、确认按钮 | 未确认不替换；坏文件保留原表              |
+| 跨运行恢复       | 初始化和固定来源                        | 同一来源刷新、停服再开仍恢复              |
 
 可以每完成一行就操作页面，并在相应函数设置断点。完整文件必须保存齐才运行；此表不是让你把函数随意复制成不完整片段。每个状态变量只有明确责任：editingId标识正在编辑谁，candidate是尚未提交的导入快照，busy限制重复保存，latestRequest与importSequence拒绝过期的读取结果。
 
@@ -12323,7 +12528,7 @@ import {
   editTask,
   removeTask,
   selectTasks,
-  summarize
+  summarize,
 } from './task-core.mjs'
 
 const form = document.querySelector('#task-form')
@@ -12362,8 +12567,7 @@ try {
   try {
     document.querySelector('#raw-data').value = localStorage.getItem(STORAGE_KEY) ?? ''
   } catch {
-    document.querySelector('#raw-data').value =
-      '存储访问被浏览器策略阻止，请先恢复存储权限。'
+    document.querySelector('#raw-data').value = '存储访问被浏览器策略阻止，请先恢复存储权限。'
   }
 }
 
@@ -12375,7 +12579,7 @@ async function api(path, { body, method = 'GET' } = {}) {
     const tasks = selectTasks(state, {
       query: url.searchParams.get('q') ?? '',
       status: url.searchParams.get('status') ?? 'all',
-      sort: url.searchParams.get('sort') ?? 'id'
+      sort: url.searchParams.get('sort') ?? 'id',
     })
     return { tasks, summary: summarize(tasks) }
   }
@@ -12412,7 +12616,7 @@ document.querySelector('#reset-storage').addEventListener('click', async () => {
 function setBusy(value) {
   busy = value
   for (const control of document.querySelectorAll(
-    '[data-mutate], #task-form input, #cancel-edit'
+    '[data-mutate], #task-form input, #cancel-edit',
   )) {
     control.disabled = value
   }
@@ -12457,10 +12661,7 @@ function render(tasks, summary) {
     copy.append(heading, meta)
     const actions = document.createElement('div')
     actions.className = 'task-actions'
-    actions.append(
-      button('编辑', 'edit', task.id),
-      button('删除', 'delete', task.id, 'danger')
-    )
+    actions.append(button('编辑', 'edit', task.id), button('删除', 'delete', task.id, 'danger'))
     row.append(label, copy, actions)
     return row
   })
@@ -12477,17 +12678,16 @@ async function refresh() {
   const parameters = new URLSearchParams({
     q: query.value,
     status: status.value,
-    sort: sort.value
+    sort: sort.value,
   })
   history.replaceState(null, '', `?${parameters}`)
   try {
     const payload = await api(`/api/tasks?${parameters}`, {
-      signal: readingController.signal
+      signal: readingController.signal,
     })
     if (sequence === latestRequest) render(payload.tasks, payload.summary)
   } catch (error) {
-    if (error.name !== 'AbortError' && sequence === latestRequest)
-      say(error.message, true)
+    if (error.name !== 'AbortError' && sequence === latestRequest) say(error.message, true)
   }
 }
 
@@ -12528,7 +12728,7 @@ form.addEventListener('submit', (event) => {
         .split(/[,，]/u)
         .map((tag) => tag.trim())
         .filter(Boolean),
-      done: old?.done ?? false
+      done: old?.done ?? false,
     })
     const id = editingId
     void mutate(
@@ -12539,11 +12739,11 @@ form.addEventListener('submit', (event) => {
           body:
             id === null
               ? fields
-              : { title: fields.title, minutes: fields.minutes, tags: fields.tags }
+              : { title: fields.title, minutes: fields.minutes, tags: fields.tags },
         })
         clearEditor()
       },
-      id === null ? '已添加任务' : '已保存修改'
+      id === null ? '已添加任务' : '已保存修改',
     ).finally(() => title.focus())
   } catch (error) {
     say(error.message, true)
@@ -12577,9 +12777,9 @@ list.addEventListener('click', (event) => {
       () =>
         api(`/api/tasks/${id}`, {
           method: 'PATCH',
-          body: { done: !task.done }
+          body: { done: !task.done },
         }),
-      task.done ? '已恢复为待完成' : '已完成任务'
+      task.done ? '已恢复为待完成' : '已完成任务',
     )
   }
 })
@@ -12588,16 +12788,15 @@ document.querySelector('#filters').addEventListener('submit', (event) => {
   event.preventDefault()
   void refresh()
 })
-for (const select of [status, sort])
-  select.addEventListener('change', () => void refresh())
+for (const select of [status, sort]) select.addEventListener('change', () => void refresh())
 
 document.querySelector('#export').addEventListener('click', async () => {
   try {
     const state = await api('/api/store')
     const objectUrl = URL.createObjectURL(
       new Blob([JSON.stringify(state, null, 2)], {
-        type: 'application/json'
-      })
+        type: 'application/json',
+      }),
     )
     const link = document.createElement('a')
     link.href = objectUrl
@@ -12651,9 +12850,7 @@ query.value = initial.get('q') ?? ''
 status.value = ['all', 'open', 'done'].includes(initial.get('status'))
   ? initial.get('status')
   : 'all'
-sort.value = ['id', 'title', 'minutes'].includes(initial.get('sort'))
-  ? initial.get('sort')
-  : 'id'
+sort.value = ['id', 'title', 'minutes'].includes(initial.get('sort')) ? initial.get('sort') : 'id'
 await refresh()
 if (message.textContent === '正在读取任务……') say('任务已读取；可以开始添加')
 ```
@@ -12684,7 +12881,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -12708,15 +12905,11 @@ node demo.mjs
 
 ```javascript
 import assert from 'node:assert/strict'
-import {
-  emptyStore,
-  addTask,
-  validateStore
-} from '../../../projects/browser-tasks/task-core.mjs'
+import { emptyStore, addTask, validateStore } from '../../../projects/browser-tasks/task-core.mjs'
 const state = addTask(
   emptyStore(),
   { title: '检查恢复', minutes: 0, tags: [], done: false },
-  '2026-11-09T00:00:00.000Z'
+  '2026-11-09T00:00:00.000Z',
 )
 const restored = validateStore(JSON.parse(JSON.stringify(state)))
 assert.deepEqual(restored, state)
@@ -12728,7 +12921,7 @@ console.log('快照往返与失败保护检查通过')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -12743,14 +12936,14 @@ node demo.mjs
 
 先自行写一张检查记录，逐项记输入、预期和实际，不把“界面看起来正常”作为全部结论。
 
-| 任务 | 输入或操作 | 通过标准 |
-| :--- | :--- | :--- |
-| 正常保存 | 添加“复习模块”、0分钟 | 列表与统计正确，刷新恢复 |
-| 跨运行恢复 | Ctrl+C后用同命令重启3211端口 | 同一URL仍恢复，不重新初始化空表 |
-| 业务失败 | 输入空白标题、负数或小数 | 旧任务、nextId和存储快照不变 |
-| 导入失败 | 使用坏JSON或重复ID的测试文件 | 不提交替换，原任务仍在 |
-| 明确恢复 | 导出→删除一项→导入预览→确认 | 文件声明的快照整体恢复 |
-| 键盘操作 | 用Tab定位表单、按钮与导入确认 | 焦点可见，主要操作可达 |
+| 任务       | 输入或操作                    | 通过标准                        |
+| :--------- | :---------------------------- | :------------------------------ |
+| 正常保存   | 添加“复习模块”、0分钟         | 列表与统计正确，刷新恢复        |
+| 跨运行恢复 | Ctrl+C后用同命令重启3211端口  | 同一URL仍恢复，不重新初始化空表 |
+| 业务失败   | 输入空白标题、负数或小数      | 旧任务、nextId和存储快照不变    |
+| 导入失败   | 使用坏JSON或重复ID的测试文件  | 不提交替换，原任务仍在          |
+| 明确恢复   | 导出→删除一项→导入预览→确认   | 文件声明的快照整体恢复          |
+| 键盘操作   | 用Tab定位表单、按钮与导入确认 | 焦点可见，主要操作可达          |
 
 参考排错：若同来源重启仍为空，先比较协议、主机、端口和存储键，再检查是否处于隐私模式、存储被清理或被策略阻止。先保留已有原文；不要通过无条件写空表来“修复”。通过后再进入Node文件与HTTP综合项目。
 
@@ -12774,12 +12967,12 @@ node demo.mjs
 
 ### 40.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 启动 | `node tools/serve-examples.mjs --dir projects/browser-tasks --port 3211` | 从学习根目录运行，保持同一来源 |
-| 保存 | setItem后更新state | 失败保留旧内存 |
-| 坏数据 | blocked恢复区 | 不自动覆盖 |
-| 导入 | 整份校验+确认 | 整体替换会改变ID空间 |
+| 场景   | 做法与返回                                                               | 易错边界                       |
+| :----- | :----------------------------------------------------------------------- | :----------------------------- |
+| 启动   | `node tools/serve-examples.mjs --dir projects/browser-tasks --port 3211` | 从学习根目录运行，保持同一来源 |
+| 保存   | setItem后更新state                                                       | 失败保留旧内存                 |
+| 坏数据 | blocked恢复区                                                            | 不自动覆盖                     |
+| 导入   | 整份校验+确认                                                            | 整体替换会改变ID空间           |
 
 本章参考：[HTML标准：Web Storage](https://html.spec.whatwg.org/multipage/webstorage.html)、[DOM标准](https://dom.spec.whatwg.org/)、[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)。
 
@@ -12797,12 +12990,7 @@ node demo.mjs
 
 ```javascript
 function checkMinutes(value) {
-  if (
-    typeof value !== 'number' ||
-    !Number.isInteger(value) ||
-    value < 0 ||
-    value > 1440
-  ) {
+  if (typeof value !== 'number' || !Number.isInteger(value) || value < 0 || value > 1440) {
     throw new TypeError('需要0到1440的整数分钟')
   }
   return value
@@ -12819,7 +13007,7 @@ for (const value of [0, 25, '25', NaN, Infinity, -1]) {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -12853,7 +13041,7 @@ for (const key of Object.keys(input)) {
 console.log(JSON.stringify(safe), {}.admin)
 const routes = new Map([
   ['/app.mjs', 'public/app.mjs'],
-  ['/', 'public/index.html']
+  ['/', 'public/index.html'],
 ])
 console.log(routes.get('/../../secret') ?? '拒绝未知路径')
 ```
@@ -12861,7 +13049,7 @@ console.log(routes.get('/../../secret') ?? '拒绝未知路径')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -12894,7 +13082,7 @@ const old = load(
   '旧结果',
   new Promise((resolve) => {
     releaseOld = resolve
-  })
+  }),
 )
 const fresh = load('新结果', Promise.resolve())
 await fresh
@@ -12906,7 +13094,7 @@ console.log(output.join(','))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -12939,7 +13127,7 @@ console.log(lookup.has(999), lookup.has(-1))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -12968,18 +13156,18 @@ console.log(
       platform: process.platform,
       arch: process.arch,
       hasFromAsync: typeof Array.fromAsync === 'function',
-      hasSumPrecise: typeof Math.sumPrecise === 'function'
+      hasSumPrecise: typeof Math.sumPrecise === 'function',
     },
     null,
-    2
-  )
+    2,
+  ),
 )
 ```
 
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13017,20 +13205,18 @@ node demo.mjs
 
 ### 41.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 校验 | 格式+类型+范围+业务 | 放在信任边界 |
-| 请求竞争 | 取消+序号 | 不撤销已提交写入 |
-| 持久化竞争 | 仓储队列 | 单实例保证 |
-| 性能 | 先测再改 | 记录环境与负载 |
+| 场景       | 做法与返回          | 易错边界         |
+| :--------- | :------------------ | :--------------- |
+| 校验       | 格式+类型+范围+业务 | 放在信任边界     |
+| 请求竞争   | 取消+序号           | 不撤销已提交写入 |
+| 持久化竞争 | 仓储队列            | 单实例保证       |
+| 性能       | 先测再改            | 记录环境与负载   |
 
 本章参考：[Node.js官方文档](https://nodejs.org/en/learn/getting-started/security-best-practices)、[OWASP：DOM based XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html)、[OWASP：Prototype Pollution Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.html)、[Node.js v26.13.0：perf_hooks](https://nodejs.org/docs/v26.13.0/api/perf_hooks.html)。
 
 ## 第42章 ES5至ES2023：现代JavaScript怎样形成
 
 版本章用于建立地图，不要求重新背一套语法。前面已经在稳定主线中使用许多现代特性，这里解释它们首次进入哪个年度标准，旧写法如何表达相同需求，以及哪些改写会改变行为。所有对照均在当前环境演示，不冒称已在历史引擎运行。
-
-**本章导航：** [42.1 年度标准、引擎和宿主版本](#421-年度标准引擎和宿主版本) · [42.2 ES5和ES2015的基础变化](#422-es5和es2015的基础变化) · [42.3 ES2016至ES2019](#423-es2016至es2019) · [42.4 ES2020至ES2022](#424-es2020至es2022) · [42.5 ES2023与兼容迁移](#425-es2023与兼容迁移) · [42.6 动手练习与参考答案](#426-动手练习与参考答案) · [42.7 本章速查](#427-本章速查)
 
 ### 42.1 年度标准、引擎和宿主版本
 
@@ -13044,7 +13230,7 @@ ES5在2009年发布，ES5.1在2011年修订；ES6即ES2015，此后按年度命�
 const years = new Map([
   [5, 2009],
   [5.1, 2011],
-  [6, 2015]
+  [6, 2015],
 ])
 console.log('ES6对应', years.get(6))
 console.log('当前Node', process.version)
@@ -13055,7 +13241,7 @@ console.log('是否有精确求和', typeof Math.sumPrecise === 'function')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13073,21 +13259,21 @@ ES6对应 2015
 
 下表记录首次进入年度标准的时间，实际引擎可能在更早版本试验实现。详细旧新写法与行为变化在42.2—42.5和第43章给出；表格用于定位，不代替示例讲解。年度说明依据[ECMAScript固定版规范的历次修订介绍](https://262.ecma-international.org/17.0/#sec-intro)和[TC39完成提案清单](https://github.com/tc39/proposals/blob/main/finished-proposals.md)。
 
-| 首次正式年度 | 重点变化 | 本册主要位置 | 迁移时先检查 |
-| :--- | :--- | :--- | :--- |
-| ES5，2009 | 严格模式、JSON、对象描述符与数组高阶方法 | 第14、17、20章与42.2 | 严格模式约束和属性标志 |
-| ES2015 | let/const、箭头、class、模块、Promise、Map/Set | 第4、10、15—18、24、27章 | 块级绑定、this与宿主模块实现 |
-| ES2016 | 指数运算、`Array.includes` | 第6、11章与42.3 | includes的相等规则 |
-| ES2017 | async/await、`Object.values`/entries、字符串填充 | 第7、12、28章 | await不等于新建线程 |
-| ES2018 | 对象rest/spread、异步迭代、`Promise.finally`和正则增强 | 第13、22、23、27—28章 | 浅复制、清理和异步消费 |
-| ES2019 | flat/flatMap、`Object.fromEntries`、可选catch绑定、稳定排序要求 | 第12、14、19章 | 默认排序规则仍非数值排序 |
-| ES2020 | BigInt、可选链、??、allSettled、动态import、globalThis | 第5、6、24、27章 | 缺失边界、数值类型与异步返回 |
-| ES2021 | 逻辑赋值、replaceAll、数值分隔符、`Promise.any`、弱引用相关API | 第5—7、18、27章 | 副作用次数、AggregateError和回收不确定性 |
-| ES2022 | class字段/私有成员/静态块、at、`Object.hasOwn`、Error.cause、顶层await | 第11、12、17、19、24章 | 声明位置、身份与宿主加载条件 |
-| ES2023 | findLast/findLastIndex、数组非修改方法等 | 第11、14章与42.5 | 新外层不代表深复制 |
-| ES2024 | 分组、withResolvers、可调整/转移缓冲区、正则v及规范化文本工具 | 43.1 | 缓冲区分离和分组返回类型 |
-| ES2025 | 迭代器辅助方法、Set运算、JSON模块/导入属性、RegExp.escape、`Promise.try`、Float16 | 43.2 | 新语法解析、宿主支持与半精度边界 |
-| ES2026 | Map获取或插入、Error.isError、sumPrecise、fromAsync、`Iterator.concat`、字节编码和JSON来源文本 | 43.3—43.4 | 年度收录与当前实现支持分别核对 |
+| 首次正式年度 | 重点变化                                                                                       | 本册主要位置             | 迁移时先检查                             |
+| :----------- | :--------------------------------------------------------------------------------------------- | :----------------------- | :--------------------------------------- |
+| ES5，2009    | 严格模式、JSON、对象描述符与数组高阶方法                                                       | 第14、17、20章与42.2     | 严格模式约束和属性标志                   |
+| ES2015       | let/const、箭头、class、模块、Promise、Map/Set                                                 | 第4、10、15—18、24、27章 | 块级绑定、this与宿主模块实现             |
+| ES2016       | 指数运算、`Array.includes`                                                                     | 第6、11章与42.3          | includes的相等规则                       |
+| ES2017       | async/await、`Object.values`/entries、字符串填充                                               | 第7、12、28章            | await不等于新建线程                      |
+| ES2018       | 对象rest/spread、异步迭代、`Promise.finally`和正则增强                                         | 第13、22、23、27—28章    | 浅复制、清理和异步消费                   |
+| ES2019       | flat/flatMap、`Object.fromEntries`、可选catch绑定、稳定排序要求                                | 第12、14、19章           | 默认排序规则仍非数值排序                 |
+| ES2020       | BigInt、可选链、??、allSettled、动态import、globalThis                                         | 第5、6、24、27章         | 缺失边界、数值类型与异步返回             |
+| ES2021       | 逻辑赋值、replaceAll、数值分隔符、`Promise.any`、弱引用相关API                                 | 第5—7、18、27章          | 副作用次数、AggregateError和回收不确定性 |
+| ES2022       | class字段/私有成员/静态块、at、`Object.hasOwn`、Error.cause、顶层await                         | 第11、12、17、19、24章   | 声明位置、身份与宿主加载条件             |
+| ES2023       | findLast/findLastIndex、数组非修改方法等                                                       | 第11、14章与42.5         | 新外层不代表深复制                       |
+| ES2024       | 分组、withResolvers、可调整/转移缓冲区、正则v及规范化文本工具                                  | 43.1                     | 缓冲区分离和分组返回类型                 |
+| ES2025       | 迭代器辅助方法、Set运算、JSON模块/导入属性、RegExp.escape、`Promise.try`、Float16              | 43.2                     | 新语法解析、宿主支持与半精度边界         |
+| ES2026       | Map获取或插入、Error.isError、sumPrecise、fromAsync、`Iterator.concat`、字节编码和JSON来源文本 | 43.3—43.4                | 年度收录与当前实现支持分别核对           |
 
 Node特有文件、HTTP和测试API的历史应查对应Node文档的History与Stability，不使用ECMAScript年度替它们编号。浏览器DOM、Fetch和Web Storage也各有宿主标准。旧写法可继续有效，不因为出现新API就自动“已废弃”；真正弃用与移除要有对应宿主的版本说明。
 
@@ -13126,7 +13312,7 @@ console.log(new Map([['a', 1]]).get('a'), typeof Symbol('id'))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13162,7 +13348,7 @@ console.log(await Promise.resolve(value))
 在本例目录执行：
 
 ```powershell
-node main.mjs 
+node main.mjs
 ```
 
 预期输出：
@@ -13190,14 +13376,14 @@ console.log(
     .filter(function (n) {
       return n > 1
     })
-    .join(',')
+    .join(','),
 )
 ```
 
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13214,11 +13400,11 @@ TypeError
 
 以下表记录常用正式新增，旧写法与新写法围绕同一输入观察。标准库方法更新与宿主新增API要分开。
 
-| 年度 | 代表变化 |
-| :--- | :--- |
-| ES2016 | 幂运算、`Array.includes` |
-| ES2017 | async/await、`Object.values`/entries、描述符集合、字符串补齐 |
-| ES2018 | 对象rest/spread、异步迭代、`Promise.finally`、正则增强 |
+| 年度   | 代表变化                                                                  |
+| :----- | :------------------------------------------------------------------------ |
+| ES2016 | 幂运算、`Array.includes`                                                  |
+| ES2017 | async/await、`Object.values`/entries、描述符集合、字符串补齐              |
+| ES2018 | 对象rest/spread、异步迭代、`Promise.finally`、正则增强                    |
 | ES2019 | flat/flatMap、fromEntries、trimStart/trimEnd、可省catch绑定、稳定排序要求 |
 
 示例 **C42E05**，目录 `js-study/examples/ch42/C42E05/`，环境：Node.js。
@@ -13229,10 +13415,7 @@ TypeError
 console.log(Math.pow(2, 3), 2 ** 3)
 console.log([1, 2].indexOf(2) !== -1, [1, 2].includes(2))
 console.log('7'.padStart(3, '0'), '7'.padEnd(3, '0'))
-console.log(
-  JSON.stringify(Object.values({ a: 1 })),
-  JSON.stringify(Object.entries({ a: 1 }))
-)
+console.log(JSON.stringify(Object.values({ a: 1 })), JSON.stringify(Object.entries({ a: 1 })))
 console.log(Object.getOwnPropertyDescriptors({ a: 1 }).a.enumerable)
 async function get() {
   return await Promise.resolve(4)
@@ -13243,7 +13426,7 @@ console.log(await get())
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13273,10 +13456,7 @@ for await (const value of values()) console.log(value)
 await Promise.resolve().finally(() => console.log('finally'))
 const matched = /(?<word>JS)./s.exec('JS\n')
 console.log(matched.groups.word, /\p{Letter}/u.test('中'), /(?<=A)B/.test('AB'))
-console.log(
-  JSON.stringify([[1], [2]].flat()),
-  JSON.stringify(['a b'].flatMap((s) => s.split(' ')))
-)
+console.log(JSON.stringify([[1], [2]].flat()), JSON.stringify(['a b'].flatMap((s) => s.split(' '))))
 console.log(JSON.stringify(Object.fromEntries([['a', 1]])))
 console.log(' x '.trimStart().length, ' x '.trimEnd().length)
 try {
@@ -13289,7 +13469,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13338,7 +13518,7 @@ console.log(weak.deref() === held, typeof FinalizationRegistry)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13389,7 +13569,7 @@ console.log(await Promise.resolve('顶层await'))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13416,7 +13596,7 @@ ES2023提供findLast/findLastIndex和非修改数组操作等改进，并允许�
 const values = [1, 3, 2, 3]
 console.log(
   values.findLast((n) => n > 2),
-  values.findLastIndex((n) => n > 2)
+  values.findLastIndex((n) => n > 2),
 )
 console.log(JSON.stringify(values.toSorted((a, b) => a - b)))
 console.log(JSON.stringify(values.toReversed()))
@@ -13431,7 +13611,7 @@ console.log(map.get(symbol))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13468,20 +13648,18 @@ node demo.mjs
 
 ### 42.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 版本名 | ES6=ES2015 | Node版本另记 |
-| 首次纳入 | 按固定年度规范 | 不以当前可用反推 |
-| 语法迁移 | 检查this/作用域等 | 不做纯文本替换 |
-| 兼容测试 | 真实目标引擎 | 新引擎跑旧写法不足以证明 |
+| 场景     | 做法与返回        | 易错边界                 |
+| :------- | :---------------- | :----------------------- |
+| 版本名   | ES6=ES2015        | Node版本另记             |
+| 首次纳入 | 按固定年度规范    | 不以当前可用反推         |
+| 语法迁移 | 检查this/作用域等 | 不做纯文本替换           |
+| 兼容测试 | 真实目标引擎      | 新引擎跑旧写法不足以证明 |
 
 本章参考：[ECMAScript 2026语言规范：对应条款](https://262.ecma-international.org/17.0/#sec-intro)、[Ecma标准：ECMA-262](https://ecma-international.org/publications-and-standards/standards/ecma-262/)、[Node.js v26.13.0：esm](https://nodejs.org/docs/v26.13.0/api/esm.html)。
 
 ## 第43章 ES2024至ES2026、提案状态与升级
 
 本章是全书版本基线的核对中心。正式标准、已完成待收录提案、实现支持和API稳定级别各有含义。标准新增API即使在较旧引擎早已实现，也仍按首次年度记录；较新运行时也可能缺少某项正式API。
-
-**本章导航：** [43.1 ES2024的分组、Promise和二进制增强](#431-es2024的分组promise和二进制增强) · [43.2 ES2025的迭代器、集合与文本增强](#432-es2025的迭代器集合与文本增强) · [43.3 ES2026的获取或插入、错误和求和](#433-es2026的获取或插入错误和求和) · [43.4 ES2026的数据交换和迭代增强](#434-es2026的数据交换和迭代增强) · [43.5 状态矩阵、兼容方案和升级步骤](#435-状态矩阵兼容方案和升级步骤) · [43.6 动手练习与参考答案](#436-动手练习与参考答案) · [43.7 本章速查](#437-本章速查)
 
 ### 43.1 ES2024的分组、Promise和二进制增强
 
@@ -13511,7 +13689,7 @@ console.log(typeof Atomics.waitAsync)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13543,7 +13721,7 @@ console.log(
     .filter((n) => n > 1)
     .map((n) => n * 2)
     .toArray()
-    .join(',')
+    .join(','),
 )
 const a = new Set([1, 2])
 const b = new Set([2, 3])
@@ -13552,7 +13730,7 @@ console.log([...a.difference(b)].join(','), [...a.symmetricDifference(b)].join('
 console.log(
   a.isSubsetOf(new Set([1, 2, 3])),
   a.isSupersetOf(new Set([1])),
-  a.isDisjointFrom(new Set([9]))
+  a.isDisjointFrom(new Set([9])),
 )
 console.log(new RegExp(RegExp.escape('a.b')).test('a.b'))
 console.log(/(?i:a)b/.test('Ab'))
@@ -13567,7 +13745,7 @@ console.log(view.getFloat16(0))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13603,7 +13781,7 @@ console.log(data.title)
 在本例目录执行：
 
 ```powershell
-node main.mjs 
+node main.mjs
 ```
 
 预期输出：
@@ -13643,7 +13821,7 @@ else console.log('本环境尚无Math.sumPrecise；不以普通reduce冒充相�
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13676,7 +13854,7 @@ console.log(JSON.stringify(await Array.fromAsync(values(), (n) => n * 2)))
 console.log(
   Iterator.concat([1, 2], new Set([3]))
     .toArray()
-    .join(',')
+    .join(','),
 )
 const bytes = new Uint8Array([72, 105])
 console.log(bytes.toBase64(), bytes.toHex())
@@ -13685,7 +13863,7 @@ const target = new Uint8Array(2)
 console.log(target.setFromBase64('SGk=').written, target.setFromHex('4869').written)
 const text = JSON.stringify({ n: JSON.rawJSON('9007199254740993') })
 const restored = JSON.parse(text, (key, value, context) =>
-  key === 'n' ? BigInt(context.source) : value
+  key === 'n' ? BigInt(context.source) : value,
 )
 console.log(String(restored.n), JSON.isRawJSON(JSON.rawJSON('1')))
 ```
@@ -13693,7 +13871,7 @@ console.log(String(restored.n), JSON.isRawJSON(JSON.rawJSON('1')))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13723,12 +13901,12 @@ const report = {
   languageMethods: {
     sumPrecise: typeof Math.sumPrecise === 'function',
     fromAsync: typeof Array.fromAsync === 'function',
-    getOrInsert: typeof Map.prototype.getOrInsert === 'function'
+    getOrInsert: typeof Map.prototype.getOrInsert === 'function',
   },
   laterYearFeatures: {
     temporal: typeof Temporal !== 'undefined',
-    disposableStack: typeof DisposableStack !== 'undefined'
-  }
+    disposableStack: typeof DisposableStack !== 'undefined',
+  },
 }
 console.log(JSON.stringify(report, null, 2))
 ```
@@ -13736,7 +13914,7 @@ console.log(JSON.stringify(report, null, 2))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13762,16 +13940,16 @@ polyfill能在一定前提下补充库方法，不能让旧解析器直接读懂
 
 本书固定Node.js 26.13.0环境；下表的支持只表示该基线，不表示这些API首次在Node 26出现。浏览器的品牌和版本各自变化，运行下一例记录当前能力，再决定兼容方案。
 
-| 特性 | 首次正式年度／状态 | Node 26.13.0 | 使用条件与旧写法差异 |
-| :--- | :--- | :--- | :--- |
-| Set集合运算、Iterator辅助方法 | ES2025正式 | 可用，无额外参数 | 旧环境可遍历实现；迭代器辅助方法具有惰性与一次消费语义 |
-| JSON模块与导入属性 | ES2025正式 | 可用，无额外参数 | `.mjs`中使用`with { type: 'json' }`；宿主加载规则另查 |
-| Map.getOrInsert/Computed | ES2026正式 | 可用，无额外参数 | 旧写法用has区分已存undefined，注意默认表达式何时求值 |
-| Error.isError | ES2026正式 | 可用，无额外参数 | instanceof对跨realm敏感；不能用名字字符串充当错误品牌 |
-| `Math.sumPrecise` | ES2026正式 | 缺失，示例给检测分支 | 普通reduce不具有相同精度保证；不静默冒充替代 |
-| `Array.fromAsync`、`Iterator.concat` | ES2026正式 | 可用，无额外参数 | 等待收集与惰性连接的消费方式不同 |
-| Uint8Array编码、JSON来源文本 | ES2026正式 | 可用，无额外参数 | 字节编码不是文本字符编码，大整数应保留来源文本或明确文本协议 |
-| Temporal、显式资源管理 | Stage4，预期纳入2027；本书选修 | 基线已提供相应能力，语法独立文件运行 | 实现先于年度收录不改变年度归属；旧解析器不能靠if跳过using解析 |
+| 特性                                 | 首次正式年度／状态             | Node 26.13.0                         | 使用条件与旧写法差异                                          |
+| :----------------------------------- | :----------------------------- | :----------------------------------- | :------------------------------------------------------------ |
+| Set集合运算、Iterator辅助方法        | ES2025正式                     | 可用，无额外参数                     | 旧环境可遍历实现；迭代器辅助方法具有惰性与一次消费语义        |
+| JSON模块与导入属性                   | ES2025正式                     | 可用，无额外参数                     | `.mjs`中使用`with { type: 'json' }`；宿主加载规则另查         |
+| Map.getOrInsert/Computed             | ES2026正式                     | 可用，无额外参数                     | 旧写法用has区分已存undefined，注意默认表达式何时求值          |
+| Error.isError                        | ES2026正式                     | 可用，无额外参数                     | instanceof对跨realm敏感；不能用名字字符串充当错误品牌         |
+| `Math.sumPrecise`                    | ES2026正式                     | 缺失，示例给检测分支                 | 普通reduce不具有相同精度保证；不静默冒充替代                  |
+| `Array.fromAsync`、`Iterator.concat` | ES2026正式                     | 可用，无额外参数                     | 等待收集与惰性连接的消费方式不同                              |
+| Uint8Array编码、JSON来源文本         | ES2026正式                     | 可用，无额外参数                     | 字节编码不是文本字符编码，大整数应保留来源文本或明确文本协议  |
+| Temporal、显式资源管理               | Stage4，预期纳入2027；本书选修 | 基线已提供相应能力，语法独立文件运行 | 实现先于年度收录不改变年度归属；旧解析器不能靠if跳过using解析 |
 
 TC39的Stage4表示提案流程完成，年度标准是另一个时间点；Node的Experimental等稳定级别由Node文档定义。Java术语“预览／孵化”不能直接当作JavaScript所有特性的通用分类。若某宿主要求实验参数，必须为该具体实现写出参数和版本，本表不把未知条件猜成默认可用。
 
@@ -13792,7 +13970,7 @@ const report = {
   fromAsync: typeof Array.fromAsync === 'function',
   concat: typeof globalThis.Iterator?.concat === 'function',
   bytesFromHex: typeof Uint8Array.fromHex === 'function',
-  jsonSourceText: sourceText
+  jsonSourceText: sourceText,
 }
 const text = JSON.stringify(report, null, 2)
 if (typeof document === 'undefined') console.log(text)
@@ -13806,12 +13984,15 @@ Node中运行`node report.mjs`。在本书固定基线中，sumPrecise为false�
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><title>检查浏览器语言能力</title></head>
-<body>
-  <h1>当前浏览器的能力</h1>
-  <pre id="report">等待模块</pre>
-  <script type="module" src="./report.mjs"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>检查浏览器语言能力</title>
+  </head>
+  <body>
+    <h1>当前浏览器的能力</h1>
+    <pre id="report">等待模块</pre>
+    <script type="module" src="./report.mjs"></script>
+  </body>
 </html>
 ```
 
@@ -13837,12 +14018,12 @@ Node中运行`node report.mjs`。在本书固定基线中，sumPrecise为false�
 
 ### 43.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 年度标准 | 固定版ECMA-262 | 不使用滚动草案偷换年度 |
-| 完成提案 | Stage4 | 年度归属另核对 |
-| 实现检测 | typeof API | 语法支持还需解析测试 |
-| 兼容方案 | 转译/补库/改设计 | 不保证自动补全语义 |
+| 场景     | 做法与返回       | 易错边界               |
+| :------- | :--------------- | :--------------------- |
+| 年度标准 | 固定版ECMA-262   | 不使用滚动草案偷换年度 |
+| 完成提案 | Stage4           | 年度归属另核对         |
+| 实现检测 | typeof API       | 语法支持还需解析测试   |
+| 兼容方案 | 转译/补库/改设计 | 不保证自动补全语义     |
 
 本章参考：[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)、[TC39提案流程](https://tc39.es/process-document/)、[TC39完成提案清单](https://github.com/tc39/proposals/blob/main/finished-proposals.md)、[Node.js发布计划](https://github.com/nodejs/Release)、[Node.js v26.13.0：deprecations](https://nodejs.org/docs/v26.13.0/api/deprecations.html)。
 
@@ -13864,7 +14045,7 @@ const proxy = new Proxy(target, {
   set(object, key, value, receiver) {
     if (key === 'title' && typeof value !== 'string') throw new TypeError('需要文本')
     return Reflect.set(object, key, value, receiver)
-  }
+  },
 })
 proxy.title = '练习'
 console.log(target.title, proxy === target)
@@ -13877,7 +14058,7 @@ const frozen = Object.freeze({ n: 1 })
 const wrong = new Proxy(frozen, {
   get() {
     return 2
-  }
+  },
 })
 try {
   console.log(wrong.n)
@@ -13889,7 +14070,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -13935,7 +14116,7 @@ console.log(result)
 在本例目录执行：
 
 ```powershell
-node main.mjs 
+node main.mjs
 ```
 
 预期输出：
@@ -13979,7 +14160,7 @@ document.querySelector('#run').addEventListener('click', () => {
       document.querySelector('#out').textContent = event.data
       worker.terminate()
     },
-    { once: true }
+    { once: true },
   )
   worker.addEventListener(
     'error',
@@ -13987,7 +14168,7 @@ document.querySelector('#run').addEventListener('click', () => {
       document.querySelector('#out').textContent = '计算失败'
       worker.terminate()
     },
-    { once: true }
+    { once: true },
   )
   worker.postMessage(10)
 })
@@ -14019,7 +14200,7 @@ console.log(Atomics.add(shared, 0, 2), Atomics.load(shared, 0))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -14055,7 +14236,7 @@ if (typeof Temporal === 'undefined') {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -14082,7 +14263,7 @@ using在离开作用域时调用`Symbol.dispose`；await using等待`Symbol.asyn
   using resource = {
     [Symbol.dispose]() {
       console.log('释放同步资源')
-    }
+    },
   }
   console.log('使用中')
 }
@@ -14091,7 +14272,7 @@ using在离开作用域时调用`Symbol.dispose`；await using等待`Symbol.asyn
     async [Symbol.asyncDispose]() {
       await Promise.resolve()
       console.log('释放异步资源')
-    }
+    },
   }
   console.log('异步资源使用中')
 }
@@ -14105,7 +14286,7 @@ using在离开作用域时调用`Symbol.dispose`；await using等待`Symbol.asyn
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -14127,7 +14308,7 @@ node demo.mjs
 const resource = {
   close() {
     console.log('传统清理')
-  }
+  },
 }
 try {
   console.log('传统使用')
@@ -14139,7 +14320,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -14171,12 +14352,12 @@ node demo.mjs
 
 ### 44.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 拦截 | Proxy+Reflect | 保留目标不变量 |
-| 独立计算 | Worker | 有启动和通信成本 |
-| 共享内存 | SharedArrayBuffer+Atomics | 浏览器有隔离条件 |
-| 确定释放 | using/await using | 与GC和年度归属分开 |
+| 场景     | 做法与返回                | 易错边界           |
+| :------- | :------------------------ | :----------------- |
+| 拦截     | Proxy+Reflect             | 保留目标不变量     |
+| 独立计算 | Worker                    | 有启动和通信成本   |
+| 共享内存 | SharedArrayBuffer+Atomics | 浏览器有隔离条件   |
+| 确定释放 | using/await using         | 与GC和年度归属分开 |
 
 本章参考：[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)、[Node.js v26.13.0：worker_threads](https://nodejs.org/docs/v26.13.0/api/worker_threads.html)、[HTML标准：Worker](https://html.spec.whatwg.org/multipage/workers.html)、[Temporal提案文档](https://tc39.es/proposal-temporal/docs/)、[显式资源管理提案](https://github.com/tc39/proposal-explicit-resource-management)、[TC39完成提案清单](https://github.com/tc39/proposals/blob/main/finished-proposals.md)。
 
@@ -14185,8 +14366,6 @@ node demo.mjs
 本项目把完整学习路线接起来：浏览器负责交互，Node负责HTTP与文件，纯业务模块负责共同规则。
 它是本机单用户工具，不提供账号、数据库和公网部署。先在临时数据目录练习，再保存自己的任务。
 本章按职责给出全部必要源文件，请在`js-study/projects/task-manager/`按同样结构保存文件；项目无第三方运行依赖。
-
-**本章导航：** [45.1 需求、架构和运行方式](#451-需求架构和运行方式) · [45.2 数据与接口契约](#452-数据与接口契约) · [45.3 文件仓储、HTTP与服务生命周期](#453-文件仓储http与服务生命周期) · [45.4 浏览器界面、请求和状态](#454-浏览器界面请求和状态) · [45.5 测试、故障演练和验收](#455-测试故障演练和验收) · [45.6 动手练习与参考答案](#456-动手练习与参考答案) · [45.7 本章速查](#457-本章速查)
 
 ### 45.1 需求、架构和运行方式
 
@@ -14275,14 +14454,14 @@ PORT=3211 TASK_FILE="$PWD/data/tasks.json" node server/main.mjs
 每项最多20个标签，每个标签1—30个UTF-16码元；快照最多1000项。
 创建时间使用规范UTC ISO字符串。未知字段、重复ID、非法nextId和未知格式版本拒绝。
 
-| 请求 | 成功结果 | 失败边界 |
-| :--- | :--- | :--- |
-| GET /api/tasks | tasks和当前筛选summary | 非法状态或排序400 |
-| POST /api/tasks | 新任务，201 | 非法字段400 |
-| PATCH /api/tasks/ID | 更新后任务，200 | 不存在404 |
-| DELETE /api/tasks/ID | 无内容204 | 不存在404 |
-| GET /api/store | 完整快照200 | 读取失败500 |
-| PUT /api/store | 导入项数200 | 整份校验失败400 |
+| 请求                 | 成功结果               | 失败边界          |
+| :------------------- | :--------------------- | :---------------- |
+| GET /api/tasks       | tasks和当前筛选summary | 非法状态或排序400 |
+| POST /api/tasks      | 新任务，201            | 非法字段400       |
+| PATCH /api/tasks/ID  | 更新后任务，200        | 不存在404         |
+| DELETE /api/tasks/ID | 无内容204              | 不存在404         |
+| GET /api/store       | 完整快照200            | 读取失败500       |
+| PUT /api/store       | 导入项数200            | 整份校验失败400   |
 
 客户端和服务端共享规则，但各自入口仍要执行校验。不能因为前端导入过同一个模块就信任网络请求。
 
@@ -14303,13 +14482,10 @@ function assert(condition, message) {
 }
 
 function exactKeys(value, keys, label) {
-  assert(
-    value !== null && typeof value === 'object' && !Array.isArray(value),
-    `${label}必须是对象`
-  )
+  assert(value !== null && typeof value === 'object' && !Array.isArray(value), `${label}必须是对象`)
   assert(
     Object.keys(value).every((key) => keys.includes(key)),
-    `${label}含未知字段`
+    `${label}含未知字段`,
   )
 }
 
@@ -14320,7 +14496,7 @@ export function normalizeFields(value) {
   assert(title.length >= 1 && title.length <= 200, '标题需要1至200个UTF-16码元')
   assert(
     Number.isInteger(value.minutes) && value.minutes >= 0 && value.minutes <= 1440,
-    '分钟数必须是0至1440的整数'
+    '分钟数必须是0至1440的整数',
   )
   assert(typeof value.done === 'boolean', '完成状态必须是布尔值')
   assert(Array.isArray(value.tags) && value.tags.length <= 20, '标签必须是最多20项的数组')
@@ -14353,13 +14529,13 @@ export function validateStore(value) {
     const date = new Date(task.createdAt)
     assert(
       Number.isFinite(date.getTime()) && date.toISOString() === task.createdAt,
-      'createdAt必须是规范的UTC ISO时间字符串'
+      'createdAt必须是规范的UTC ISO时间字符串',
     )
     const fields = normalizeFields({
       title: task.title,
       minutes: task.minutes,
       tags: task.tags,
-      done: task.done
+      done: task.done,
     })
     return { id: task.id, ...fields, createdAt: task.createdAt }
   })
@@ -14375,7 +14551,7 @@ export function addTask(store, input, now = new Date().toISOString()) {
   return validateStore({
     ...store,
     nextId: store.nextId + 1,
-    tasks: [...store.tasks, task]
+    tasks: [...store.tasks, task],
   })
 }
 
@@ -14388,11 +14564,11 @@ export function editTask(store, id, patch) {
     minutes: task.minutes,
     tags: task.tags,
     done: task.done,
-    ...patch
+    ...patch,
   })
   return {
     ...store,
-    tasks: store.tasks.map((item) => (item.id === id ? { ...item, ...fields } : item))
+    tasks: store.tasks.map((item) => (item.id === id ? { ...item, ...fields } : item)),
   }
 }
 
@@ -14413,8 +14589,7 @@ export function selectTasks(store, { query = '', status = 'all', sort = 'id' } =
     return matched && (status === 'all' || task.done === (status === 'done'))
   })
   return selected.toSorted((a, b) => {
-    const result =
-      sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a[sort] - b[sort]
+    const result = sort === 'title' ? a.title.localeCompare(b.title, 'zh-CN') : a[sort] - b[sort]
     return result || a.id - b.id
   })
 }
@@ -14423,7 +14598,7 @@ export function summarize(tasks) {
   return {
     total: tasks.length,
     done: tasks.filter((task) => task.done).length,
-    minutes: tasks.reduce((sum, task) => sum + task.minutes, 0)
+    minutes: tasks.reduce((sum, task) => sum + task.minutes, 0),
   }
 }
 ```
@@ -14444,14 +14619,12 @@ try {
     console.log(help)
   } else {
     // CLI与HTTP服务不要同时打开同一数据文件；本例只保证单进程串行写入。
-    const repository = await openRepository(
-      resolve(process.env.TASK_FILE ?? 'data/tasks.json')
-    )
+    const repository = await openRepository(resolve(process.env.TASK_FILE ?? 'data/tasks.json'))
     if (command === 'list' && args.length === 0) {
       const tasks = selectTasks(await repository.read())
       for (const task of tasks)
         console.log(
-          `${task.id}\t${task.done ? '已完成' : '待完成'}\t${task.minutes}\t${task.title}`
+          `${task.id}\t${task.done ? '已完成' : '待完成'}\t${task.minutes}\t${task.title}`,
         )
       if (tasks.length === 0) console.log('暂无任务')
     } else if (command === 'add' && args.length === 2 && args[1].trim() !== '') {
@@ -14460,8 +14633,8 @@ try {
           title: args[0],
           minutes: Number(args[1]),
           tags: [],
-          done: false
-        })
+          done: false,
+        }),
       )
       console.log(`已添加任务：${state.tasks.at(-1).id}`)
     } else if (
@@ -14472,7 +14645,7 @@ try {
       const id = Number(args[0])
       if (!Number.isSafeInteger(id)) throw new Error('ID超出安全整数范围')
       await repository.transact((old) =>
-        command === 'done' ? editTask(old, id, { done: true }) : removeTask(old, id)
+        command === 'done' ? editTask(old, id, { done: true }) : removeTask(old, id),
       )
       console.log(command === 'done' ? '已完成任务' : '已删除任务')
     } else {
@@ -14540,7 +14713,7 @@ export async function openRepository(file, { write = writeSnapshot } = {}) {
     if (error.code === 'ENOENT') state = emptyStore()
     else
       throw new Error('任务文件无法读取或内容无效；请保留原文件并修复后重试', {
-        cause: error
+        cause: error,
       })
   }
   let tail = Promise.resolve()
@@ -14560,7 +14733,7 @@ export async function openRepository(file, { write = writeSnapshot } = {}) {
       // 一次保存失败不使以后所有操作永久失败；失败仍交给本次调用者处理。
       tail = operation.catch(() => {})
       return operation
-    }
+    },
   }
 }
 ```
@@ -14579,14 +14752,14 @@ import {
   removeTask,
   selectTasks,
   summarize,
-  validateStore
+  validateStore,
 } from '../shared/task-core.mjs'
 
 const staticFiles = new Map([
   ['/', ['../public/index.html', 'text/html; charset=utf-8']],
   ['/app.mjs', ['../public/app.mjs', 'text/javascript; charset=utf-8']],
   ['/styles.css', ['../public/styles.css', 'text/css; charset=utf-8']],
-  ['/shared/task-core.mjs', ['../shared/task-core.mjs', 'text/javascript; charset=utf-8']]
+  ['/shared/task-core.mjs', ['../shared/task-core.mjs', 'text/javascript; charset=utf-8']],
 ])
 
 function methodNotAllowed(response, methods) {
@@ -14597,7 +14770,7 @@ function methodNotAllowed(response, methods) {
 function json(response, status, value) {
   response.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
-    'Cache-Control': 'no-store'
+    'Cache-Control': 'no-store',
   })
   response.end(JSON.stringify(value))
 }
@@ -14644,7 +14817,7 @@ export function createTaskServer(repository) {
     response.setHeader('X-Content-Type-Options', 'nosniff')
     response.setHeader(
       'Content-Security-Policy',
-      "default-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+      "default-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
     )
     const url = new URL(request.url, origin)
     const method = request.method
@@ -14658,7 +14831,7 @@ export function createTaskServer(repository) {
       const tasks = selectTasks(state, {
         query: url.searchParams.get('q') ?? '',
         status: url.searchParams.get('status') ?? 'all',
-        sort: url.searchParams.get('sort') ?? 'id'
+        sort: url.searchParams.get('sort') ?? 'id',
       })
       return json(response, 200, { tasks, summary: summarize(tasks) })
     }
@@ -14685,7 +14858,7 @@ export function createTaskServer(repository) {
         return json(
           response,
           200,
-          state.tasks.find((task) => task.id === id)
+          state.tasks.find((task) => task.id === id),
         )
       }
       if (method === 'DELETE') {
@@ -14707,8 +14880,7 @@ export function createTaskServer(repository) {
     }
     const resource = staticFiles.get(url.pathname)
     if (!resource) throw new InputError('页面或文件不存在', 404)
-    if (method !== 'GET' && method !== 'HEAD')
-      return methodNotAllowed(response, ['GET', 'HEAD'])
+    if (method !== 'GET' && method !== 'HEAD') return methodNotAllowed(response, ['GET', 'HEAD'])
     const content = await readFile(new URL(resource[0], import.meta.url))
     response.writeHead(200, { 'Content-Type': resource[1], 'Cache-Control': 'no-store' })
     response.end(method === 'HEAD' ? undefined : content)
@@ -14727,8 +14899,7 @@ import { openRepository } from './task-repository.mjs'
 import { createTaskServer } from './http-app.mjs'
 
 const port = Number(process.env.PORT ?? 3210)
-if (!Number.isInteger(port) || port < 0 || port > 65535)
-  throw new Error('PORT必须为0至65535的整数')
+if (!Number.isInteger(port) || port < 0 || port > 65535) throw new Error('PORT必须为0至65535的整数')
 const file = resolve(process.env.TASK_FILE ?? 'data/tasks.json')
 const repository = await openRepository(file)
 const server = createTaskServer(repository)
@@ -14745,7 +14916,7 @@ for (const signal of ['SIGINT', 'SIGTERM']) {
   process.once(signal, () =>
     server.close((error) => {
       if (error) process.exitCode = 1
-    })
+    }),
   )
 }
 ```
@@ -14776,14 +14947,14 @@ try {
   const added = await fetch(base + '/api/tasks', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title: '后端链路', minutes: 0, tags: [], done: false })
+    body: JSON.stringify({ title: '后端链路', minutes: 0, tags: [], done: false }),
   })
   const task = await added.json()
   console.log('新增', added.status, task.id)
   const edited = await fetch(base + `/api/tasks/${task.id}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
-    body: '{"done":true}'
+    body: '{"done":true}',
   })
   console.log('完成', (await edited.json()).done)
   const rejected = await fetch(base + `/api/tasks/${task.id}`, { method: 'POST' })
@@ -14838,69 +15009,99 @@ HTTP/CLI提交修改函数 → 排队等待旧操作 → 从最新state计算nex
 ```html
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>学习任务管理器</title>
-  <link rel="stylesheet" href="/styles.css" />
-  <script type="module" src="/app.mjs"></script>
-</head>
-<body>
-  <main class="workspace">
-    <header class="page-header">
-      <h1>学习任务管理器</h1>
-      <p>把下一步写清楚，完成后再向前。</p>
-    </header>
-    <p id="message" class="message" role="status" aria-live="polite">正在读取任务……</p>
-    <section class="editor" aria-labelledby="editor-heading">
-      <h2 id="editor-heading">添加任务</h2>
-      <form id="task-form">
-        <div class="field field-title">
-          <label for="title">任务标题</label>
-          <input id="title" name="title" required maxlength="200" autocomplete="off" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>学习任务管理器</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.mjs"></script>
+  </head>
+  <body>
+    <main class="workspace">
+      <header class="page-header">
+        <h1>学习任务管理器</h1>
+        <p>把下一步写清楚，完成后再向前。</p>
+      </header>
+      <p id="message" class="message" role="status" aria-live="polite">正在读取任务……</p>
+      <section class="editor" aria-labelledby="editor-heading">
+        <h2 id="editor-heading">添加任务</h2>
+        <form id="task-form">
+          <div class="field field-title">
+            <label for="title">任务标题</label>
+            <input id="title" name="title" required maxlength="200" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="minutes">预计分钟数</label>
+            <input
+              id="minutes"
+              name="minutes"
+              type="number"
+              min="0"
+              max="1440"
+              step="1"
+              value="25"
+              required
+            />
+          </div>
+          <div class="field field-title">
+            <label for="tags">标签，用中文或英文逗号分隔</label>
+            <input id="tags" name="tags" autocomplete="off" />
+          </div>
+          <div class="form-actions">
+            <button id="save" type="submit" data-mutate>添加任务</button>
+            <button id="cancel-edit" type="button" class="secondary" hidden>取消编辑</button>
+          </div>
+        </form>
+      </section>
+      <section aria-labelledby="list-heading">
+        <div class="section-heading">
+          <h2 id="list-heading">任务清单</h2>
+          <p id="summary"></p>
         </div>
-        <div class="field">
-          <label for="minutes">预计分钟数</label>
-          <input id="minutes" name="minutes" type="number" min="0" max="1440" step="1" value="25" required />
+        <form id="filters" class="filters" role="search">
+          <div class="field field-title">
+            <label for="query">搜索标题或标签</label><input id="query" name="q" type="search" />
+          </div>
+          <div class="field">
+            <label for="status">完成状态</label
+            ><select id="status">
+              <option value="all">全部</option>
+              <option value="open">待完成</option>
+              <option value="done">已完成</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sort">排序</label
+            ><select id="sort">
+              <option value="id">添加顺序</option>
+              <option value="title">标题</option>
+              <option value="minutes">预计分钟数</option>
+            </select>
+          </div>
+          <button type="submit" class="secondary">查询</button>
+        </form>
+        <p id="empty" class="empty" hidden>当前没有符合条件的任务。可以添加任务或调整筛选。</p>
+        <ul id="tasks" class="task-list"></ul>
+      </section>
+      <section class="data-tools" aria-labelledby="data-heading">
+        <h2 id="data-heading">保存与交换</h2>
+        <p>操作成功后由本机服务保存。导入会整体替换现有任务，请先导出备份。</p>
+        <div class="tool-actions">
+          <button id="export" type="button" class="secondary">导出 JSON</button>
+          <label for="import-file">选择 JSON 文件（最多4 MiB）</label>
+          <input id="import-file" type="file" accept=".json,application/json" data-mutate />
         </div>
-        <div class="field field-title">
-          <label for="tags">标签，用中文或英文逗号分隔</label>
-          <input id="tags" name="tags" autocomplete="off" />
+        <div id="import-preview" class="import-preview" hidden>
+          <p id="import-description"></p>
+          <button id="confirm-import" type="button" class="danger" data-mutate>
+            确认替换现有任务
+          </button>
+          <button id="cancel-import" type="button" class="secondary">取消导入</button>
         </div>
-        <div class="form-actions">
-          <button id="save" type="submit" data-mutate>添加任务</button>
-          <button id="cancel-edit" type="button" class="secondary" hidden>取消编辑</button>
-        </div>
-      </form>
-    </section>
-    <section aria-labelledby="list-heading">
-      <div class="section-heading"><h2 id="list-heading">任务清单</h2><p id="summary"></p></div>
-      <form id="filters" class="filters" role="search">
-        <div class="field field-title"><label for="query">搜索标题或标签</label><input id="query" name="q" type="search" /></div>
-        <div class="field"><label for="status">完成状态</label><select id="status"><option value="all">全部</option><option value="open">待完成</option><option value="done">已完成</option></select></div>
-        <div class="field"><label for="sort">排序</label><select id="sort"><option value="id">添加顺序</option><option value="title">标题</option><option value="minutes">预计分钟数</option></select></div>
-        <button type="submit" class="secondary">查询</button>
-      </form>
-      <p id="empty" class="empty" hidden>当前没有符合条件的任务。可以添加任务或调整筛选。</p>
-      <ul id="tasks" class="task-list"></ul>
-    </section>
-    <section class="data-tools" aria-labelledby="data-heading">
-      <h2 id="data-heading">保存与交换</h2>
-      <p>操作成功后由本机服务保存。导入会整体替换现有任务，请先导出备份。</p>
-      <div class="tool-actions">
-        <button id="export" type="button" class="secondary">导出 JSON</button>
-        <label for="import-file">选择 JSON 文件（最多4 MiB）</label>
-        <input id="import-file" type="file" accept=".json,application/json" data-mutate />
-      </div>
-      <div id="import-preview" class="import-preview" hidden>
-        <p id="import-description"></p>
-        <button id="confirm-import" type="button" class="danger" data-mutate>确认替换现有任务</button>
-        <button id="cancel-import" type="button" class="secondary">取消导入</button>
-      </div>
-    </section>
-    <footer>本机单用户教学项目 · Node.js 与浏览器共享 JavaScript 业务规则</footer>
-  </main>
-</body>
+      </section>
+      <footer>本机单用户教学项目 · Node.js 与浏览器共享 JavaScript 业务规则</footer>
+    </main>
+  </body>
 </html>
 ```
 
@@ -15200,7 +15401,7 @@ async function api(path, { body, ...options } = {}) {
   const response = await fetch(path, {
     ...options,
     headers: body === undefined ? undefined : { 'Content-Type': 'application/json' },
-    body: body === undefined ? undefined : JSON.stringify(body)
+    body: body === undefined ? undefined : JSON.stringify(body),
   })
   if (response.status === 204) return null
   const payload = await response.json()
@@ -15211,7 +15412,7 @@ async function api(path, { body, ...options } = {}) {
 function setBusy(value) {
   busy = value
   for (const control of document.querySelectorAll(
-    '[data-mutate], #task-form input, #cancel-edit'
+    '[data-mutate], #task-form input, #cancel-edit',
   )) {
     control.disabled = value
   }
@@ -15256,10 +15457,7 @@ function render(tasks, summary) {
     copy.append(heading, meta)
     const actions = document.createElement('div')
     actions.className = 'task-actions'
-    actions.append(
-      button('编辑', 'edit', task.id),
-      button('删除', 'delete', task.id, 'danger')
-    )
+    actions.append(button('编辑', 'edit', task.id), button('删除', 'delete', task.id, 'danger'))
     row.append(label, copy, actions)
     return row
   })
@@ -15276,17 +15474,16 @@ async function refresh() {
   const parameters = new URLSearchParams({
     q: query.value,
     status: status.value,
-    sort: sort.value
+    sort: sort.value,
   })
   history.replaceState(null, '', `?${parameters}`)
   try {
     const payload = await api(`/api/tasks?${parameters}`, {
-      signal: readingController.signal
+      signal: readingController.signal,
     })
     if (sequence === latestRequest) render(payload.tasks, payload.summary)
   } catch (error) {
-    if (error.name !== 'AbortError' && sequence === latestRequest)
-      say(error.message, true)
+    if (error.name !== 'AbortError' && sequence === latestRequest) say(error.message, true)
   }
 }
 
@@ -15327,7 +15524,7 @@ form.addEventListener('submit', (event) => {
         .split(/[,，]/u)
         .map((tag) => tag.trim())
         .filter(Boolean),
-      done: old?.done ?? false
+      done: old?.done ?? false,
     })
     const id = editingId
     void mutate(
@@ -15338,11 +15535,11 @@ form.addEventListener('submit', (event) => {
           body:
             id === null
               ? fields
-              : { title: fields.title, minutes: fields.minutes, tags: fields.tags }
+              : { title: fields.title, minutes: fields.minutes, tags: fields.tags },
         })
         clearEditor()
       },
-      id === null ? '已添加任务' : '已保存修改'
+      id === null ? '已添加任务' : '已保存修改',
     ).finally(() => title.focus())
   } catch (error) {
     say(error.message, true)
@@ -15376,9 +15573,9 @@ list.addEventListener('click', (event) => {
       () =>
         api(`/api/tasks/${id}`, {
           method: 'PATCH',
-          body: { done: !task.done }
+          body: { done: !task.done },
         }),
-      task.done ? '已恢复为待完成' : '已完成任务'
+      task.done ? '已恢复为待完成' : '已完成任务',
     )
   }
 })
@@ -15387,16 +15584,15 @@ document.querySelector('#filters').addEventListener('submit', (event) => {
   event.preventDefault()
   void refresh()
 })
-for (const select of [status, sort])
-  select.addEventListener('change', () => void refresh())
+for (const select of [status, sort]) select.addEventListener('change', () => void refresh())
 
 document.querySelector('#export').addEventListener('click', async () => {
   try {
     const state = await api('/api/store')
     const objectUrl = URL.createObjectURL(
       new Blob([JSON.stringify(state, null, 2)], {
-        type: 'application/json'
-      })
+        type: 'application/json',
+      }),
     )
     const link = document.createElement('a')
     link.href = objectUrl
@@ -15450,9 +15646,7 @@ query.value = initial.get('q') ?? ''
 status.value = ['all', 'open', 'done'].includes(initial.get('status'))
   ? initial.get('status')
   : 'all'
-sort.value = ['id', 'title', 'minutes'].includes(initial.get('sort'))
-  ? initial.get('sort')
-  : 'id'
+sort.value = ['id', 'title', 'minutes'].includes(initial.get('sort')) ? initial.get('sort') : 'id'
 await refresh()
 if (message.textContent === '正在读取任务……') say('任务已读取；可以开始添加')
 ```
@@ -15477,7 +15671,7 @@ import {
   removeTask,
   selectTasks,
   summarize,
-  validateStore
+  validateStore,
 } from '../shared/task-core.mjs'
 
 const fields = { title: ' 学习闭包 ', minutes: 25, tags: ['基础', '基础'], done: false }
@@ -15506,13 +15700,10 @@ test('非法字段逐项拒绝，允许合法零分钟', () => {
     { tags: 'js' },
     { tags: [''] },
     { tags: [1] },
-    { unknown: true }
+    { unknown: true },
   ])
     assert.throws(() => addTask(emptyStore(), { ...fields, ...patch }, instant))
-  assert.equal(
-    addTask(emptyStore(), { ...fields, minutes: 0 }, instant).tasks[0].minutes,
-    0
-  )
+  assert.equal(addTask(emptyStore(), { ...fields, minutes: 0 }, instant).tasks[0].minutes, 0)
 })
 
 test('修改、完成、删除和不存在ID', () => {
@@ -15528,18 +15719,14 @@ test('修改、完成、删除和不存在ID', () => {
 
 test('过滤、排序和统计不修改原顺序', () => {
   let store = addTask(emptyStore(), fields, instant)
-  store = addTask(
-    store,
-    { title: '测试', minutes: 10, tags: ['工程'], done: true },
-    instant
-  )
+  store = addTask(store, { title: '测试', minutes: 10, tags: ['工程'], done: true }, instant)
   assert.deepEqual(
     selectTasks(store, { sort: 'minutes' }).map((task) => task.id),
-    [2, 1]
+    [2, 1],
   )
   assert.deepEqual(
     store.tasks.map((task) => task.id),
-    [1, 2]
+    [1, 2],
   )
   assert.equal(selectTasks(store, { query: '基础', status: 'open' }).length, 1)
   assert.deepEqual(summarize(store.tasks), { total: 2, done: 1, minutes: 35 })
@@ -15557,7 +15744,7 @@ test('导入拒绝损坏结构、未知版本、重复ID和非法nextId', () => 
     { ...valid, tasks: [...valid.tasks, valid.tasks[0]] },
     { ...valid, tasks: [{ ...valid.tasks[0], createdAt: '昨天' }] },
     { ...valid, tasks: [{ ...valid.tasks[0], done: 'false' }] },
-    JSON.parse('{"version":1,"nextId":1,"tasks":[],"__proto__":{}}')
+    JSON.parse('{"version":1,"nextId":1,"tasks":[],"__proto__":{}}'),
   ])
     assert.throws(() => validateStore(invalid))
   assert.deepEqual(validateStore(JSON.parse(JSON.stringify(valid))), valid)
@@ -15568,7 +15755,7 @@ test('删除不会复用ID，达到ID边界后停止新增', () => {
   store = removeTask(store, 1)
   assert.equal(addTask(store, fields, instant).tasks[0].id, 2)
   assert.throws(() =>
-    addTask({ ...emptyStore(), nextId: Number.MAX_SAFE_INTEGER }, fields, instant)
+    addTask({ ...emptyStore(), nextId: Number.MAX_SAFE_INTEGER }, fields, instant),
   )
 })
 ```
@@ -15603,7 +15790,7 @@ async function fixture(t) {
       new Promise((resolve, reject) => {
         server.close((error) => (error ? reject(error) : resolve()))
         server.closeIdleConnections()
-      })
+      }),
   )
   return { dir, file, repository, url: `http://127.0.0.1:${server.address().port}` }
 }
@@ -15612,7 +15799,7 @@ function send(url, method, body, headers = {}) {
   return fetch(url, {
     method,
     headers: { 'Content-Type': 'application/json', ...headers },
-    body: body === undefined ? undefined : JSON.stringify(body)
+    body: body === undefined ? undefined : JSON.stringify(body),
   })
 }
 
@@ -15634,10 +15821,7 @@ test('HTTP正常流程、排序、导出、修改、删除与重启恢复', asyn
 test('请求体和输入异常有明确状态，失败不会清空旧数据', async (t) => {
   const { url } = await fixture(t)
   await send(`${url}/api/tasks`, 'POST', fields)
-  assert.equal(
-    (await send(`${url}/api/tasks`, 'POST', { ...fields, minutes: -1 })).status,
-    400
-  )
+  assert.equal((await send(`${url}/api/tasks`, 'POST', { ...fields, minutes: -1 })).status, 400)
   assert.equal((await send(`${url}/api/tasks/999`, 'PATCH', { done: true })).status, 404)
   assert.equal((await send(`${url}/api/store`, 'PUT', { version: 9 })).status, 400)
   assert.equal((await send(`${url}/api/tasks/1`, 'POST', {})).status, 405)
@@ -15646,7 +15830,7 @@ test('请求体和输入异常有明确状态，失败不会清空旧数据', as
   const malformed = await fetch(`${url}/api/tasks`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: '{'
+    body: '{',
   })
   assert.equal(malformed.status, 400)
   const wrongType = await fetch(`${url}/api/tasks`, { method: 'POST', body: 'a' })
@@ -15654,7 +15838,7 @@ test('请求体和输入异常有明确状态，失败不会清空旧数据', as
   const oversized = await fetch(`${url}/api/tasks`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: ' '.repeat(4194305)
+    body: ' '.repeat(4194305),
   })
   assert.equal(oversized.status, 413)
   assert.equal((await (await fetch(`${url}/api/tasks`)).json()).tasks.length, 1)
@@ -15664,8 +15848,8 @@ test('并发新增在仓储内排队，无重复ID或丢失更新', async (t) =>
   const { url, file } = await fixture(t)
   const responses = await Promise.all(
     Array.from({ length: 20 }, (_, i) =>
-      send(`${url}/api/tasks`, 'POST', { ...fields, title: `任务${i}` })
-    )
+      send(`${url}/api/tasks`, 'POST', { ...fields, title: `任务${i}` }),
+    ),
   )
   assert.ok(responses.every((response) => response.status === 201))
   const state = JSON.parse(await readFile(file, 'utf8'))
@@ -15689,7 +15873,7 @@ test('模拟保存失败：内存回滚，后续操作可恢复', async (t) => {
     async write(file, state) {
       if (fail) throw new Error('模拟磁盘写入失败')
       await writeFile(file, JSON.stringify(state), 'utf8')
-    }
+    },
   })
   await assert.rejects(repository.transact((old) => addTask(old, fields)))
   assert.equal((await repository.read()).tasks.length, 0)
@@ -15707,9 +15891,8 @@ test('静态资源白名单、来源限制、响应安全头与导入恢复', as
     assert.equal((await fetch(`${url}${path}`)).status, 404)
   }
   assert.equal(
-    (await fetch(`${url}/api/tasks`, { headers: { Origin: 'https://other.example' } }))
-      .status,
-    403
+    (await fetch(`${url}/api/tasks`, { headers: { Origin: 'https://other.example' } })).status,
+    403,
   )
   await send(`${url}/api/tasks`, 'POST', fields)
   const exported = await (await fetch(`${url}/api/store`)).json()
@@ -15725,7 +15908,7 @@ test('不支持的方法返回405和准确Allow，旧任务不变', async (t) =>
     ['/api/tasks', 'DELETE', 'GET, POST'],
     ['/api/tasks/1', 'POST', 'PATCH, DELETE'],
     ['/api/store', 'POST', 'GET, PUT'],
-    ['/', 'PATCH', 'GET, HEAD']
+    ['/', 'PATCH', 'GET, HEAD'],
   ]) {
     const response = await fetch(`${url}${path}`, { method })
     assert.equal(response.status, 405)
@@ -15781,14 +15964,14 @@ test('不支持的方法返回405和准确Allow，旧任务不变', async (t) =>
 
 ### 45.7 本章速查
 
-| 目标 | 入口 | 边界 |
-| :--- | :--- | :--- |
-| 网页运行 | `npm start` | 默认3210，仅回环 |
-| 自动检查 | `npm test` | 临时目录与端口 |
-| 终端操作 | `node cli.mjs` | 不与服务同时写同一文件 |
-| 文件配置 | TASK_FILE | 相对工作目录解析 |
-| 恢复数据 | JSON导入确认 | 整体替换，先备份 |
-| 保存一致性 | transact排队 | 单仓储实例，无多进程锁 |
+| 目标       | 入口           | 边界                   |
+| :--------- | :------------- | :--------------------- |
+| 网页运行   | `npm start`    | 默认3210，仅回环       |
+| 自动检查   | `npm test`     | 临时目录与端口         |
+| 终端操作   | `node cli.mjs` | 不与服务同时写同一文件 |
+| 文件配置   | TASK_FILE      | 相对工作目录解析       |
+| 恢复数据   | JSON导入确认   | 整体替换，先备份       |
+| 保存一致性 | transact排队   | 单仓储实例，无多进程锁 |
 
 本章参考：[Node.js文档](https://nodejs.org/docs/v26.13.0/api/)、[DOM Standard](https://dom.spec.whatwg.org/)、[Fetch Standard](https://fetch.spec.whatwg.org/)。
 
@@ -15840,7 +16023,7 @@ public class Demo {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -15900,7 +16083,7 @@ public class Demo {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -15912,7 +16095,7 @@ false
 
 对照示例可跳过。Java按JDK21：在同目录运行javac -encoding UTF-8 --release 21 Demo.java，再运行java Demo；Python按3.12及以上：python demo.py。下面“预期输出”针对JavaScript `demo.mjs`，各语言自己的结果按其代码和下述检查说明核对。 Python为9 False True及True；Java为9 false true及true。JS最后为false，数组严格相等比较身份；其他两例使用各自内容相等操作。
 
-不要说“全部容器相等都比较内容”，也不要说“三种语言复制都完全一样”。Java equals取决于类型契约，Python自定义类型可改变__eq__，JS的Map/Set另有相等规则。参数传递还应区分修改共享对象与重绑形参，第10章已用JS观察。
+不要说“全部容器相等都比较内容”，也不要说“三种语言复制都完全一样”。Java equals取决于类型契约，Python自定义类型可改变**eq**，JS的Map/Set另有相等规则。参数传递还应区分修改共享对象与重绑形参，第10章已用JS观察。
 
 ### 46.3 函数、默认参数和作用域
 
@@ -15973,7 +16156,7 @@ public class Demo {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16062,7 +16245,7 @@ public class Demo {
 在本例目录执行：
 
 ```powershell
-node main.mjs 
+node main.mjs
 ```
 
 预期输出：
@@ -16130,7 +16313,7 @@ public class Demo {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16167,20 +16350,18 @@ Java阻塞get会等待线程，JS await让出当前async流程，Python await推
 
 ### 46.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 默认参数 | JS调用需要时求值 | 不同于Python常见默认求值 |
-| 接收者 | JS看调用方式 | self和this勿机械替换 |
-| 数组相等 | JS严格相等看身份 | 内容比较需明确规则 |
-| 异步 | 分别观察启动与调度 | 不能统一叫线程 |
+| 场景     | 做法与返回         | 易错边界                 |
+| :------- | :----------------- | :----------------------- |
+| 默认参数 | JS调用需要时求值   | 不同于Python常见默认求值 |
+| 接收者   | JS看调用方式       | self和this勿机械替换     |
+| 数组相等 | JS严格相等看身份   | 内容比较需明确规则       |
+| 异步     | 分别观察启动与调度 | 不能统一叫线程           |
 
 本章参考：[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)、[Python官方教程](https://docs.python.org/3/tutorial/)、[Python asyncio任务文档](https://docs.python.org/3/library/asyncio-task.html)、[Java 21：CompletableFuture](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/CompletableFuture.html)。
 
 ## 第47章 分层练习、典型案例与参考答案
 
 练习按基础、数据、机制、应用、算法分层。先自己写预期和实现，再阅读答案，最后更换边界输入。算法为选修，不能代替程序组织、错误处理和可运行项目；每题给出能核对的结果。
-
-**本章导航：** [47.1 基础：输入、范围和函数](#471-基础输入范围和函数) · [47.2 数据：去重、分组与稳定排序](#472-数据去重分组与稳定排序) · [47.3 机制：转换、this和异步排错](#473-机制转换this和异步排错) · [47.4 应用：迁移、取消与联调](#474-应用迁移取消与联调) · [47.5 算法选修：栈、队列、链表与查找](#475-算法选修栈队列链表与查找) · [47.6 动手练习与参考答案](#476-动手练习与参考答案) · [47.7 本章速查](#477-本章速查)
 
 ### 47.1 基础：输入、范围和函数
 
@@ -16204,7 +16385,7 @@ for (const text of ['0', '25', ' ', '-1', '1.5', 'NaN', 'Infinity']) {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16233,7 +16414,7 @@ node demo.mjs
 const tasks = [
   { id: 1, title: 'B', minutes: 20, tags: ['JS', 'JS'] },
   { id: 2, title: 'A', minutes: 10, tags: ['JS'] },
-  { id: 3, title: 'C', minutes: 30, tags: ['其他'] }
+  { id: 3, title: 'C', minutes: 30, tags: ['其他'] },
 ]
 function report(tag) {
   const selected = tasks
@@ -16241,7 +16422,7 @@ function report(tag) {
     .toSorted((a, b) => a.title.localeCompare(b.title, 'en') || a.id - b.id)
   return {
     ids: selected.map((task) => task.id),
-    minutes: selected.reduce((n, task) => n + task.minutes, 0)
+    minutes: selected.reduce((n, task) => n + task.minutes, 0),
   }
 }
 console.log(JSON.stringify(report('JS')))
@@ -16252,7 +16433,7 @@ console.log(tasks.map((task) => task.id).join(','))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16279,7 +16460,7 @@ const task = {
   title: '阅读',
   read() {
     return this.title
-  }
+  },
 }
 const read = task.read.bind(task)
 console.log(read())
@@ -16292,7 +16473,7 @@ console.log('同步完成')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16316,11 +16497,8 @@ node demo.mjs
 
 ```javascript
 function migrate(value, now) {
-  if (value?.version !== 0 || !Array.isArray(value.titles))
-    throw new Error('不支持的旧格式')
-  if (
-    !value.titles.every((title) => typeof title === 'string' && title.trim().length > 0)
-  )
+  if (value?.version !== 0 || !Array.isArray(value.titles)) throw new Error('不支持的旧格式')
+  if (!value.titles.every((title) => typeof title === 'string' && title.trim().length > 0))
     throw new Error('旧标题无效')
   const tasks = value.titles.map((title, index) => ({
     id: index + 1,
@@ -16328,7 +16506,7 @@ function migrate(value, now) {
     minutes: 0,
     tags: [],
     done: false,
-    createdAt: now
+    createdAt: now,
   }))
   return { version: 1, nextId: tasks.length + 1, tasks }
 }
@@ -16345,7 +16523,7 @@ try {
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16391,7 +16569,7 @@ try {
   await once(server, 'listening')
   const controller = new AbortController()
   const pending = fetch(`http://127.0.0.1:${server.address().port}/`, {
-    signal: controller.signal
+    signal: controller.signal,
   })
   const rejected = assert.rejects(pending, (error) => error.name === 'AbortError')
   await started
@@ -16451,7 +16629,7 @@ try {
   for (const [path, message] of [
     ['/http', 'HTTP失败：503'],
     ['/json', 'JSON解析失败'],
-    ['/data', '字段校验失败：tasks需要数组']
+    ['/data', '字段校验失败：tasks需要数组'],
   ]) {
     await assert.rejects(load(base + path), (error) => error.message === message)
     console.log(message)
@@ -16503,7 +16681,7 @@ console.log(binarySearch([1, 3, 5, 7, 9], 5), binarySearch([], 5))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16541,7 +16719,7 @@ console.log(insertionSort(input).join(','), input.join(','))
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16572,11 +16750,11 @@ node demo.mjs
 
 ### 47.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 预测题 | 先写值与原因 | 只背日志顺序不足 |
-| 数据题 | 说明统计范围 | 重复标签别重复计 |
-| 应用题 | 验证后提交 | 不先清空旧数据 |
+| 场景   | 做法与返回   | 易错边界             |
+| :----- | :----------- | :------------------- |
+| 预测题 | 先写值与原因 | 只背日志顺序不足     |
+| 数据题 | 说明统计范围 | 重复标签别重复计     |
+| 应用题 | 验证后提交   | 不先清空旧数据       |
 | 算法题 | 声明输入前提 | 复杂度不等于实际耗时 |
 
 本章参考：[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)。
@@ -16585,20 +16763,18 @@ node demo.mjs
 
 速查用于回到已学概念，不代替第一次理解。本章按语言机制、内置对象、宿主能力和工具命令分类，避免把Node文件模块、浏览器DOM和语言标准混成同一套能力。阶段验收以能独立完成的动作衡量，不强制安排固定学习天数。
 
-**本章导航：** [48.1 语法与语言机制速查](#481-语法与语言机制速查) · [48.2 内置对象与宿主API速查](#482-内置对象与宿主api速查) · [48.3 开发命令、版本与多版本管理](#483-开发命令版本与多版本管理) · [48.4 阶段能力验收](#484-阶段能力验收) · [48.5 官方资料与后续路线](#485-官方资料与后续路线) · [48.6 动手练习与参考答案](#486-动手练习与参考答案) · [48.7 本章速查](#487-本章速查)
-
 ### 48.1 语法与语言机制速查
 
 优先用const表达不重新绑定的名字，需要重新赋值再用let。选择函数形式要看this和构造需求，不只看代码行数。
 
-| 场景 | 写法 | 重点 |
-| :--- | :--- | :--- |
-| 声明 | const / let | const不深冻结对象 |
-| 缺失默认 | value ?? fallback | 只替换null/undefined |
-| 条件/循环 | if、for、for...of | 键和值分开 |
-| 函数 | function、箭头 | this和arguments不同 |
-| 模块 | import/export | 明确ESM配置 |
-| 异步 | async/await | 等待不等于并行线程 |
+| 场景      | 写法              | 重点                 |
+| :-------- | :---------------- | :------------------- |
+| 声明      | const / let       | const不深冻结对象    |
+| 缺失默认  | value ?? fallback | 只替换null/undefined |
+| 条件/循环 | if、for、for...of | 键和值分开           |
+| 函数      | function、箭头    | this和arguments不同  |
+| 模块      | import/export     | 明确ESM配置          |
+| 异步      | async/await       | 等待不等于并行线程   |
 
 示例 **C48E01**，目录 `js-study/examples/ch48/C48E01/`，环境：Node.js。
 
@@ -16618,7 +16794,7 @@ console.log(await result())
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16633,17 +16809,17 @@ node demo.mjs
 
 表中明确返回与修改行为；同名概念不代表跨环境可用。
 
-| 需要 | 工具 | 返回与修改 |
-| :--- | :--- | :--- |
-| 清理文本 | trim/replace | 新字符串 |
-| 数组映射/筛选 | map/filter | 新外层数组，共享元素可存在 |
-| 原地添加 | push | 修改数组，返回长度 |
-| 非修改排序 | toSorted | 新外层数组 |
-| 映射与集合 | Map/Set | 明确键和相等规则 |
-| 交换文本 | `JSON.parse`/stringify | 格式转换，仍需校验 |
-| 页面文本 | textContent | 浏览器DOM，安全文本 |
-| 网络 | fetch | 宿主接口，检查HTTP状态 |
-| 文件 | node:fs/promises | Node专有，需处理I/O失败 |
+| 需要          | 工具                   | 返回与修改                 |
+| :------------ | :--------------------- | :------------------------- |
+| 清理文本      | trim/replace           | 新字符串                   |
+| 数组映射/筛选 | map/filter             | 新外层数组，共享元素可存在 |
+| 原地添加      | push                   | 修改数组，返回长度         |
+| 非修改排序    | toSorted               | 新外层数组                 |
+| 映射与集合    | Map/Set                | 明确键和相等规则           |
+| 交换文本      | `JSON.parse`/stringify | 格式转换，仍需校验         |
+| 页面文本      | textContent            | 浏览器DOM，安全文本        |
+| 网络          | fetch                  | 宿主接口，检查HTTP状态     |
+| 文件          | node:fs/promises       | Node专有，需处理I/O失败    |
 
 示例 **C48E02**，目录 `js-study/examples/ch48/C48E02/`，环境：Node.js。
 
@@ -16660,7 +16836,7 @@ console.log(typeof document, typeof fetch)
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16677,15 +16853,15 @@ undefined function
 
 运行与工具命令要在正确终端和目录执行。nvm-windows当前2.x与旧1.x、nvm-sh以及fnm的机制不同，详细安装、Shell初始化与切换见第2章，不混用各工具命令。
 
-| 目的 | 命令或配置 | 检查 |
-| :--- | :--- | :--- |
-| 版本来源 | `node --version`；`npm --version` | 再查Get-Command或`command -v` |
-| 脚本 | `node demo.mjs` | 源码保存且目录正确 |
-| 项目约定 | .nvmrc／.node-version、engines | 按所选管理器读取；配置不等于已切换 |
-| fnm版本选择 | `fnm use`；`fnm current` | 先完成Shell初始化，再核对Node真实路径 |
-| 安装依赖 | `npm install / npm ci` | ci需要相符锁文件 |
-| 测试 | `node --test / npm test` | 失败退出码要处理 |
-| 本书页面 | `node tools/serve-examples.mjs --dir` 目录 | 从`js-study`学习根目录运行 |
+| 目的        | 命令或配置                                 | 检查                                  |
+| :---------- | :----------------------------------------- | :------------------------------------ |
+| 版本来源    | `node --version`；`npm --version`          | 再查Get-Command或`command -v`         |
+| 脚本        | `node demo.mjs`                            | 源码保存且目录正确                    |
+| 项目约定    | .nvmrc／.node-version、engines             | 按所选管理器读取；配置不等于已切换    |
+| fnm版本选择 | `fnm use`；`fnm current`                   | 先完成Shell初始化，再核对Node真实路径 |
+| 安装依赖    | `npm install / npm ci`                     | ci需要相符锁文件                      |
+| 测试        | `node --test / npm test`                   | 失败退出码要处理                      |
+| 本书页面    | `node tools/serve-examples.mjs --dir` 目录 | 从`js-study`学习根目录运行            |
 
 示例 **C48E03**，目录 `js-study/examples/ch48/C48E03/`，环境：Node.js。
 
@@ -16699,18 +16875,18 @@ console.log(
       v8: process.versions.v8,
       executable: process.execPath,
       module: import.meta.url.endsWith('.mjs'),
-      sumPrecise: typeof Math.sumPrecise === 'function'
+      sumPrecise: typeof Math.sumPrecise === 'function',
     },
     null,
-    2
-  )
+    2,
+  ),
 )
 ```
 
 在本例目录执行：
 
 ```powershell
-node check-environment.mjs 
+node check-environment.mjs
 ```
 
 预期输出：
@@ -16731,14 +16907,14 @@ execPath和工作目录随本机变化，输出只作为自己排错记录。版
 
 验收入口分散在实际学习节点，下面用于回到对应任务，不用最后一个小函数代表全部阶段。
 
-| 阶段 | 本册验收位置 | 要能独立证明的结果 |
-| :--- | :--- | :--- |
-| 一：文件与错误 | 3.5.1 | 从文件、行号和错误类别定位并修正 |
-| 二：数据与函数 | 10.6.1、14.6.1 | 转换不代替校验，报告不修改原数据 |
-| 三：模块与规则 | 25.5.1 | ID稳定、非法操作不改变旧状态 |
-| 四：异步 | 28.6.1、47.4.1 | 旧结果不覆盖新结果，取消不冒充撤回 |
-| 五：浏览器保存 | 40.5.1 | 同来源刷新与重启恢复，坏导入保留原表 |
-| 六：综合工程 | 45.5.1 | 真实保存、重启、失败恢复与自动测试 |
+| 阶段           | 本册验收位置   | 要能独立证明的结果                   |
+| :------------- | :------------- | :----------------------------------- |
+| 一：文件与错误 | 3.5.1          | 从文件、行号和错误类别定位并修正     |
+| 二：数据与函数 | 10.6.1、14.6.1 | 转换不代替校验，报告不修改原数据     |
+| 三：模块与规则 | 25.5.1         | ID稳定、非法操作不改变旧状态         |
+| 四：异步       | 28.6.1、47.4.1 | 旧结果不覆盖新结果，取消不冒充撤回   |
+| 五：浏览器保存 | 40.5.1         | 同来源刷新与重启恢复，坏导入保留原表 |
+| 六：综合工程   | 45.5.1         | 真实保存、重启、失败恢复与自动测试   |
 
 下面cleanTitle只是最小断言热身，不替代整张验收表。
 
@@ -16761,7 +16937,7 @@ console.log('能运行、能解释、能拒绝非法输入')
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16786,7 +16962,7 @@ const routes = new Map([
   ['页面与事件', 'HTML与DOM Standard'],
   ['请求与跨源', 'Fetch Standard'],
   ['文件和服务', '目标Node API文档'],
-  ['版本切换', '当前版本管理器官方文档']
+  ['版本切换', '当前版本管理器官方文档'],
 ])
 for (const [question, source] of routes) console.log(`${question} → ${source}`)
 ```
@@ -16794,7 +16970,7 @@ for (const [question, source] of routes) console.log(`${question} → ${source}`
 在本例目录执行：
 
 ```powershell
-node demo.mjs 
+node demo.mjs
 ```
 
 预期输出：
@@ -16851,11 +17027,11 @@ node demo.mjs
 
 ### 48.7 本章速查
 
-| 场景 | 做法与返回 | 易错边界 |
-| :--- | :--- | :--- |
-| 先查环境 | 版本、来源、目录 | 不要只看配置 |
-| 再查数据 | 格式、类型、业务 | 解析不等于校验 |
-| 再查顺序 | 同步、等待、状态提交 | 不要猜回调时刻 |
-| 后续学习 | 由需求选择工具 | 不同时堆满技术栈 |
+| 场景     | 做法与返回           | 易错边界         |
+| :------- | :------------------- | :--------------- |
+| 先查环境 | 版本、来源、目录     | 不要只看配置     |
+| 再查数据 | 格式、类型、业务     | 解析不等于校验   |
+| 再查顺序 | 同步、等待、状态提交 | 不要猜回调时刻   |
+| 后续学习 | 由需求选择工具       | 不同时堆满技术栈 |
 
 本章参考：[ECMAScript 2026语言规范](https://262.ecma-international.org/17.0/)、[TC39提案流程](https://tc39.es/process-document/)、[Node.js v26.13.0：api](https://nodejs.org/docs/v26.13.0/api/)、[nvm-windows官方文档](https://docs.nvm-windows.com/)、[nvm-sh官方文档](https://github.com/nvm-sh/nvm)、[fnm官方文档](https://github.com/Schniz/fnm)。
