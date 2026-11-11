@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress-theme-async/config'
+import { slug as githubSlug } from 'github-slugger'
 import pkg from '../../package.json' with { type: 'json' }
 
 const author = pkg.author.name
@@ -39,6 +40,12 @@ export default defineConfig({
   description: `${author} 使用 Vitepress 搭建的博客站点`,
   rewrites: {
     'posts/(.*)': '(.*)',
+  },
+  markdown: {
+    anchor: {
+      // 与 GitHub 标题锚点保持一致，兼容手册原有目录链接。
+      slugify: githubSlug,
+    },
   },
   /* 主题配置 */
   themeConfig: {
