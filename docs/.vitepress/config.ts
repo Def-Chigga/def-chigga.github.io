@@ -86,7 +86,7 @@ export default defineConfig({
       // { title: 'gallery', url: '/gallery' },
     ],
     outline: {
-      level: [2, 6],
+      level: [2, 3],
       label: '目录列表',
     },
     user: {

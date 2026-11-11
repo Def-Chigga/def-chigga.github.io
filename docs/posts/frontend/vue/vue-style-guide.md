@@ -3,6 +3,7 @@ title: Vue 代码风格指南
 date: 2025-10-01
 categories: [前端]
 tags: [Vue, 代码规范]
+outline: [2, 4]
 ---
 
 # Vue 代码风格指南

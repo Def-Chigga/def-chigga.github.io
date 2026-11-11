@@ -4,6 +4,7 @@ date: 2026-01-27
 sticky: 1
 categories: [Git]
 tags: [Git]
+outline: [2, 4]
 ---
 
 # Git Cheat Sheet

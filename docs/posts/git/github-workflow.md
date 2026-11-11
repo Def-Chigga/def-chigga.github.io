@@ -3,6 +3,7 @@ title: GitHub Workflow
 date: 2026-01-27
 categories: [Git]
 tags: [GitHub]
+outline: [2, 4]
 ---
 
 # GitHub Workflow
