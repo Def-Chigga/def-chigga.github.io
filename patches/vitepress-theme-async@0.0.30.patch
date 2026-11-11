@@ -1,0 +1,26 @@
+diff --git a/components/TrmPageIndex.vue b/components/TrmPageIndex.vue
+index b36199be531dbf88f922263fdd65325b20dab0e0..1b47b25b08b747dcee9bcbd23040c76157f84f47 100644
+--- a/components/TrmPageIndex.vue
++++ b/components/TrmPageIndex.vue
+@@ -18,7 +18,7 @@ const { pageIndex, pageList, pageSize, pageLength, hasCategorieCard, categorieLi
+ <template>
+ 	<div v-if="hasCategorieCard" class="row hidden-sm">
+ 		<div v-for="(item, index) in categorieList" class="col-lg-6" :key="index">
+-			<TrmCardCategorie :name="item[0]" :length="item[1]" :category-url="pageUrl.categories + '?q=' + item[0]" />
++			<TrmCardCategorie :name="item[0]" :length="item[1]" :category-url="pageUrl.categories + '/' + encodeURIComponent(item[0])" />
+ 		</div>
+ 	</div>
+ 	<div class="row">
+diff --git a/components/global/TrmCardPost.vue b/components/global/TrmCardPost.vue
+index 3ad9bdb3edf29e773973e5f4084caf9456cc7a2c..b08d7d86fa53db6b1f08def323fdeac83cabf143 100644
+--- a/components/global/TrmCardPost.vue
++++ b/components/global/TrmCardPost.vue
+@@ -36,7 +36,7 @@ withDefaults(
+ 		</div>
+ 		<div class="trm-card-descr">
+ 			<div class="trm-label trm-category trm-mb-20">
+-				<a :href="post.categories?.length ? categoryUrl + '?q=' + post.categories[0] : '#.'">
++				<a :href="post.categories?.length ? categoryUrl + '/' + encodeURIComponent(post.categories[0]) : '#.'">
+ 					{{ post.categories?.length ? post.categories[0] : $t("title.unclassified") }}
+ 				</a>
+ 			</div>

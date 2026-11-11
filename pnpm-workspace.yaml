@@ -5,3 +5,5 @@ allowBuilds:
   esbuild: true
   less: true
   vue-demi: true
+patchedDependencies:
+  vitepress-theme-async@0.0.30: patches/vitepress-theme-async@0.0.30.patch

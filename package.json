@@ -16,7 +16,7 @@
     "format": "prettier --write . --ignore-unknown"
   },
   "dependencies": {
-    "vitepress-theme-async": "latest"
+    "vitepress-theme-async": "0.0.30"
   },
   "directories": {
     "doc": "docs"
