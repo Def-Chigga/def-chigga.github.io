@@ -3,7 +3,7 @@ title: 前端开发风格指南
 date: 2025-10-01
 sticky: 1
 categories: [前端]
-tags: [前端, 代码规范]
+tags: [代码规范]
 ---
 
 # 前端开发风格指南

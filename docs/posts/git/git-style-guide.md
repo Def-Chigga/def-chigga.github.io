@@ -2,7 +2,7 @@
 title: Git 风格指南
 date: 2025-10-01
 categories: [Git]
-tags: [Git, 代码规范, 工作流]
+tags: [Git, 代码规范]
 ---
 
 # Git 风格指南

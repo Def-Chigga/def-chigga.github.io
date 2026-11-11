@@ -2,7 +2,7 @@
 title: JavaScript 代码风格指南
 date: 2025-10-01
 categories: [前端]
-tags: [前端, JavaScript, 代码规范]
+tags: [JavaScript, 代码规范]
 ---
 
 # JavaScript 代码风格指南
