@@ -110,6 +110,95 @@ const CATEGORY_EN = {
   其它: 'OTHER',
 }
 
+/* ---------- 标题竖排（左栏内垂直居中，字多自动分列） ---------- */
+
+const TITLE_COL = { left: 96, right: 520, center: 308, width: 400 }
+const TITLE_MID_Y = 480
+const TITLE_MAX_H = 560
+
+function charWidth(ch) {
+  if (/[一-鿿　-〿＀-￯]/.test(ch)) return 1
+  if (/[A-Z]/.test(ch)) return 0.7
+  if (/[a-z]/.test(ch)) return 0.58
+  if (/[0-9]/.test(ch)) return 0.6
+  if (ch === ' ') return 0.32
+  return 0.5
+}
+
+function measure(str, size, spacing) {
+  const units = [...str].reduce((sum, ch) => sum + charWidth(ch), 0)
+  return units * size + Math.max(0, [...str].length - 1) * spacing
+}
+
+// 连续英文/数字算一个词，空白单独成 token，中文逐字
+function tokenize(text) {
+  return text.match(/[A-Za-z0-9.+#/_-]+|\s+|[^\s]/g) || []
+}
+
+/** 拆出英文段与中文段：英文作横排标签，中文竖排 */
+function splitTitle(title) {
+  const latin = (title.match(/[A-Za-z][A-Za-z0-9.+#/_-]*/g) || []).join(' ')
+  const cjk = title.replace(/[A-Za-z0-9.+#/_-]+/g, ' ').replace(/\s+/g, '')
+  return { latin, cjk }
+}
+
+/** 竖排：每列从上到下，列从右往左；字号收缩到塞进左栏且不超过 4 列 */
+function layoutVertical(text, label) {
+  const chars = [...text]
+  for (let size = 46; size >= 22; size -= 2) {
+    const step = Math.round(size * 1.16)
+    const maxPerCol = Math.max(1, Math.floor(TITLE_MAX_H / step))
+    const colCount = Math.ceil(chars.length / maxPerCol)
+    const colStep = Math.round(size * 1.55)
+    if (colCount <= 4 && colCount * colStep <= TITLE_COL.width) {
+      const per = Math.ceil(chars.length / colCount)
+      const columns = Array.from({ length: colCount }, (_, i) => chars.slice(i * per, (i + 1) * per))
+      return { mode: 'vertical', columns, size, step, label }
+    }
+  }
+  const size = 22
+  const step = Math.round(size * 1.16)
+  const per = Math.ceil(chars.length / 4)
+  const columns = Array.from({ length: 4 }, (_, i) => chars.slice(i * per, (i + 1) * per))
+  return { mode: 'vertical', columns, size, step, label }
+}
+
+function wrapHorizontal(text, size, spacing) {
+  const lines = []
+  let cur = ''
+  for (const token of tokenize(text)) {
+    const next = cur + token
+    if (cur && measure(next.trimEnd(), size, spacing) > TITLE_COL.width) {
+      lines.push(cur.trim())
+      cur = token.trimStart()
+    } else {
+      cur = next
+    }
+  }
+  if (cur.trim()) lines.push(cur.trim())
+  return lines
+}
+
+/** 横排：按宽度换行，最多 4 行 */
+function layoutHorizontal(title) {
+  for (let size = 44; size >= 24; size -= 2) {
+    const spacing = size >= 36 ? 2 : 1
+    const lines = wrapHorizontal(title, size, spacing)
+    if (lines.length <= 4 && lines.every((l) => measure(l, size, spacing) <= TITLE_COL.width)) {
+      return { mode: 'horizontal', lines, size, spacing }
+    }
+  }
+  const spacing = 1
+  return { mode: 'horizontal', lines: wrapHorizontal(title, 24, spacing), size: 24, spacing }
+}
+
+function layoutTitle(title) {
+  const { latin, cjk } = splitTitle(title)
+  // 中文标题竖排，英文段退为上方横排标签；纯英文标题横排
+  if (cjk.length >= 2) return layoutVertical(cjk, latin)
+  return layoutHorizontal(title)
+}
+
 /* ---------- 配色 ---------- */
 
 const PALETTE = {
@@ -128,15 +217,15 @@ function gitVariants(c) {
 
   const main = (branches, extra = '') => `
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M760 110 V850" stroke="${ink}" stroke-width="9" stroke-opacity="0.85" />
+    <path d="M880 110 V850" stroke="${ink}" stroke-width="9" stroke-opacity="0.85" />
     ${branches}
     ${extra}
   </g>
   <g>
-    ${node(760, 110)}
-    ${node(760, 330, 32, true)}
-    ${node(760, 580)}
-    ${node(760, 850)}
+    ${node(880, 110)}
+    ${node(880, 330, 32, true)}
+    ${node(880, 580)}
+    ${node(880, 850)}
   </g>`
 
   const branch = (d, purple = false) => `
@@ -148,33 +237,33 @@ function gitVariants(c) {
   return [
     // 右分支
     main(
-      branch('M760 330 C 940 330 980 200 1180 200 V 460 C 980 460 940 580 760 580') +
-        branch('M760 580 C 960 580 1000 760 1200 760', true)
+      branch('M880 330 C 1060 330 1100 200 1300 200 V 460 C 1100 460 1060 580 880 580') +
+        branch('M880 580 C 1080 580 1120 760 1320 760', true)
     ) +
-      node(1180, 200, 26) +
-      node(1180, 460, 26) +
-      node(1200, 760, 32, false, true) +
-      `<rect x="840" y="308" width="110" height="14" rx="7" fill="${ink}" opacity="0.28" />`,
+      node(1300, 200, 26) +
+      node(1300, 460, 26) +
+      node(1320, 760, 32, false, true) +
+      `<rect x="960" y="308" width="110" height="14" rx="7" fill="${ink}" opacity="0.28" />`,
     // 左分支
     main(
-      branch('M760 330 C 600 330 560 200 400 200 V 460 C 560 460 600 580 760 580') +
-        branch('M760 580 C 580 580 540 760 380 760', true)
+      branch('M880 330 C 720 330 680 200 600 200 V 460 C 680 460 720 580 880 580') +
+        branch('M880 580 C 720 580 680 760 600 760', true)
     ) +
-      node(400, 200, 26) +
-      node(400, 460, 26) +
-      node(380, 760, 32, false, true) +
-      `<rect x="1040" y="308" width="90" height="14" rx="7" fill="${ink}" opacity="0.28" />`,
+      node(600, 200, 26) +
+      node(600, 460, 26) +
+      node(600, 760, 32, false, true) +
+      `<rect x="1160" y="308" width="90" height="14" rx="7" fill="${ink}" opacity="0.28" />`,
     // 双侧
     main(
-      branch('M760 330 C 900 330 930 200 1080 200 V 440 C 930 440 900 540 760 540') +
-        branch('M760 540 C 600 540 570 700 420 700') +
-        branch('M760 580 C 940 580 980 800 1160 800', true)
+      branch('M880 330 C 1020 330 1050 200 1200 200 V 440 C 1050 440 1020 540 880 540') +
+        branch('M880 540 C 720 540 690 700 640 700') +
+        branch('M880 580 C 1060 580 1100 800 1280 800', true)
     ) +
-      node(1080, 200, 26) +
-      node(1080, 440, 26) +
-      node(420, 700, 24) +
-      node(1160, 800, 32, false, true) +
-      `<rect x="840" y="308" width="100" height="14" rx="7" fill="${ink}" opacity="0.28" />`,
+      node(1200, 200, 26) +
+      node(1200, 440, 26) +
+      node(640, 700, 24) +
+      node(1280, 800, 32, false, true) +
+      `<rect x="960" y="308" width="100" height="14" rx="7" fill="${ink}" opacity="0.28" />`,
   ]
 }
 
@@ -406,10 +495,47 @@ function buildSvg(post, index, total, scheme) {
     post.date.getDate()
   ).padStart(2, '0')}`
 
-  const titleSize = 40
-  const title = `<text x="100" y="196" font-family="${FONT_SANS}" font-size="${titleSize}" font-weight="600" letter-spacing="1" fill="${c.ink}">${esc(
-    post.title
-  )}</text>`
+  const layout = layoutTitle(post.title)
+  let title
+  if (layout.mode === 'vertical') {
+    const colStep = Math.round(layout.size * 1.55)
+    const totalW = layout.columns.length * colStep
+    const rightMostX = TITLE_COL.center + totalW / 2 - colStep / 2
+    const maxColLen = Math.max(...layout.columns.map((col) => col.length))
+    const blockTop = TITLE_MID_Y - (maxColLen * layout.step) / 2
+    const startY = blockTop + Math.round(layout.size * 0.82)
+    const labelY = Math.max(178, blockTop - 34)
+    const labelSvg = layout.label
+      ? `<text x="${TITLE_COL.center}" y="${labelY}" text-anchor="middle" font-family="${FONT_EN}" font-size="${Math.round(
+          layout.size * 0.66
+        )}" font-weight="600" letter-spacing="2" fill="${c.accent}">${esc(layout.label)}</text>\n  `
+      : ''
+    title =
+      labelSvg +
+      layout.columns
+        .flatMap((col, ci) => {
+          const x = rightMostX - ci * colStep
+          return col.map(
+            (ch, ri) =>
+              `<text x="${x}" y="${startY + ri * layout.step}" text-anchor="middle" font-family="${FONT_SANS}" font-size="${layout.size}" font-weight="600" fill="${c.ink}">${esc(
+                ch
+              )}</text>`
+          )
+        })
+        .join('\n  ')
+  } else {
+    const lineHeight = Math.round(layout.size * 1.34)
+    const firstBaseline =
+      TITLE_MID_Y - (layout.lines.length * lineHeight) / 2 + Math.round(layout.size * 0.82)
+    title = layout.lines
+      .map(
+        (line, i) =>
+          `<text x="${TITLE_COL.center}" y="${firstBaseline + i * lineHeight}" text-anchor="middle" font-family="${FONT_SANS}" font-size="${layout.size}" font-weight="600" letter-spacing="${layout.spacing}" fill="${c.ink}">${esc(
+            line
+          )}</text>`
+      )
+      .join('\n  ')
+  }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-label="${esc(
     post.title
@@ -433,7 +559,7 @@ function buildSvg(post, index, total, scheme) {
   <g>${pattern}
   </g>
 
-  <text x="100" y="132" font-family="${FONT_EN}" font-size="20" letter-spacing="6" fill="${c.accent}">${String(
+  <text x="${TITLE_COL.center}" y="132" text-anchor="middle" font-family="${FONT_EN}" font-size="20" letter-spacing="6" fill="${c.accent}">${String(
     index
   ).padStart(2, '0')} — ${total} · ${catEn}</text>
   ${title}

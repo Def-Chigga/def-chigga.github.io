@@ -38,8 +38,15 @@
   </g>
   </g>
 
-  <text x="100" y="132" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="20" letter-spacing="6" fill="#8f91e6">13 — 17 · FRONTEND</text>
-  <text x="100" y="196" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="40" font-weight="600" letter-spacing="1" fill="#e3e5e8">前端开发风格指南</text>
+  <text x="308" y="132" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="20" letter-spacing="6" fill="#8f91e6">13 — 17 · FRONTEND</text>
+  <text x="308" y="306" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">前</text>
+  <text x="308" y="359" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">端</text>
+  <text x="308" y="412" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">开</text>
+  <text x="308" y="465" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">发</text>
+  <text x="308" y="518" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">风</text>
+  <text x="308" y="571" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">格</text>
+  <text x="308" y="624" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">指</text>
+  <text x="308" y="677" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="46" font-weight="600" fill="#e3e5e8">南</text>
 
   <line x1="100" y1="860" x2="1500" y2="860" stroke="#e3e5e8" stroke-width="1" stroke-opacity="0.25" />
   <text x="100" y="908" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="22" letter-spacing="3" fill="#e3e5e8" fill-opacity="0.55">代码规范</text>

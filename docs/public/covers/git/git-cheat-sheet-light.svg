@@ -25,26 +25,27 @@
 
   <g>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M760 110 V850" stroke="#1a2330" stroke-width="9" stroke-opacity="0.85" />
+    <path d="M880 110 V850" stroke="#1a2330" stroke-width="9" stroke-opacity="0.85" />
     
-    <path d="M760 330 C 900 330 930 200 1080 200 V 440 C 930 440 900 540 760 540" fill="none" stroke="#1a2330" stroke-width="8" stroke-opacity="0.5" stroke-linecap="round" />
-    <path class="flow" d="M760 330 C 900 330 930 200 1080 200 V 440 C 930 440 900 540 760 540" fill="none" stroke="#6062ce" stroke-width="3.5" stroke-opacity="0.9" />
-    <path d="M760 540 C 600 540 570 700 420 700" fill="none" stroke="#1a2330" stroke-width="8" stroke-opacity="0.5" stroke-linecap="round" />
-    <path class="flow" d="M760 540 C 600 540 570 700 420 700" fill="none" stroke="#6062ce" stroke-width="3.5" stroke-opacity="0.9" />
-    <path d="M760 580 C 940 580 980 800 1160 800" fill="none" stroke="#6062ce" stroke-width="10" stroke-opacity="1" stroke-linecap="round" />
-    <path class="flow" d="M760 580 C 940 580 980 800 1160 800" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-opacity="0.9" />
+    <path d="M880 330 C 1020 330 1050 200 1200 200 V 440 C 1050 440 1020 540 880 540" fill="none" stroke="#1a2330" stroke-width="8" stroke-opacity="0.5" stroke-linecap="round" />
+    <path class="flow" d="M880 330 C 1020 330 1050 200 1200 200 V 440 C 1050 440 1020 540 880 540" fill="none" stroke="#6062ce" stroke-width="3.5" stroke-opacity="0.9" />
+    <path d="M880 540 C 720 540 690 700 640 700" fill="none" stroke="#1a2330" stroke-width="8" stroke-opacity="0.5" stroke-linecap="round" />
+    <path class="flow" d="M880 540 C 720 540 690 700 640 700" fill="none" stroke="#6062ce" stroke-width="3.5" stroke-opacity="0.9" />
+    <path d="M880 580 C 1060 580 1100 800 1280 800" fill="none" stroke="#6062ce" stroke-width="10" stroke-opacity="1" stroke-linecap="round" />
+    <path class="flow" d="M880 580 C 1060 580 1100 800 1280 800" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-opacity="0.9" />
     
   </g>
   <g>
-    <circle cx="760" cy="110" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
-    <circle cx="760" cy="330" r="32" fill="#1a2330" stroke="none" stroke-width="7" />
-    <circle cx="760" cy="580" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
-    <circle cx="760" cy="850" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
-  </g><circle cx="1080" cy="200" r="26" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="1080" cy="440" r="26" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="420" cy="700" r="24" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="1160" cy="800" r="32" fill="#6062ce" stroke="none" stroke-width="7" /><rect x="840" y="308" width="100" height="14" rx="7" fill="#1a2330" opacity="0.28" />
+    <circle cx="880" cy="110" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
+    <circle cx="880" cy="330" r="32" fill="#1a2330" stroke="none" stroke-width="7" />
+    <circle cx="880" cy="580" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
+    <circle cx="880" cy="850" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
+  </g><circle cx="1200" cy="200" r="26" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="1200" cy="440" r="26" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="640" cy="700" r="24" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="1280" cy="800" r="32" fill="#6062ce" stroke="none" stroke-width="7" /><rect x="960" y="308" width="100" height="14" rx="7" fill="#1a2330" opacity="0.28" />
   </g>
 
-  <text x="100" y="132" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="20" letter-spacing="6" fill="#6062ce">10 — 17 · GIT</text>
-  <text x="100" y="196" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="40" font-weight="600" letter-spacing="1" fill="#1a2330">Git Cheat Sheet</text>
+  <text x="308" y="132" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="20" letter-spacing="6" fill="#6062ce">10 — 17 · GIT</text>
+  <text x="308" y="457" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="44" font-weight="600" letter-spacing="2" fill="#1a2330">Git Cheat</text>
+  <text x="308" y="516" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="44" font-weight="600" letter-spacing="2" fill="#1a2330">Sheet</text>
 
   <line x1="100" y1="860" x2="1500" y2="860" stroke="#1a2330" stroke-width="1" stroke-opacity="0.25" />
   <text x="100" y="908" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="22" letter-spacing="3" fill="#1a2330" fill-opacity="0.55">Git</text>
