@@ -4965,13 +4965,6 @@ div[class*=language-].line-numbers-mode {
 }
 
 @font-face {
-  font-family: Raleway;
-  font-style: normal;
-  font-display: swap;
-  src: url(/fonts/DTM-Mono-1.otf)
-}
-
-@font-face {
   font-family: OPPOSans;
   font-style: medium;
   font-weight: 500;
