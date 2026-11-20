@@ -4,6 +4,9 @@ date: 2025-10-01
 sticky: 1
 categories: [前端]
 tags: [代码规范]
+cover:
+  - /covers/frontend/frontend-style-guide-light.svg
+  - /covers/frontend/frontend-style-guide-dark.svg
 ---
 
 # 前端开发风格指南

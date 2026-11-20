@@ -3,6 +3,9 @@ title: MCP 入门
 date: 2026-11-20
 categories: [AI]
 tags: [MCP]
+cover:
+  - /covers/ai/mcp/introduction-light.svg
+  - /covers/ai/mcp/introduction-dark.svg
 ---
 
 # MCP 入门
@@ -3504,11 +3507,11 @@ npx -y @modelcontextprotocol/inspector@2.15.0 --cli --protocol-era modern node d
 
 试验 state=California、latitude=100 应被输入校验拒绝；有效参数但上游不可达、非成功状态或缺预报地址应得到明确工具错误。HTTP 客户端设置超时，服务端只从固定域名读取，不因上游给出另一个 URL 就无条件跟随。为真实业务增加缓存、重试或调用次数预算时，仍检查错误类别和新鲜度。
 
-![天气查询结果在主应用中的呈现示例](../../../images/mcp/introduction/current-weather.webp)
+![天气查询结果在主应用中的呈现示例](../../../images/ai/mcp/introduction/current-weather.webp)
 
 图示来源：MCP 官方文档。图示说明：用户提出地点与天气需求，主应用选择工具并把返回信息组织成回答。截图用于说明交互，不是当前天气数据；界面中的工具调用记录比自然语言声称“已查询”更能说明实际执行情况。
 
-![预警查询结果在主应用中的呈现示例](../../../images/mcp/introduction/weather-alerts.webp)
+![预警查询结果在主应用中的呈现示例](../../../images/ai/mcp/introduction/weather-alerts.webp)
 
 图示来源：MCP 官方文档。图示说明：预警可能包含区域、事件和说明；有结果、没有活跃预警、上游调用失败三种情况需要分别呈现。没有真实主应用或网络时，可先验证参数与固定响应处理，不声称已取得实时数据。
 

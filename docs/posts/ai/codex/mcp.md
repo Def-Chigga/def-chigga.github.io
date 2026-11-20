@@ -3,6 +3,9 @@ title: Codex MCP 使用手册
 date: 2026-11-20
 categories: [AI]
 tags: [MCP, Codex]
+cover:
+  - /covers/ai/codex/mcp-light.svg
+  - /covers/ai/codex/mcp-dark.svg
 ---
 
 # Codex MCP 使用手册
@@ -50,7 +53,7 @@ tags: [MCP, Codex]
 
 假设你要查询101号工单。模型可以解释工单概念，但不知道你系统的真实状态。MCP（Model Context Protocol，模型上下文协议）让Codex通过统一的客户端接口调用外部服务器。服务器描述工具、验证请求并访问实际系统，模型再根据返回结果组织回答。
 
-![查询工单时的信息流](../../../images/mcp/codex/how-a-request-works-poster.webp)
+![查询工单时的信息流](../../../images/ai/mcp/codex/how-a-request-works-poster.webp)
 
 图中以ChatGPT为宿主展示通用工单查询链；Codex作为宿主时，同样通过MCP服务器访问业务系统。它是信息流示意图，界面入口按本书的CLI、桌面与IDE步骤识别。
 

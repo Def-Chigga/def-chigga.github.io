@@ -3,6 +3,9 @@ title: Python零基础入门学习手册
 date: 2026-11-11
 categories: [后端]
 tags: [Python]
+cover:
+  - /covers/backend/python/python-basics-manual-light.svg
+  - /covers/backend/python/python-basics-manual-dark.svg
 ---
 
 # Python零基础入门学习手册

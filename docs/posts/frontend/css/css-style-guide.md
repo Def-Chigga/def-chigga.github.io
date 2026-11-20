@@ -3,6 +3,9 @@ title: CSS 代码风格指南
 date: 2025-10-01
 categories: [前端]
 tags: [CSS, 代码规范]
+cover:
+  - /covers/frontend/css/css-style-guide-light.svg
+  - /covers/frontend/css/css-style-guide-dark.svg
 ---
 
 # CSS 代码风格指南

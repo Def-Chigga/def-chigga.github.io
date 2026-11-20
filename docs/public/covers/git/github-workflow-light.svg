@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-label="GitHub Workflow 封面">
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      .flow { stroke-dasharray: 24 150; animation: flow 2.6s linear infinite; }
+      .breathe { animation: breathe 3.2s ease-in-out infinite; }
+      .breathe.d2 { animation-delay: 0.8s; }
+      .breathe.d3 { animation-delay: 1.6s; }
+    }
+    @keyframes flow { from { stroke-dashoffset: 88; } to { stroke-dashoffset: 0; } }
+    @keyframes breathe { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+  </style>
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#1a2330" opacity="0.14" />
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6062ce" stop-opacity="0.14" />
+      <stop offset="1" stop-color="#6062ce" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="960" fill="#f5f3ee" />
+  <rect width="1600" height="960" fill="url(#dots)" />
+  <circle cx="900" cy="470" r="520" fill="url(#glow)" class="breathe" />
+
+  <g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M760 110 V850" stroke="#1a2330" stroke-width="9" stroke-opacity="0.85" />
+    
+    <path d="M760 330 C 940 330 980 200 1180 200 V 460 C 980 460 940 580 760 580" fill="none" stroke="#1a2330" stroke-width="8" stroke-opacity="0.5" stroke-linecap="round" />
+    <path class="flow" d="M760 330 C 940 330 980 200 1180 200 V 460 C 980 460 940 580 760 580" fill="none" stroke="#6062ce" stroke-width="3.5" stroke-opacity="0.9" />
+    <path d="M760 580 C 960 580 1000 760 1200 760" fill="none" stroke="#6062ce" stroke-width="10" stroke-opacity="1" stroke-linecap="round" />
+    <path class="flow" d="M760 580 C 960 580 1000 760 1200 760" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-opacity="0.9" />
+    
+  </g>
+  <g>
+    <circle cx="760" cy="110" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
+    <circle cx="760" cy="330" r="32" fill="#1a2330" stroke="none" stroke-width="7" />
+    <circle cx="760" cy="580" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
+    <circle cx="760" cy="850" r="28" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" />
+  </g><circle cx="1180" cy="200" r="26" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="1180" cy="460" r="26" fill="#f5f3ee" stroke="#1a2330" stroke-width="7" /><circle cx="1200" cy="760" r="32" fill="#6062ce" stroke="none" stroke-width="7" /><rect x="840" y="308" width="110" height="14" rx="7" fill="#1a2330" opacity="0.28" />
+  </g>
+
+  <text x="100" y="132" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="20" letter-spacing="6" fill="#6062ce">11 — 17 · GIT</text>
+  <text x="100" y="196" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="40" font-weight="600" letter-spacing="1" fill="#1a2330">GitHub Workflow</text>
+
+  <line x1="100" y1="860" x2="1500" y2="860" stroke="#1a2330" stroke-width="1" stroke-opacity="0.25" />
+  <text x="100" y="908" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="22" letter-spacing="3" fill="#1a2330" fill-opacity="0.55">GitHub</text>
+  <text x="1500" y="908" text-anchor="end" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="22" letter-spacing="3" fill="#1a2330" fill-opacity="0.4">2026.01.27</text>
+</svg>

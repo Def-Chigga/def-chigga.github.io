@@ -3,6 +3,9 @@ title: Java零基础入门学习手册
 date: 2026-11-11
 categories: [后端]
 tags: [Java]
+cover:
+  - /covers/backend/java/java-basics-manual-light.svg
+  - /covers/backend/java/java-basics-manual-dark.svg
 ---
 
 # Java零基础入门学习手册
@@ -9341,7 +9344,7 @@ public class Demo {
 模型检查通过
 ```
 
-![数字拼图界面示意](../../../images/java-basics-manual/java21-puzzle.png)
+![数字拼图界面示意](../../../images/backend/java/java-basics-manual/java21-puzzle.png)
 
 上图直接渲染本例Swing组件，省略操作系统标题栏；主题、边框和字体会随平台变化。
 

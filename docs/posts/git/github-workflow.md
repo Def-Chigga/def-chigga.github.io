@@ -4,6 +4,9 @@ date: 2026-01-27
 categories: [Git]
 tags: [GitHub]
 outline: [2, 4]
+cover:
+  - /covers/git/github-workflow-light.svg
+  - /covers/git/github-workflow-dark.svg
 ---
 
 # GitHub Workflow

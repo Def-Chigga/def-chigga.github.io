@@ -3,6 +3,9 @@ title: JavaScript 代码风格指南
 date: 2025-10-01
 categories: [前端]
 tags: [JavaScript, 代码规范]
+cover:
+  - /covers/frontend/javascript/javascript-style-guide-light.svg
+  - /covers/frontend/javascript/javascript-style-guide-dark.svg
 ---
 
 # JavaScript 代码风格指南

@@ -3,6 +3,9 @@ title: MCP 规格说明
 date: 2026-11-20
 categories: [AI]
 tags: [MCP]
+cover:
+  - /covers/ai/mcp/specification-light.svg
+  - /covers/ai/mcp/specification-dark.svg
 ---
 
 # MCP 规格说明
@@ -4012,7 +4015,7 @@ sequenceDiagram
 
 例如，作为 slash commands（斜杠命令）：
 
-![主应用将提示模板显示为命令的界面示意](../../../images/mcp/specification/slash-command.png)
+![主应用将提示模板显示为命令的界面示意](../../../images/ai/mcp/specification/slash-command.png)
 
 图示来源：MCP 官方文档。图示说明：这是主应用呈现方式的示例，按钮与布局依产品而异；协议规定消息和内容，不强制所有产品使用同一界面。
 
@@ -4339,7 +4342,7 @@ MCP 中的资源被设计为 **application-driven（应用驱动）**，由主�
 - 允许用户搜索并筛选可用的资源
 - 依据启发式规则或 AI 模型的选择实现自动上下文纳入
 
-![主应用选择资源内容的界面示意](../../../images/mcp/specification/resource-picker.png)
+![主应用选择资源内容的界面示意](../../../images/ai/mcp/specification/resource-picker.png)
 
 图示来源：MCP 官方文档。图示说明：这是主应用呈现方式的示例，按钮与布局依产品而异；协议规定消息和内容，不强制所有产品使用同一界面。
 

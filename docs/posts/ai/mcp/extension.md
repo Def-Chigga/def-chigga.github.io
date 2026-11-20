@@ -3,6 +3,9 @@ title: MCP 扩展
 date: 2026-11-20
 categories: [AI]
 tags: [MCP]
+cover:
+  - /covers/ai/mcp/extension-light.svg
+  - /covers/ai/mcp/extension-dark.svg
 ---
 
 # MCP 扩展

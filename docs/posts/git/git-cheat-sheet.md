@@ -5,6 +5,9 @@ sticky: 1
 categories: [Git]
 tags: [Git]
 outline: [2, 4]
+cover:
+  - /covers/git/git-cheat-sheet-light.svg
+  - /covers/git/git-cheat-sheet-dark.svg
 ---
 
 # Git Cheat Sheet

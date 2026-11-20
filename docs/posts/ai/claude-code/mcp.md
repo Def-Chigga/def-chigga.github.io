@@ -3,6 +3,9 @@ title: Claude Code MCP 使用手册
 date: 2026-11-20
 categories: [AI]
 tags: [MCP, ClaudeCode]
+cover:
+  - /covers/ai/claude-code/mcp-light.svg
+  - /covers/ai/claude-code/mcp-dark.svg
 ---
 
 # Claude Code MCP 使用手册

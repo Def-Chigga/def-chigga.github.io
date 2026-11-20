@@ -3,6 +3,9 @@ title: JavaScript零基础入门学习手册
 date: 2026-11-11
 categories: [前端]
 tags: [JavaScript]
+cover:
+  - /covers/frontend/javascript/javascript-basics-manual-light.svg
+  - /covers/frontend/javascript/javascript-basics-manual-dark.svg
 ---
 
 # JavaScript零基础入门学习手册

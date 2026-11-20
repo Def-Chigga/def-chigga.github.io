@@ -4,6 +4,9 @@ date: 2025-10-01
 categories: [前端]
 tags: [Vue, 代码规范]
 outline: [2, 4]
+cover:
+  - /covers/frontend/vue/vue-style-guide-light.svg
+  - /covers/frontend/vue/vue-style-guide-dark.svg
 ---
 
 # Vue 代码风格指南

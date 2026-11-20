@@ -3,6 +3,9 @@ title: Git 风格指南
 date: 2025-10-01
 categories: [Git]
 tags: [Git, 代码规范]
+cover:
+  - /covers/git/git-style-guide-light.svg
+  - /covers/git/git-style-guide-dark.svg
 ---
 
 # Git 风格指南
