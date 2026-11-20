@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress-theme-async/config'
 import { slug as githubSlug } from 'github-slugger'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import pkg from '../../package.json' with { type: 'json' }
 
 const author = pkg.author.name
@@ -27,7 +28,7 @@ function getAge(year: number, month: number, day: number) {
   return age
 }
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   base: '/', // 站点将部署到的 base URL
   srcDir: './',
   lang: 'zh',
@@ -289,4 +290,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))

@@ -5,5 +5,9 @@ allowBuilds:
   esbuild: true
   less: true
   vue-demi: true
+# Vite 5 ships esbuild 0.21, which fails to unlink its temp file on Windows
+# when a transform output exceeds ~1MB ("remove ...: Access is denied").
+overrides:
+  'vite@5>esbuild': 0.27.2
 patchedDependencies:
   vitepress-theme-async@0.0.30: patches/vitepress-theme-async@0.0.30.patch
