@@ -142,25 +142,73 @@ function splitTitle(title) {
   return { latin, cjk }
 }
 
-/** 竖排：每列从上到下，列从右往左；字号收缩到塞进左栏且不超过 4 列 */
+let zhSegmenter = null
+
+/** 中文按词切分；环境不支持 Intl.Segmenter 时退回逐字 */
+function cjkWords(text) {
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    zhSegmenter ||= new Intl.Segmenter('zh', { granularity: 'word' })
+    return [...zhSegmenter.segment(text)].map((s) => s.segment).filter((w) => w.trim())
+  }
+  return [...text]
+}
+
+/**
+ * 把词序列连续切成 k 段，最小化「最长段」长度（minimax DP），
+ * 保证列与列之间在词边界断开且长度均衡。
+ */
+function partitionWords(words, k) {
+  const n = words.length
+  const parts = Math.max(1, Math.min(k, n))
+  const prefix = [0]
+  for (let i = 0; i < n; i++) prefix[i + 1] = prefix[i] + [...words[i]].length
+
+  const dp = Array.from({ length: n + 1 }, () => Array(parts + 1).fill(Infinity))
+  const cut = Array.from({ length: n + 1 }, () => Array(parts + 1).fill(0))
+  dp[0][0] = 0
+  for (let j = 1; j <= parts; j++) {
+    for (let i = j; i <= n; i++) {
+      for (let p = j - 1; p < i; p++) {
+        const segLen = prefix[i] - prefix[p]
+        const worst = Math.max(dp[p][j - 1], segLen)
+        if (worst < dp[i][j]) {
+          dp[i][j] = worst
+          cut[i][j] = p
+        }
+      }
+    }
+  }
+
+  const bounds = []
+  let i = n
+  for (let j = parts; j > 0; j--) {
+    const p = cut[i][j]
+    bounds.unshift([p, i])
+    i = p
+  }
+  return bounds.map(([a, b]) => words.slice(a, b).join(''))
+}
+
+/** 竖排：每列从上到下，列从右往左；按词边界分列，字号收缩到不超过 4 列 */
 function layoutVertical(text, label) {
   const chars = [...text]
+  const words = cjkWords(text)
+  const build = (colCount, size, step) => {
+    const columns = partitionWords(words, colCount).map((part) => [...part])
+    return { mode: 'vertical', columns, size, step, label }
+  }
   for (let size = 46; size >= 22; size -= 2) {
     const step = Math.round(size * 1.16)
-    const maxPerCol = Math.max(1, Math.floor(TITLE_MAX_H / step))
+    // 单列最多 7 字，过长就分列，避免一根长条
+    const maxPerCol = Math.max(1, Math.min(7, Math.floor(TITLE_MAX_H / step)))
     const colCount = Math.ceil(chars.length / maxPerCol)
     const colStep = Math.round(size * 1.55)
     if (colCount <= 4 && colCount * colStep <= TITLE_COL.width) {
-      const per = Math.ceil(chars.length / colCount)
-      const columns = Array.from({ length: colCount }, (_, i) => chars.slice(i * per, (i + 1) * per))
-      return { mode: 'vertical', columns, size, step, label }
+      return build(colCount, size, step)
     }
   }
   const size = 22
-  const step = Math.round(size * 1.16)
-  const per = Math.ceil(chars.length / 4)
-  const columns = Array.from({ length: 4 }, (_, i) => chars.slice(i * per, (i + 1) * per))
-  return { mode: 'vertical', columns, size, step, label }
+  return build(4, size, Math.round(size * 1.16))
 }
 
 function wrapHorizontal(text, size, spacing) {
