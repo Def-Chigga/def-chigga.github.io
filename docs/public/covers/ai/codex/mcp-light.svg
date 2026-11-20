@@ -23,28 +23,24 @@
   <rect width="1600" height="960" fill="url(#dots)" />
   <circle cx="900" cy="470" r="520" fill="url(#glow)" class="breathe" />
 
-  <g>
-    <circle cx="1000" cy="480" r="280" fill="none" stroke="#6062ce" stroke-width="2.5" stroke-opacity="0.35" stroke-dasharray="6 12" />
+  <g transform="translate(43 -4) translate(1000 480) scale(1 1) rotate(-1.70) scale(0.948) translate(-1000 -480)"><g>
+    <path d="M820 306 C 900 200 1260 210 1340 420 C 1400 600 1170 780 950 780 C 720 780 640 520 760 330" fill="none" stroke="#1a2330" stroke-width="4" stroke-opacity="0.28" stroke-linecap="round" />
+    <path d="M820 306 C 900 200 1260 210 1340 420" fill="none" stroke="#6062ce" stroke-width="4" stroke-opacity="0.8" class="flow" stroke-linecap="round" />
     
-          <line x1="1000" y1="480" x2="1000" y2="140" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1000" y2="140" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="1240" y2="240" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1240" y2="240" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="1340" y2="480" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1340" y2="480" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="1240" y2="720" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1240" y2="720" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="1000" y2="820" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1000" y2="820" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="760" y2="720" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="760" y2="720" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="660" y2="480" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="660" y2="480" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="760" y2="240" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="760" y2="240" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-    <circle cx="1000" cy="140" r="22" fill="#6062ce" stroke="none" stroke-width="4" stroke-opacity="0.5" /><circle cx="1240" cy="240" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" /><circle cx="1340" cy="480" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" /><circle cx="1240" cy="720" r="22" fill="#6062ce" stroke="none" stroke-width="4" stroke-opacity="0.5" /><circle cx="1000" cy="820" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" /><circle cx="760" cy="720" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" /><circle cx="660" cy="480" r="22" fill="#6062ce" stroke="none" stroke-width="4" stroke-opacity="0.5" /><circle cx="760" cy="240" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" />
-    <circle cx="1000" cy="480" r="64" fill="#6062ce" opacity="0.9" />
-    <circle cx="1000" cy="480" r="28" fill="#f5f3ee" />
+    <rect x="780" y="210" width="170" height="96" rx="16" fill="#6062ce" fill-opacity="0.18" stroke="#6062ce" stroke-width="4" stroke-opacity="0.7" />
+    <circle cx="810" cy="258" r="12" fill="#6062ce" opacity="1" />
+    <rect x="836" y="240" width="80" height="10" rx="5" fill="#1a2330" opacity="0.32" />
+    <rect x="836" y="264" width="56" height="9" rx="4" fill="#1a2330" opacity="0.2" />
+    <rect x="1210" y="390" width="170" height="96" rx="16" fill="none" fill-opacity="0" stroke="#1a2330" stroke-width="4" stroke-opacity="0.35" />
+    <circle cx="1240" cy="438" r="12" fill="#1a2330" opacity="0.4" />
+    <rect x="1266" y="420" width="80" height="10" rx="5" fill="#1a2330" opacity="0.32" />
+    <rect x="1266" y="444" width="56" height="9" rx="4" fill="#1a2330" opacity="0.2" />
+    <rect x="940" y="680" width="170" height="96" rx="16" fill="none" fill-opacity="0" stroke="#1a2330" stroke-width="4" stroke-opacity="0.35" />
+    <circle cx="970" cy="728" r="12" fill="#1a2330" opacity="0.4" />
+    <rect x="996" y="710" width="80" height="10" rx="5" fill="#1a2330" opacity="0.32" />
+    <rect x="996" y="734" width="56" height="9" rx="4" fill="#1a2330" opacity="0.2" />
+    <path d="M960 450 l-52 42 52 42 M1060 450 l52 42 -52 42 M1026 430 l-28 128" fill="none" stroke="#6062ce" stroke-width="6" stroke-opacity="0.85" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
   </g>
 
   <text x="308" y="132" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="20" letter-spacing="6" fill="#6062ce">02 — 17 · AI</text>

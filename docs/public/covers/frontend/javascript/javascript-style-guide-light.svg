@@ -23,18 +23,18 @@
   <rect width="1600" height="960" fill="url(#dots)" />
   <circle cx="900" cy="470" r="520" fill="url(#glow)" class="breathe" />
 
-  <g>
-  <g>
-    <rect x="560" y="140" width="880" height="700" rx="22" fill="#ffffff" fill-opacity="0.82" stroke="#1a2330" stroke-width="4" stroke-opacity="0.45" />
-    <line x1="560" y1="222" x2="1440" y2="222" stroke="#1a2330" stroke-width="4" stroke-opacity="0.28" />
-    <circle cx="612" cy="182" r="11" fill="#6062ce" />
-    <circle cx="650" cy="182" r="11" fill="#1a2330" opacity="0.4" />
-    <circle cx="688" cy="182" r="11" fill="#1a2330" opacity="0.2" />
-    
-      <rect x="600" y="264" width="796" height="150" rx="12" fill="#6062ce" opacity="0.4" />
-      <rect x="600" y="438" width="378" height="362" rx="12" fill="#6062ce" opacity="0.18" />
-      <rect x="996" y="438" width="400" height="362" rx="12" fill="#1a2330" opacity="0.1" />
-      <rect x="826" y="264" width="200" height="20" rx="10" fill="#6062ce" />
+  <g transform="translate(30 20) translate(1000 480) scale(1 1) rotate(-0.60) scale(0.989) translate(-1000 -480)"><g>
+    <rect x="640" y="260" width="260" height="66" rx="10" fill="none" fill-opacity="0" stroke="#1a2330" stroke-width="4" stroke-opacity="0.35" />
+        <rect x="664" y="286" width="120" height="9" rx="4" fill="#1a2330" opacity="0.28" /><rect x="640" y="346" width="260" height="66" rx="10" fill="#6062ce" fill-opacity="0.2" stroke="#1a2330" stroke-width="4" stroke-opacity="0.65" />
+        <rect x="664" y="372" width="120" height="9" rx="4" fill="#1a2330" opacity="0.28" /><rect x="640" y="432" width="260" height="66" rx="10" fill="none" fill-opacity="0" stroke="#1a2330" stroke-width="4" stroke-opacity="0.35" />
+        <rect x="664" y="458" width="120" height="9" rx="4" fill="#1a2330" opacity="0.28" />
+    <rect x="1050" y="220" width="300" height="170" rx="16" fill="none" stroke="#1a2330" stroke-width="4" stroke-opacity="0.35" />
+    <rect x="1080" y="260" width="120" height="10" rx="5" fill="#1a2330" opacity="0.3" />
+    <rect x="1080" y="292" width="80" height="9" rx="4" fill="#1a2330" opacity="0.18" />
+    <rect x="1040" y="690" width="100" height="60" rx="10" fill="none" stroke="#1a2330" stroke-width="3" stroke-opacity="0.35" />
+    <rect x="1150" y="690" width="100" height="60" rx="10" fill="none" stroke="#1a2330" stroke-width="3" stroke-opacity="0.35" />
+    <rect x="1260" y="690" width="100" height="60" rx="10" fill="#6062ce" fill-opacity="0.2" stroke="#6062ce" stroke-width="3" stroke-opacity="0.6" />
+    <path d="M840 760 C 760 680 760 360 860 240 C 1000 60 1300 140 1360 380 C 1400 560 1240 700 1080 700" fill="none" stroke="#6062ce" stroke-width="4" stroke-opacity="0.7" class="flow" stroke-linecap="round" />
   </g>
   </g>
 

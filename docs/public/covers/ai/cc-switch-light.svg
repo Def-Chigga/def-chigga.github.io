@@ -23,24 +23,26 @@
   <rect width="1600" height="960" fill="url(#dots)" />
   <circle cx="900" cy="470" r="520" fill="url(#glow)" class="breathe" />
 
-  <g>
-    <circle cx="1000" cy="480" r="270" fill="none" stroke="#6062ce" stroke-width="2.5" stroke-opacity="0.35" stroke-dasharray="6 12" />
-    
-          <line x1="1000" y1="480" x2="1000" y2="150" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1000" y2="150" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="1286" y2="315" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1286" y2="315" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="1286" y2="645" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1286" y2="645" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="1000" y2="810" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="1000" y2="810" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="714" y2="645" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="714" y2="645" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-          <line x1="1000" y1="480" x2="714" y2="315" stroke="#1a2330" stroke-width="3" stroke-opacity="0.32" />
-          <line class="flow" x1="1000" y1="480" x2="714" y2="315" stroke="#6062ce" stroke-width="3" stroke-opacity="0.85" />
-    <circle cx="1000" cy="150" r="22" fill="#6062ce" stroke="none" stroke-width="4" stroke-opacity="0.5" /><circle cx="1286" cy="315" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" /><circle cx="1286" cy="645" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" /><circle cx="1000" cy="810" r="22" fill="#6062ce" stroke="none" stroke-width="4" stroke-opacity="0.5" /><circle cx="714" cy="645" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" /><circle cx="714" cy="315" r="15" fill="#f5f3ee" stroke="#1a2330" stroke-width="4" stroke-opacity="0.5" />
-    <circle cx="1000" cy="480" r="64" fill="#6062ce" opacity="0.9" />
-    <circle cx="1000" cy="480" r="28" fill="#f5f3ee" />
+  <g transform="translate(46 25) translate(1000 480) scale(1 1) rotate(0.00) scale(0.986) translate(-1000 -480)"><g>
+    <rect x="600" y="250" width="240" height="96" rx="16" fill="none" fill-opacity="0" stroke="#1a2330" stroke-width="4" stroke-opacity="0.32" />
+    <circle cx="650" cy="298" r="14" fill="#1a2330" opacity="0.4" />
+    <rect x="690" y="280" width="110" height="12" rx="6" fill="#1a2330" opacity="0.35" />
+    <rect x="690" y="306" width="70" height="10" rx="5" fill="#1a2330" opacity="0.2" /><path d="M840 298 H1030" stroke="#1a2330" stroke-width="3" stroke-opacity="0.22" />
+    <rect x="600" y="430" width="240" height="96" rx="16" fill="#6062ce" fill-opacity="0.2" stroke="#1a2330" stroke-width="4" stroke-opacity="0.65" />
+    <circle cx="650" cy="478" r="14" fill="#6062ce" opacity="1" />
+    <rect x="690" y="460" width="110" height="12" rx="6" fill="#1a2330" opacity="0.35" />
+    <rect x="690" y="486" width="70" height="10" rx="5" fill="#1a2330" opacity="0.2" /><path d="M840 478 H1030" stroke="#6062ce" stroke-width="5" stroke-opacity="0.85" class="flow" />
+    <rect x="600" y="610" width="240" height="96" rx="16" fill="none" fill-opacity="0" stroke="#1a2330" stroke-width="4" stroke-opacity="0.32" />
+    <circle cx="650" cy="658" r="14" fill="#1a2330" opacity="0.4" />
+    <rect x="690" y="640" width="110" height="12" rx="6" fill="#1a2330" opacity="0.35" />
+    <rect x="690" y="666" width="70" height="10" rx="5" fill="#1a2330" opacity="0.2" /><path d="M840 658 H1030" stroke="#1a2330" stroke-width="3" stroke-opacity="0.22" />
+    <path d="M1030 298 V658" stroke="#1a2330" stroke-width="4" stroke-opacity="0.25" />
+    <rect x="1006" y="430" width="48" height="96" rx="24" fill="#6062ce" opacity="0.9" />
+    <circle cx="1030" cy="478" r="14" fill="#ffffff" opacity="0.9" />
+    <path d="M1078 478 H1260" stroke="#6062ce" stroke-width="5" class="flow" />
+    <rect x="1260" y="430" width="120" height="96" rx="20" fill="none" stroke="#6062ce" stroke-width="4" stroke-opacity="0.7" />
+    <circle cx="1320" cy="478" r="20" fill="#6062ce" opacity="0.85" />
+  </g>
   </g>
 
   <text x="308" y="132" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',sans-serif" font-size="20" letter-spacing="6" fill="#6062ce">09 — 17 · AI</text>
