@@ -1,6 +1,6 @@
 ---
 title: Claude Code MCP 使用手册
-date: 2026-11-20
+date: 2026-07-30
 categories: [AI]
 tags: [MCP, ClaudeCode]
 cover:
@@ -12,7 +12,7 @@ cover:
 
 > DefChigga <defchigga@qq.com>
 >
-> 2026年11月20日
+> 2026年07月30日
 
 > **来源 (Source)**：本手册为原创学习笔记；协议内容依据 [MCP 官方规范](https://modelcontextprotocol.io/specification)（基线 2026-07-28）整理，示例代码与核验记录由作者编写。
 
@@ -20,7 +20,7 @@ cover:
 
 读者无需事先学习 MCP 协议，但应能打开终端、创建文本文件和运行命令。先完成第1—6章的接入闭环，再学习认证、权限与稳定性；第15—16章面向希望把代理嵌入程序的读者，需要 Python 或 TypeScript 基础，其必要依赖和文件均在章内给出。
 
-主线采用 Claude Code 2.1.322 的命令结构，并将截至2026年11月13日的产品条件写在特性旁。版本号是核对环境，不代表所有功能都由该版本首次引入；云端、灰度功能、组织策略和提供商可能改变可用能力。桌面聊天、Claude Code 桌面、CLI、IDE 和 Agent SDK 的入口分别说明。
+本书以产品资料中的命令结构为基础。基本 MCP 管理命令在 Claude Code 2.1.330 中复跑；云端、灰度功能、组织策略和提供商会影响各项进阶能力，使用时按对应章节确认。桌面聊天、Claude Code 桌面、CLI、IDE 和 Agent SDK 的入口分别说明。
 
 准备 Claude Code、可用模型登录、PowerShell，以及本地实验使用的 Python 3.12。Node.js 仅用于 npx 或 TypeScript 例子。本书把固定只读的工单服务作为主线；远程服务案例需要各自账户，不能用模型登录代替第三方授权。
 
@@ -154,6 +154,8 @@ claude mcp get claude-code-docs
 
 ### 2.2 用证据判断第一次查询
 
+连接后可在工具目录查找 `search_claude_code_docs`。检查目录只能确认服务器公布了该工具，下一步还要观察会话是否发起调用、返回结果是否与问题相关。服务更新后以当前目录为准。
+
 运行 `claude` 打开会话，输入 `/mcp`，查看服务器状态和工具。随后提问：
 
 ```text
@@ -259,6 +261,8 @@ claude mcp remove claude-code-docs
 
 ### 3.1 学习目标与本地进程模型
 
+上一章由官方站点提供远程服务器。本章用本地固定工单排除公网和外部账户的影响，再观察同一套发现与调用步骤。
+
 stdio 是 standard input/output，即标准输入与标准输出。Claude Code 启动一个子进程，向其stdin发送协议消息，从stdout读取消息；日志必须写stderr。进程安静等待输入是正常现象，但还不能证明它实现了有效MCP。
 
 ```text
@@ -271,7 +275,7 @@ Claude Code ←─ JSON-RPC结果 ─ 子进程stdout
 
 ### 3.2 完整服务与依赖
 
-在 `D:\mcp-lab` 新建 `server.py`，保存为UTF-8。使用 Python 3.12 建立独立环境：
+使用第2章建立的 `D:\mcp-lab` 目录。直接从本章开始时先创建该目录，再将 `server.py` 保存为 UTF-8。在 PowerShell 运行 `python --version` 核对已安装 Python 3.12，再建立独立环境：
 
 ```powershell
 Set-Location -LiteralPath 'D:\mcp-lab'
@@ -1153,7 +1157,7 @@ stdout里只有请求头JSON，错误到stderr。此示例的令牌读取方式�
 
 先决定目标：只清除本机登录，还是也撤销授权服务器端令牌。`remove`删除配置并清理本地关联信息，不自动在所有远端撤销。若服务支持撤销，按客户端`logout`和服务商账户授权页的规则操作，然后再按需要移除服务器。
 
-不要为了恢复访问就把权限范围扩大到所有仓库或所有操作。先比较失败工具所需scope与批准范围，批准范围确实需要变化时才重新授权。固定回调、CIMD和DCR的细节用于匹配提供商条件，不应让初学者手工猜测redirect URI。
+不要为了恢复访问就把权限范围扩大到所有仓库或所有操作。先比较失败工具所需scope与批准范围，批准范围确实需要变化时才重新授权。固定回调、CIMD 和 DCR 的细节用于匹配提供商条件。`2026-07-28` 协议把 DCR 保留为旧授权服务器的兼容路径，新接入优先采用预注册或提供方支持的 CIMD。回调地址以实际客户端显示和提供方登记为准。
 
 ### 7.5 使用远程 MCP 服务器进行身份验证
 

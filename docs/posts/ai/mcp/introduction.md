@@ -1,6 +1,6 @@
 ---
 title: MCP 入门
-date: 2026-11-20
+date: 2026-07-30
 categories: [AI]
 tags: [MCP]
 cover:
@@ -12,7 +12,7 @@ cover:
 
 > DefChigga <defchigga@qq.com>
 >
-> 2026年11月20日
+> 2026年07月30日
 
 > **来源 (Source)**：本手册为原创学习笔记；协议内容依据 [MCP 官方规范](https://modelcontextprotocol.io/specification)（基线 2026-07-28）整理，示例代码与核验记录由作者编写。
 
@@ -121,6 +121,8 @@ A2A 关注 Agent 之间的任务协作。MCP 关注应用访问工具和上下�
 
 ## 第2章 建立终端与项目环境
 
+第1章分清了 MCP 各参与者。现在先准备能启动客户端和服务端的终端与项目环境。
+
 ### 2.1 文件、工作目录与命令
 
 程序文件是磁盘上的内容，进程是程序运行后的实例。命令中的第一个词通常选择程序，后续词是参数。例如 `python server.py --http` 表示用 Python 执行 `server.py`，并把 `--http` 交给脚本解释。
@@ -136,7 +138,9 @@ Get-Location
 python --version
 ```
 
-最后一条显示实际命中的 Python 版本；若提示找不到命令，先修正安装或 PATH，不要继续猜 MCP 配置。以下主线需要 Python 3.10 以上，建议用 Python 3.12；TypeScript 实现需要 Node.js 24.22.1（同时满足本册 Inspector 的环境要求）。
+最后一条显示当前终端找到的 Python 版本。以下主线需要 Python 3.10 或更高版本，建议使用 3.12。TypeScript 和 Inspector 的实验环境使用 Node.js 24.22.1。
+
+若电脑尚未安装，使用 Python 和 Node.js 的官方安装程序。安装时启用将程序加入 `PATH` 的选项（`PATH` 是终端搜索程序的目录列表）。重新打开 PowerShell，分别执行 `python --version`、`node --version` 和 `npm --version`。只做 Python 示例时先核对 Python；做 TypeScript 示例时再核对 Node.js 与随它安装的 npm。
 
 ### 2.2 项目环境与依赖
 
@@ -236,6 +240,8 @@ npm install
 **可观察结果**：解释器路径位于项目的 .venv，mcp 包显示2.3.0；TypeScript 目录安装成功并生成锁文件。
 
 ## 第3章 读懂示例所需的语法
+
+依赖安装好后，先用一条固定笔记读懂后面会用到的值、函数、类型和异步调用。
 
 ### 3.1 变量、集合与对象
 
@@ -343,6 +349,8 @@ export {}
 
 ## 第4章 看懂通信和数据结构
 
+前一章用两种语言处理了相同数据。本章观察这些数据怎样经标准流或 HTTP 在进程之间传递。
+
 ### 4.1 三条标准流与子进程
 
 本地 Client 启动 Server 时，Server 是 Client 的子进程。stdin 是输入，stdout 是输出，stderr 是诊断输出。stdio 传输用 stdin/stdout 交换协议消息；错误日志走 stderr。
@@ -436,6 +444,8 @@ SSE（Server-Sent Events）是一种把事件连续写进 HTTP 响应的编码�
 
 ## 第5章 接入本地和远程服务
 
+能辨认请求、响应和传输后，先连接现成服务，学会将启动、连接和实际调用分别验收。
+
 ### 5.1 连接前先取得四项信息
 
 本地服务需要启动程序、参数、工作目录和必要环境；远程服务需要准确端点、传输、授权方式以及服务使用权限。网页首页不一定是 MCP 端点，普通 REST API 也不能直接当 MCP 地址。
@@ -501,6 +511,8 @@ uvx mcp-server-fetch
 **本章结果**：能区分本地进程与远程端点，能说明连接、目录和调用三个不同的成功判据。
 
 ## 第6章 创建第一个工具
+
+前一章用现成服务完成调用。现在替换服务端，用自己注册的工具复现同样的连接和调用过程。
 
 ### 6.1 一个输入很少的工具
 
@@ -851,6 +863,8 @@ try {
 
 ## 第8章 读取资源
 
+第7章用工具搜索笔记。本章处理已经知道标识的内容，练习列出目录和直接读取正文。
+
 ### 8.1 先选内容，再读正文
 
 当应用已经知道要读 `stdio` 笔记，再调用“搜索”并不自然。Resource 把内容用 URI 标识，Client 可以先列目录、再按 URI 读取。
@@ -1012,6 +1026,8 @@ try {
 **通过标准**：能区分目录、模板、实例和内容，读取存在的ID并解释不存在ID的错误。
 
 ## 第9章 使用提示模板
+
+读到正文后，应用还需要告诉模型怎样处理它。本章把可复用的要求做成提示模板。
 
 ### 9.1 模板生成消息，不直接生成回答
 
@@ -1486,6 +1502,8 @@ JSON 空格与字段顺序可不同，业务值应一致。若只打印到 `tool
 
 ## 第11章 将服务从 stdio 接到 HTTP
 
+第10章的固定客户端已经能通过 stdio 验证笔记服务。本章复用同一业务接口，改用本机 HTTP 连接并对照结果。
+
 ### 11.1 变的是通信入口
 
 stdio 中 Client 创建子进程，通常一个连接对应一个本地 Server 进程；HTTP 中先启动服务监听端口，多个 Client 可以访问同一地址。工具的业务输入和结果应保持一致。
@@ -1559,11 +1577,11 @@ FastMCP 是 Python 的 MCP 框架。用装饰器注册函数时，框架根据�
 
 #### 11.5.1 安装并确认版本
 
-本实验固定 `fastmcp==4.2.2`，需要 Python 3.11 或更高版本，下面使用 3.12。在一个新目录 `C:\mcp-notes-fastmcp` 中执行这些命令，两个示例文件保存到同一个目录。
+本实验固定 `fastmcp==4.2.4`，需要 Python 3.11 或更高版本，下面使用 3.12。在一个新目录 `C:\mcp-notes-fastmcp` 中执行这些命令，两个示例文件保存到同一个目录。
 
 ```powershell
 py -3.12 -m venv .venv
-& .\.venv\Scripts\python.exe -m pip install "fastmcp==4.2.2"
+& .\.venv\Scripts\python.exe -m pip install "fastmcp==4.2.4" "mcp==2.3.0"
 & .\.venv\Scripts\fastmcp.exe version
 ```
 
@@ -2180,6 +2198,8 @@ MCP stdio 传输用进程的 stdin/stdout 承载 JSON-RPC 消息流，stdout 是
 **可观察结果**：有可用主应用时，应看到真实 search_notes 调用、query=stdio、limit=2，以及结果 total=1；没有该环境时不能据固定客户端结果推断主应用已完成。
 
 ## 第14章 使用 Inspector 观察服务
+
+第13章把服务接进了主应用。遇到界面结果不明确时，本章用 Inspector 直接观察能力目录与调用报文。
 
 ### 14.1 三种界面各自适合什么任务
 

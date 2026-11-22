@@ -1,6 +1,6 @@
 ---
 title: Codex MCP 使用手册
-date: 2026-11-20
+date: 2026-07-30
 categories: [AI]
 tags: [MCP, Codex]
 cover:
@@ -12,7 +12,7 @@ cover:
 
 > DefChigga <defchigga@qq.com>
 >
-> 2026年11月20日
+> 2026年07月30日
 
 > **来源 (Source)**：本手册为原创学习笔记；协议内容依据 [MCP 官方规范](https://modelcontextprotocol.io/specification)（基线 2026-07-28）整理，示例代码与核验记录由作者编写。
 
@@ -20,7 +20,7 @@ cover:
 
 本书从“配置一个服务器，确认它真的被调用”开始，适合未接触 MCP 的 Codex 使用者。需要能打开终端和编辑文本；Python 只用于固定只读实验，TOML 和 JSON 在出现时解释。先完成第1—9章，再按需学习插件、迁移和团队使用；第13章是 ChatGPT 插件与 Sites 选修，不是 Codex CLI 接入的前置。
 
-主线采用 Codex CLI 0.167.2 的命令结构，结合截至2026年11月13日的官方配置说明。版本号用于复现，不等于功能首次引入。桌面产品名称和菜单会调整；辨认当前会话使用的执行主机、配置目录和传输类型，比只记一个菜单名称可靠。
+本书以产品资料中的命令结构为基础。基本 MCP 管理命令在 Codex CLI 0.171.0 中复跑；平台界面、插件与远程执行环境依各自条件使用。桌面产品名称和菜单会调整；辨认当前会话使用的执行主机、配置目录和传输类型，比只记一个菜单名称可靠。
 
 准备可用的 Codex 登录、PowerShell、用于实验的 Python 3.12。Node.js 仅用于 npx 示例。桌面端、CLI 和 IDE 在同一 Codex 主机上共用配置；Windows、WSL、SSH、远程执行器或另一台机器不能因此被当作同一个主机。
 
@@ -118,7 +118,7 @@ codex mcp list --json
 
 ### 2.2 在对话中完成调用验证
 
-运行`codex`进入对话，输入`/mcp`查看服务器与工具，再提出任务：
+运行 `codex` 进入对话，输入 `/mcp` 查看服务器与工具。可在当前目录中找 `search_openai_docs` 和 `fetch_openai_doc`。再提出任务，检查实际调用及返回内容：
 
 ```text
 请使用openai-docs服务器查找Codex的MCP配置说明，给出配置文件位置和一条stdio配置。
@@ -252,9 +252,11 @@ print(sorted(data.get('mcp_servers', {})))
 
 ### 5.1 学习目标与本地服务准备
 
+在第4章已能读懂配置表。本章把表中的 `command` 指向实际准备好的本地程序，再用无模型的客户端验证接口。
+
 stdio用标准输入输出交换协议消息，Codex负责启动子进程。stdout不能打印欢迎语或调试日志；日志写stderr。`command`是可执行文件，`args`是独立参数数组，`cwd`是进程工作目录，三者分开。
 
-在PowerShell创建独立练习环境，准备Python3.12：
+准备 Python 3.12，在 PowerShell 用 `python --version` 核对。接下来创建独立练习环境：
 
 ```powershell
 New-Item -ItemType Directory -Force 'D:\codex-mcp-lab' | Out-Null
@@ -562,7 +564,7 @@ Codex 会为当前连接缓存辅助命令提供的请求头。如果同源 POST
 
 ### 7.1 学习目标与OAuth登录链
 
-OAuth让你在服务提供方完成身份验证并授予范围，客户端再拿访问令牌调用MCP。CIMD是Client ID Metadata Document，客户端ID元数据文档；DCR是Dynamic Client Registration，动态客户端注册。二者解决“客户端如何被授权服务器识别”，不是两种不同业务权限。
+OAuth让你在服务提供方完成身份验证并授予范围，客户端再拿访问令牌调用MCP。CIMD是Client ID Metadata Document，客户端ID元数据文档；DCR是Dynamic Client Registration，动态客户端注册。二者解决客户端如何被授权服务器识别。工具最终能做哪些操作仍取决于令牌和服务端权限。在 `2026-07-28` 规范下，DCR 给旧授权服务器提供兼容；新接入优先使用预注册或授权服务器支持的 CIMD。
 
 ```text
 配置MCP端点 → 发现授权信息 → 选择预注册客户端/CIMD/DCR
