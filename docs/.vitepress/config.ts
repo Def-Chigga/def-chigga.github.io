@@ -43,6 +43,8 @@ export default withMermaid(defineConfig({
     'posts/(.*)': '(.*)',
   },
   markdown: {
+    // 启用 markdown-it-mathjax3，渲染手册中的块级与行内公式。
+    math: true,
     anchor: {
       // 与 GitHub 标题锚点保持一致，兼容手册原有目录链接。
       slugify: githubSlug,
